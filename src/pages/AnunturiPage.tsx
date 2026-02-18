@@ -13,7 +13,7 @@ export default function AnunturiPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-[#4CC9F0]/5 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 flex flex-col">
-      <SimpleHeader showContent={showContent} />
+      <SimpleHeader/>
       
       <main className="pt-32 pb-24 flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

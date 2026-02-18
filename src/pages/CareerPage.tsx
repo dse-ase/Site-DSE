@@ -12,7 +12,7 @@ export default function CareerPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <SimpleHeader showContent={showContent} />
+      <SimpleHeader/>
       
       <main>
         <Cariera />

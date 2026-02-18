@@ -12,24 +12,24 @@ export default function ProfesoriCoordonatoriPage() {
   }, []);
 
   // Mapping de activități didactice pentru fiecare profesor
-  const profesoriInfo = {
+  const profesoriInfo: Record<string, string[]> = {
     'adrian-costea': ['Econometrie', 'Data Mining', 'Bazele Econometriei'],
     'adrian-otoiu': ['Statistică', 'Econometrie', 'Data Mining'],
     'claudiu-herteliu': ['Statistică computațională și econofizică', 'Statistică macroeconomică', 'Econometrie'],
     'constanta-mihaescu': ['Demografie', 'Statistică Socială', 'Statistică teoretică'],
-    'cristina-rodica-boboc': ['Analiză Statistică Multidimensională', 'Statistică Neparametrică', 'Serii de Timp'],
-    'daniela-ioana-manea': ['Statistică', 'Econometrie'],
-    'dan-traian-pele': ['Statistică', 'Econometrie', 'Serii de timp'],
-    'elena-maria-prada': ['Statistică', 'Statistică macroeconomică', 'Econometrie'],
+    'cristina-boboc': ['Analiză Statistică Multidimensională', 'Statistică Neparametrică', 'Serii de Timp'],
+    'daniela-manea': ['Statistică', 'Econometrie'],
+    'dan-pele': ['Statistica Pieţelor Financiare', 'Econometrie', 'Serii de timp'],
+    'elena-prada': ['Statistică Spatială', 'Statistică macroeconomică', 'Econometrie'],
     'emilia-gogu': ['Statistică macroeconomică', 'Statistică', 'Econometrie'],
     'emilia-titan': ['Statistică', 'Econometrie', 'Metode cantitative în studiul pieței'],
     'erika-marin': ['Statistică', 'Analiza managerială a datelor', 'Econometrie'],
-    'giani-ionel-gradinaru': ['Statistică microeconomică', 'Econometrie', 'Previziune economică'],
-    'gina-cristina-dimian': ['Statistică', 'Econometrie', 'Demografie și Statistică Socială'],
-    'marinescu-pele-mazurencu': ['Econometrie', 'Statistică', 'Evaluarea afacerilor electronice'],
+    'giani-gradinaru': ['Statistică microeconomică', 'Econometrie', 'Previziune economică'],
+    'gina-dimian': ['Statistică', 'Econometrie', 'Demografie și Statistică Socială'],
+    'marinescu-mazurencu': ['Econometrie', 'Statistică', 'Evaluarea afacerilor electronice'],
     'mihaela-covrig': ['Statistică', 'Econometrie', 'Serii de timp'],
     'mihaela-mihai': ['Statistică', 'Econometrie', 'Matematică economică'],
-    'monica-mihaela-roman': ['Econometrie', 'Statistică', 'Metode cantitative'],
+    'monica-roman': ['Econometrie', 'Statistică', 'Metode cantitative'],
     'simona-apostu': ['Bazele Statisticii', 'Statistică', 'Econometrie'],
     'smaranda-cimpoeru': ['Econometrie', 'Econometrie spațială', 'Statistică'],
     'tudorel-andrei': ['Econometrie', 'Econometrie avansată'],
@@ -42,19 +42,19 @@ export default function ProfesoriCoordonatoriPage() {
     { name: 'Adrian OȚOIU', slug: 'adrian-otoiu' },
     { name: 'Claudiu HERȚELIU', slug: 'claudiu-herteliu' },
     { name: 'Constanța MIHAESCU', slug: 'constanta-mihaescu' },
-    { name: 'Cristina Rodica BOBOC', slug: 'cristina-rodica-boboc' },
-    { name: 'Daniela Ioana MANEA', slug: 'daniela-ioana-manea' },
-    { name: 'Dan Traian PELE', slug: 'dan-traian-pele' },
-    { name: 'Elena Maria PRADA', slug: 'elena-maria-prada' },
+    { name: 'Cristina Rodica BOBOC', slug: 'cristina-boboc' },
+    { name: 'Daniela Ioana MANEA', slug: 'daniela-manea' },
+    { name: 'Dan Traian PELE', slug: 'dan-pele' },
+    { name: 'Elena Maria PRADA', slug: 'elena-prada' },
     { name: 'Emilia GOGU', slug: 'emilia-gogu' },
     { name: 'Emilia ȚIȚAN', slug: 'emilia-titan' },
     { name: 'Erika MARIN', slug: 'erika-marin' },
-    { name: 'Giani Ionel GRĂDINARU', slug: 'giani-ionel-gradinaru' },
-    { name: 'Gina Cristina DIMIAN', slug: 'gina-cristina-dimian' },
-    { name: 'Marinescu Pele MAZURENCU', slug: 'marinescu-pele-mazurencu' },
+    { name: 'Giani Ionel GRĂDINARU', slug: 'giani-gradinaru' },
+    { name: 'Gina Cristina DIMIAN', slug: 'gina-dimian' },
+    { name: 'Marinescu Pele MAZURENCU', slug: 'marinescu-mazurencu' },
     { name: 'Mihaela COVRIG', slug: 'mihaela-covrig' },
     { name: 'Mihaela MIHAI', slug: 'mihaela-mihai' },
-    { name: 'Monica Mihaela ROMAN', slug: 'monica-mihaela-roman' },
+    { name: 'Monica Mihaela ROMAN', slug: 'monica-roman' },
     { name: 'Simona APOSTU', slug: 'simona-apostu' },
     { name: 'Smaranda CIMPOERU', slug: 'smaranda-cimpoeru' },
     { name: 'Tudorel ANDREI', slug: 'tudorel-andrei' }
@@ -66,22 +66,22 @@ export default function ProfesoriCoordonatoriPage() {
     { name: 'Adrian OȚOIU', slug: 'adrian-otoiu' },
     { name: 'Claudiu HERȚELIU', slug: 'claudiu-herteliu' },
     { name: 'Constanța MIHAESCU', slug: 'constanta-mihaescu' },
-    { name: 'Cristina Rodica BOBOC', slug: 'cristina-rodica-boboc' },
-    { name: 'Dan Traian PELE', slug: 'dan-traian-pele' },
-    { name: 'Elena Maria PRADA', slug: 'elena-maria-prada' },
+    { name: 'Cristina Rodica BOBOC', slug: 'cristina-boboc' },
+    { name: 'Dan Traian PELE', slug: 'dan-pele' },
+    { name: 'Elena Maria PRADA', slug: 'elena-prada' },
     { name: 'Emilia ȚIȚAN', slug: 'emilia-titan' },
-    { name: 'Giani Ionel GRĂDINARU', slug: 'giani-ionel-gradinaru' },
+    { name: 'Giani Ionel GRĂDINARU', slug: 'giani-gradinaru' },
     { name: 'Gabriela NICULESCU', slug: 'gabriela-niculescu' },
     { name: 'Mihaela COVRIG', slug: 'mihaela-covrig' },
     { name: 'Mihaela MIHAI', slug: 'mihaela-mihai' },
-    { name: 'Monica Mihaela ROMAN', slug: 'monica-mihaela-roman' },
+    { name: 'Monica Mihaela ROMAN', slug: 'monica-roman' },
     { name: 'Smaranda CIMPOERU', slug: 'smaranda-cimpoeru' },
     { name: 'Tudorel ANDREI', slug: 'tudorel-andrei' }
   ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
-      <SimpleHeader showContent={showContent} />
+      <SimpleHeader/>
       
       <main className="pb-24 flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -5,7 +5,7 @@ import { MasterASDSDetails } from '../components/MasterASDSDetails';
 export default function MasterPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <SimpleHeader showContent={true} />
+      <SimpleHeader/>
       
       <main>
         <MasterASDSDetails />

@@ -5,7 +5,7 @@ import { MasterADADetails } from '../components/MasterADADetails';
 export default function MasterADAPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <SimpleHeader showContent={true} />
+      <SimpleHeader/>
       
       <main>
         <MasterADADetails />

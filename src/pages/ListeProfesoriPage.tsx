@@ -195,7 +195,7 @@ export default function ListeProfesoriPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
-      <SimpleHeader showContent={showContent} />
+      <SimpleHeader/>
       
       <main className="flex-grow pt-[1.5cm] pb-20">
         <div className="max-w-[1400px] mx-auto px-6">

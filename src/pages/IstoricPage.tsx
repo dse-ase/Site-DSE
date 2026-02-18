@@ -12,7 +12,7 @@ export default function IstoricPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
-      <SimpleHeader showContent={showContent} />
+      <SimpleHeader/>
       
       <main className="flex-grow">
         <Istoric />

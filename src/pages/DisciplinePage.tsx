@@ -172,7 +172,7 @@ export default function DisciplinePage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <SimpleHeader showContent={true} />
+      <SimpleHeader/>
       
       <main className="pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

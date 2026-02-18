@@ -23,7 +23,7 @@ export default function ActivitatiViitoarePage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
-      <SimpleHeader showContent={showContent} />
+      <SimpleHeader/>
       
       <main className="pb-24 flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
