@@ -1,6 +1,5 @@
 {
       "name": "University Department Website",
-      "homepage": "https://TeoSW.github.io/Site-DSE",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
@@ -56,8 +55,6 @@
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build",
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d dist"
+            "build": "vite build"
       }
 }
