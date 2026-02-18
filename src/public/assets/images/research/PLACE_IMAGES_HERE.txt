@@ -1,0 +1,12 @@
+📌 Descarcă 3 IMAGINI Unsplash pentru CERCETARE:
+
+Vezi IMAGE_DOWNLOAD_LIST.md pentru URL-uri complete!
+
+1. conference-icas.jpg - Conferința ICAS
+2. journal-jses.jpg - Journal JSES  
+3. survey-center.jpg - Centrul de Sondaje
+
+Dimensiuni: 1080x720px (landscape)
+Format: JPG
+
+Folosite în: Cercetare.tsx, Noutati.tsx

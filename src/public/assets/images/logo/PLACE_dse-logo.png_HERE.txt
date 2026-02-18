@@ -1,0 +1,12 @@
+📌 PLASEAZĂ AICI: dse-logo.png
+
+Imaginea logo-ului DSE a fost atașată în conversație.
+Salvează-o ca: dse-logo.png
+
+Dimensiuni recomandate: 200x60px (PNG transparent)
+Format: PNG
+Transparență: DA
+
+Folosit în:
+- /components/Header.tsx
+- /components/SimpleHeader.tsx

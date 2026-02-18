@@ -1,0 +1,71 @@
+═══════════════════════════════════════════════════════════════════
+  📥 LISTA COMPLETĂ URL-URI UNSPLASH - COPIAZĂ ȘI DESCARCĂ
+═══════════════════════════════════════════════════════════════════
+
+TOTAL: 11 imagini de descărcat
+
+───────────────────────────────────────────────────────────────────
+📁 RESEARCH (3 imagini) → Salvează în: /public/assets/images/research/
+───────────────────────────────────────────────────────────────────
+
+1. conference-icas.jpg
+https://images.unsplash.com/photo-1760420940953-3958ad9f6287?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25mZXJlbmNlJTIwcHJlc2VudGF0aW9uJTIwYWNhZGVtaWN8ZW58MXx8fHwxNzY2MDUxMzQ1fDA&ixlib=rb-4.1.0&q=80&w=1080
+
+2. journal-jses.jpg
+https://images.unsplash.com/photo-1588144606768-3a6a1edf7729?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMGpvdXJuYWwlMjByZXNlYXJjaHxlbnwxfHx8fDE3NjYwNjI5ODR8MA&ixlib=rb-4.1.0&q=80&w=1080
+
+3. survey-center.jpg
+https://images.unsplash.com/photo-1680602240329-b1416f7aa18b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXklMjByZXNlYXJjaCUyMGRhdGF8ZW58MXx8fHwxNzY2MDYyOTg1fDA&ixlib=rb-4.1.0&q=80&w=1080
+
+
+───────────────────────────────────────────────────────────────────
+✈️ ERASMUS (6 imagini) → Salvează în: /public/assets/images/erasmus/
+───────────────────────────────────────────────────────────────────
+
+4. netherlands.jpg (Tilburg University)
+https://images.unsplash.com/photo-1584646098378-0874589d76b1?w=400&h=300&fit=crop
+
+5. germany.jpg (Ludwig Maximilian University)
+https://images.unsplash.com/photo-1595666944516-bbb485958fb5?w=400&h=300&fit=crop
+
+6. sweden.jpg (Lund University)
+https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=400&h=300&fit=crop
+
+7. spain.jpg (University of Barcelona)
+https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&h=300&fit=crop
+
+8. austria.jpg (Vienna University of Economics)
+https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=400&h=300&fit=crop
+
+9. denmark.jpg (University of Copenhagen)
+https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=400&h=300&fit=crop
+
+
+───────────────────────────────────────────────────────────────────
+📊 MISC (2 imagini) → Salvează în: /public/assets/images/misc/
+───────────────────────────────────────────────────────────────────
+
+10. data-analysis.jpg
+https://images.unsplash.com/photo-1691643158804-d3f02eb456a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHlzaXMlMjBjaGFydHN8ZW58MXx8fHwxNzY1OTkzMTMzfDA&ixlib=rb-4.1.0&q=80&w=1080
+
+11. students-studying.jpg
+https://images.unsplash.com/photo-1723987135977-ae935608939e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHN0dWR5aW5nJTIwc3RhdGlzdGljc3xlbnwxfHx8fDE3NjU5OTkzNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ INSTRUCȚIUNI DESCĂRCARE
+═══════════════════════════════════════════════════════════════════
+
+Pentru fiecare URL:
+
+1. Copiază URL-ul complet
+2. Lipește în bara de adrese a browser-ului
+3. Apasă Enter - imaginea se va deschide
+4. Click dreapta pe imagine → "Save Image As..."
+5. Salvează cu NUMELE EXACT specificat (ex: conference-icas.jpg)
+6. Plasează în FOLDERUL CORESPUNZĂTOR
+
+NOTĂ: Folosește EXACT numele fișierelor de mai sus!
+      Codul se bazează pe aceste nume!
+
+═══════════════════════════════════════════════════════════════════
