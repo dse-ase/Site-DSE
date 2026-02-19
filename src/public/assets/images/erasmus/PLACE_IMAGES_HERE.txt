@@ -1,0 +1,15 @@
+📌 Descarcă 6 IMAGINI Unsplash pentru ERASMUS:
+
+Vezi IMAGE_DOWNLOAD_LIST.md pentru URL-uri complete!
+
+1. netherlands.jpg - Tilburg University
+2. germany.jpg - Ludwig Maximilian University
+3. sweden.jpg - Lund University
+4. spain.jpg - University of Barcelona
+5. austria.jpg - Vienna University of Economics
+6. denmark.jpg - University of Copenhagen
+
+Dimensiuni: 400x300px
+Format: JPG
+
+Folosite în: Erasmus.tsx
