@@ -245,7 +245,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                 >
                   <div className="flex items-center gap-2 mb-4">
                     <Briefcase className="w-5 h-5 text-[#4361EE]" />
-                    <h2 className="text-xl text-[#3A0CA3] dark:text-[#4CC9F0]">CV și profiluri academice</h2>
+                    <h2 className="text-xl text-[#3A0CA3] dark:text-[#4CC9F0]">Profiluri academice</h2>
                   </div>
                   <ul className="space-y-3">
                     {(data.cvProfiluri || []).map((profil, idx) => {

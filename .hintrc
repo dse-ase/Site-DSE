@@ -13,9 +13,20 @@
           "background-color: color-mix(in srgb,oklch(.379 .146 265.522) 20%,transparent)",
           "background-color: color-mix(in srgb,oklch(.278 .033 256.848) 50%,transparent)",
           "background-color: color-mix(in srgb,oklch(.278 .033 256.848) 80%,transparent)",
-          "background-color: color-mix(in srgb,oklch(.278 .033 256.848) 95%,transparent)"
+          "background-color: color-mix(in srgb,oklch(.278 .033 256.848) 95%,transparent)",
+          "border-color: oklab(55.5834% -.00367305 -.214077 / .3)",
+          "border-color: oklab(78.2436% -.0894989 -.0819075 / .2)",
+          "border-color: oklab(78.2436% -.0894989 -.0819075 / .3)",
+          "background-color: color-mix(in srgb, oklch(.379 .146 265.522) 20%, transparent)"
         ]
       }
-    ]
-  }
+    ],
+    "typescript-config/consistent-casing": "off"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not chrome <= 109",
+    "not ios_saf <= 16.1"
+  ]
 }

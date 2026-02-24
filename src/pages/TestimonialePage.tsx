@@ -91,7 +91,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
 
           {/* Testimoniale */}
           <div className="space-y-12">
-            {testimoniale.map((testimonial, index) => (
+            {testimoniale.map((testimonial) => (
               <div
                 key={testimonial.id}
                 className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-[#4CC9F0]/20 dark:border-gray-700 overflow-hidden"

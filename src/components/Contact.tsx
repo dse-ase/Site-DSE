@@ -88,7 +88,7 @@ export function Contact() {
             </a>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
               Secretar Diana Burciu<br />
-              Luni - Vineri, 08:00 - 16:00
+              Luni - Vineri, 07:30 - 15:30
             </p>
           </motion.div>
 

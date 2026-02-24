@@ -266,7 +266,7 @@ export function ProgramSection() {
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="src/assets/sala ase.jpg"
+                  src="src/assets/salaEMOS.png"
                   alt="Studenți analizând date"
                   className="w-full h-[500px] object-cover"
                 />

@@ -1,5 +1,5 @@
 {
-      "name": "University Department Website",
+      "name": "university-department-website",
       "homepage": "https://TeoSW.github.io/Site-DSE",
       "version": "0.1.0",
       "private": true,
@@ -51,6 +51,7 @@
       },
       "devDependencies": {
             "@types/node": "^20.10.0",
+            "@types/react-dom": "^19.2.3",
             "@vitejs/plugin-react-swc": "^3.10.2",
             "vite": "6.3.5"
       },

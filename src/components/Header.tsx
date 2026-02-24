@@ -70,7 +70,7 @@ export default function Header({ showContent = true }: HeaderProps) {
                 href="#/" 
                 className="cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300"
               >
-                <img src={'src/assets/76832ff7847efbc7c6a73a3c11e8dc869530dd33.png'} alt="DSE Logo" className="h-16 sm:h-20 lg:h-28 w-auto" />
+                <img src={'src/assets/logo.png'} alt="DSE Logo" className="h-16 sm:h-20 lg:h-28 w-auto" />
               </a>
               
               {/* Social Media Icons */}
@@ -188,15 +188,21 @@ export default function Header({ showContent = true }: HeaderProps) {
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-xl py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <a href="#/evenimente-trecute" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
-                    🗓️ Evenimente trecute
-                  </a>
                   <a href="#/activitati-viitoare" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
-                    📅 Activități viitoare
+                    🚀 Activități viitoare
+                  </a>
+                  <a href="#/evenimente-trecute" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
+                    🕰️ Evenimente trecute
                   </a>
                   <div className="border-t border-gray-700 my-2"></div>
-                  <a href="#/studenti-colaboratori" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
-                    🎓 Studenții noștri colaboratori
+                  <button onClick={() => setIsMapOpen(true)} className="w-full text-left block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
+                    🏢 Campus ASE
+                  </button>
+                  <a href="https://csie.ase.ro/wp-content/uploads/2025/10/Calendarul-Studentului-2025-2026.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
+                    📅 Calendarul Studentului
+                  </a>
+                  <a href="#/orar" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
+                    📚 Orar
                   </a>
                   <a href="https://csie.ase.ro/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
                     🏛️ Site CSIE
@@ -208,13 +214,10 @@ export default function Header({ showContent = true }: HeaderProps) {
                   <a href="#/instrumente-analiza" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
                     💻 Instrumente de analiză
                   </a>
-                  <button onClick={() => setIsMapOpen(true)} className="w-full text-left block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
-                    🏢 Clădiri
-                  </button>
-                  <a href="#/orar" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
-                    📅 Orar
-                  </a>
                   <div className="border-t border-gray-700 my-2"></div>
+                  <a href="#/studenti-colaboratori" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
+                    🎓 Studenții noștri colaboratori
+                  </a>
                   <a href="#/cariera" className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200">
                     💼 Carieră
                   </a>

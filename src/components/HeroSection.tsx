@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const slideImages = [
   'src/assets/CSIE.jpg',
   'src/assets/gradinacsie.jpg',
-  'src/assets/omv.jpg',
+  'src/assets/ASE.jpg',
   'src/assets/gradina csie 2.jpg'
 ];
 
