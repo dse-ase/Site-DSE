@@ -146,7 +146,7 @@ export function Doctorat() {
                 Ediții viitoare:
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Va începe pe <strong>11 martie</strong> o nouă ediție.
+                Va începe pe <strong>11 martie 2026</strong> o nouă ediție.
               </p>
             </div>
 
