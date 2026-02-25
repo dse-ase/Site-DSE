@@ -36,6 +36,10 @@ import { GabrielaNiculescuPage } from './gabriela-niculescu';
 import { MihaiSacalaPage } from './mihai-sacala';
 import { DanielaSerbanPage } from './daniela-serban';
 import { RazvanVasilePage } from './razvan-vasile';
+import { VasileStratPage } from './strat-vasile';
+import { EduardMantaPage } from './eduard-manta';
+import { NicholasAlexanderPage } from './nicholas-alexander';
+import { JSX } from 'react';
 
 // Component simplu pentru profesorii în așteptare (fără date false)
 function ProfesorComingSoon({ name, email }: { name: string; email: string }) {
@@ -114,12 +118,11 @@ const profesorRoutes: Record<string, () => JSX.Element> = {
   'daniela-serban': () => <DanielaSerbanPage />,
   'razvan-vasile': () => <RazvanVasilePage />,
 
-  // ===== PROFESORI ÎN AȘTEPTARE (7) - cu date reale minime =====
-  'nicholas-alexander': () => <ProfesorComingSoon name="ALEXANDER Nicholas Victor Julius" email="nicholas.alexander@csie.ase.ro" />,
+  'nicholas-alexander': () => <NicholasAlexanderPage/>,
   'bogdan-ileanu': () => <ProfesorComingSoon name="ILEANU Bogdan" email="bogdan.ileanu@csie.ase.ro" />,
-  'eduard-manta': () => <ProfesorComingSoon name="MANTA Eduard Nicolae" email="eduard.manta@csie.ase.ro" />,
+  'eduard-manta': () => <EduardMantaPage/>,
   'andrei-parvan': () => <ProfesorComingSoon name="PÂRVAN Andrei" email="andrei.parvan@csie.ase.ro" />,
-  'vasile-strat': () => <ProfesorComingSoon name="STRAT Vasile Alecsandru" email="vasile.strat@csie.ase.ro" />,
+  'vasile-strat': () => <VasileStratPage/>,
 };
 
 // Export function pentru routing
