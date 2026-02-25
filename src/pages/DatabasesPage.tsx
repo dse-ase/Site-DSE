@@ -53,7 +53,7 @@ const microdata = [
 ];
 
 export default function DatabasesPage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

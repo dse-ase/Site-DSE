@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 import { Calendar, ArrowRight, Award, BookOpen, Users, GraduationCap } from 'lucide-react';
 
 export default function EvenimenteTrecutePage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

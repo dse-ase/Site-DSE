@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
-import { Calendar, ExternalLink, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight } from 'lucide-react';
 
 export default function ActivitatiViitoarePage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);
@@ -18,6 +18,13 @@ export default function ActivitatiViitoarePage() {
       data: '15 Decembrie 2025',
       link: 'https://asds-csie.ase.ro/emos-mobility-programme-launched-funding-for-cross-border-internships-and-official-statistics-events/',
       categorie: 'Mobilitate'
+    },
+    {
+      id: 2,
+      titlu: 'Sesiunea de Comunicări Științifice 2026',
+      data: '1-2 aprilie 2026',
+      link: 'https://csie.ase.ro/sesiunea-de-comunicari-stiintifice-2026/',
+      categorie: 'Eveniment'
     }
   ];
 

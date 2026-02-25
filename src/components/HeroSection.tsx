@@ -13,20 +13,6 @@ const slideImages = [
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  const slides = [
-    {
-      title: 'Departamentul de Statistică și Econometrie',
-      subtitle: 'Academia de Studii Economice, București'
-    },
-    {
-      title: 'Statistică Economică și Data Science',
-      subtitle: 'Programul de licență care pregătește specialiști pentru economia digitală'
-    },
-    {
-      title: 'Investește în viitorul tău',
-      subtitle: 'Alătură-te comunității DSE și descoperă oportunitățile în data science'
-    }
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {

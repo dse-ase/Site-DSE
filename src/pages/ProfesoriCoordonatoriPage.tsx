@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 import { GraduationCap, BookOpen, ExternalLink } from 'lucide-react';
 
 export default function ProfesoriCoordonatoriPage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

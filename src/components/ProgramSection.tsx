@@ -1,9 +1,8 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { BookOpen, Award, Briefcase, GraduationCap, MapPin, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import { BookOpen, Award, Briefcase, GraduationCap, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 
 // Hartă campus ASE din Figma
-const campusMapImage = 'figma:asset/campus-map.png';
 
 const curriculumCategories = [
   {
@@ -92,32 +91,10 @@ const advantages = [
   },
 ];
 
-const databases = [
-  {
-    name: 'Kaggle',
-    description: 'Platformă globală pentru competiții de data science și seturi de date pentru practică',
-    url: 'https://www.kaggle.com',
-    color: 'from-[#4895EF] to-[#4CC9F0]',
-  },
-  {
-    name: 'Eurostat',
-    description: 'Datele officiale statistice ale Uniunii Europene - indispensabil pentru analiza economică',
-    url: 'https://ec.europa.eu/eurostat',
-    color: 'from-[#B5179E] to-[#F72585]',
-  },
-  {
-    name: 'Tempo Online',
-    description: 'Baza de date a Institutului Național de Statistică - statistici detaliate despre România',
-    url: 'http://statistici.insse.ro:8077/tempo-online/',
-    color: 'from-[#7209B7] to-[#B5179E]',
-  },
-];
-
 export function ProgramSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({});
-  const [isMapOpen, setIsMapOpen] = useState(false);
 
   const toggleCategory = (categoryName: string) => {
     setExpandedCategories(prev => ({

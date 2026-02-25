@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Target, BookOpen, Lightbulb, Users, Home, Check } from 'lucide-react';
+import { Target, BookOpen, Lightbulb, Users, Check } from 'lucide-react';
 
 export function Misiune() {
   const missions = [

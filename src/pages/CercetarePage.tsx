@@ -4,7 +4,7 @@ import { Cercetare } from '../components/Cercetare';
 import { Footer } from '../components/Footer';
 
 export default function CercetarePage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

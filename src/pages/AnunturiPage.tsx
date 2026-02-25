@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 import { Bell, Megaphone } from 'lucide-react';
 
 export default function AnunturiPage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

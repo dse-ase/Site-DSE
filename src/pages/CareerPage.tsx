@@ -4,7 +4,7 @@ import { Cariera } from '../components/Cariera';
 import { Footer } from '../components/Footer';
 
 export default function CareerPage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

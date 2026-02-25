@@ -4,7 +4,7 @@ import { Istoric } from '../components/Istoric';
 import { Footer } from '../components/Footer';
 
 export default function IstoricPage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

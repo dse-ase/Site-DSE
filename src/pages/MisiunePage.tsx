@@ -4,7 +4,7 @@ import { Misiune } from '../components/Misiune';
 import { Footer } from '../components/Footer';
 
 export default function MisiunePage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Mail, GraduationCap, BookOpen, Award, Users, Home, ExternalLink, FileText, Briefcase } from 'lucide-react';
+import { Mail, GraduationCap, BookOpen, Users, Home, ExternalLink, FileText, Briefcase } from 'lucide-react';
 import { SimpleHeader } from './SimpleHeader';
 import { Footer } from './Footer';
 
@@ -45,7 +45,7 @@ interface ProfesorProfileProps {
 }
 
 export function ProfesorProfile({ data }: ProfesorProfileProps) {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

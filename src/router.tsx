@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, JSX } from 'react';
 import HomePage from './pages/HomePage';
 import IstoricPage from './pages/IstoricPage';
 import CadreDidacticePage from './pages/CadreDidacticePage';
 import MisiunePage from './pages/MisiunePage';
-import ErasmusPage from './pages/ErasmusPage';
 import DisciplinePage from './pages/DisciplinePage';
 import MasterPage from './pages/MasterPage';
 import MasterADAPage from './pages/MasterADAPage';
@@ -39,8 +38,8 @@ export function Router() {
       
       setCurrentPath(newHash);
       
-      // Check if this is a section anchor on the home page (e.g., /#licenta, /#contact)
-      const sectionAnchors = ['#acasa', '#licenta', '#master', '#doctorat', '#noutati', '#cercetare', '#contact'];
+      // Check if this is a section anchor on the home page 
+      const sectionAnchors = ['#acasa', '#noutati', '#cercetare', '#contact'];
       const isSectionAnchor = sectionAnchors.some(anchor => newHash === `/${anchor}` || newHash === anchor);
       
       // Check if this is a research section anchor (e.g., #/icas, #/jses, #/centrul-sondaje)
@@ -104,7 +103,6 @@ export function Router() {
     '#/istoric': <IstoricPage />,
     '#/cadre-didactice': <CadreDidacticePage />,
     '#/misiune': <MisiunePage />,
-    '#/erasmus': <ErasmusPage />,
     '#/discipline': <DisciplinePage />,
     '#/master-asds': <MasterPage />,
     '#/master-ada': <MasterADAPage />,
@@ -125,9 +123,6 @@ export function Router() {
     '#/studenti-colaboratori': <StudentiColaboratoriPage />,
     '#/cursuri-postuniversitare': <CursuriPostuniversitarePage />,
     // Home page section anchors
-    '/#licenta': <HomePage />,
-    '/#master': <HomePage />,
-    '/#doctorat': <HomePage />,
     '/#noutati': <HomePage />,
     '/#contact': <HomePage />,
   };

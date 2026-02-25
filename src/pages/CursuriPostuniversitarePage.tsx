@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { GraduationCap, Calendar, Users, Clock, Monitor, Award, BookOpen, BarChart3, Brain, Target, CheckCircle2, Mail, ChevronDown, ChevronUp } from 'lucide-react';
+import { GraduationCap, Calendar, Users, Clock, Monitor, Award, BookOpen, BarChart3, Brain, Target, CheckCircle2, Mail, ChevronDown } from 'lucide-react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
 

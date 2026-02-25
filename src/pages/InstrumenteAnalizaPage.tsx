@@ -48,7 +48,7 @@ const instrumente = [
 ];
 
 export default function InstrumenteAnalizaPage() {
-  const [showContent, setShowContent] = useState(false);
+  const [, setShowContent] = useState(false);
 
   useEffect(() => {
     setShowContent(true);

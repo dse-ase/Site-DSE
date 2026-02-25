@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { GraduationCap, BookOpen, Mail, Users, Crown, FileText, ExternalLink, Home } from 'lucide-react';
+import { GraduationCap, BookOpen, Users, Crown, FileText, ExternalLink } from 'lucide-react';
 
 export function CadreDidactice() {
   const conducere = {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { BookOpen, GraduationCap, ExternalLink, Brain } from 'lucide-react';
+import { BookOpen, ExternalLink, Brain } from 'lucide-react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
 

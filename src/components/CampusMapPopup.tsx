@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { MapPin, X, ExternalLink } from 'lucide-react';
 
 interface CampusMapPopupProps {

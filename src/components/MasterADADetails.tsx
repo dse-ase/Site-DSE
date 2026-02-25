@@ -1,6 +1,6 @@
 import { motion, useInView } from 'motion/react';
 import { useRef, useState } from 'react';
-import { GraduationCap, Users, Brain, BookOpen, ExternalLink, Globe, Clock, Database } from 'lucide-react';
+import { GraduationCap, Users, Brain, BookOpen, ExternalLink, Globe} from 'lucide-react';
 
 const masterInfo = {
   title: 'Applied Data Analytics',

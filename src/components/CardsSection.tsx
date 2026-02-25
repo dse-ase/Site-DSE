@@ -1,12 +1,15 @@
-import { motion } from 'motion/react';
-import { useState } from 'react';
-import { CampusMapPopup } from './CampusMapPopup';
+import { motion } from "motion/react";
+import { useState } from "react";
+import { CampusMapPopup } from "./CampusMapPopup";
 
 export function CardsSection() {
   const [isMapOpen, setIsMapOpen] = useState(false);
 
   return (
-    <div className="relative bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-16" style={{ minHeight: '30vh' }}>
+    <div
+      className="relative bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-16"
+      style={{ minHeight: "30vh" }}
+    >
       <div className="w-full flex items-center justify-center">
         {/* Four Cards */}
         <motion.div
@@ -22,43 +25,55 @@ export function CardsSection() {
             </h3>
             <ul className="space-y-5 text-gray-700 dark:text-gray-300 text-lg card-section-list">
               <li>
-                <a 
-                  href="/#licenta" 
-                  className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
+                <a
+                  href="#licenta"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById("licenta");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all cursor-pointer"
                 >
-                  • <span className="font-medium">Licență:</span> Statistică aplicată și Data Science
+                  • <span className="font-medium">Licență:</span> Statistică
+                  aplicată și Data Science
                 </a>
               </li>
               <li>
-                <a 
-                  href="#/master-asds" 
+                <a
+                  href="#/master-asds"
                   className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
                 >
-                  • <span className="font-medium">Master:</span> Statistică aplicată și Data Science
+                  • <span className="font-medium">Master:</span> Statistică
+                  aplicată și Data Science
                 </a>
               </li>
               <li>
-                <a 
-                  href="#/master-ada" 
+                <a
+                  href="#/master-ada"
                   className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
                 >
-                  • <span className="font-medium">Master:</span> Applied data analytics
+                  • <span className="font-medium">Master:</span> Applied data
+                  analytics
                 </a>
               </li>
               <li>
-                <a 
-                  href="#/cursuri-postuniversitare" 
+                <a
+                  href="#/cursuri-postuniversitare"
                   className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
                 >
-                  • <span className="font-medium">Cursuri postuniversitare</span>
+                  •{" "}
+                  <span className="font-medium">Cursuri postuniversitare</span>
                 </a>
               </li>
               <li>
-                <a 
-                  href="#/doctorat" 
+                <a
+                  href="#/doctorat"
                   className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
                 >
-                  • <span className="font-medium">Doctorat:</span> Cibernetică și Statistică Economică
+                  • <span className="font-medium">Doctorat:</span> Cibernetică
+                  și Statistică Economică
                 </a>
               </li>
             </ul>
@@ -71,43 +86,48 @@ export function CardsSection() {
             </h3>
             <ul className="space-y-4 card-section-list">
               <li>
-                <a 
+                <a
                   href="#/cariera"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
-                  • <span className="font-medium">Carieră</span> - Oportunități și internship-uri
+                  • <span className="font-medium">Carieră</span> - Oportunități
+                  și internship-uri
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href="#/orar"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
-                  • <span className="font-medium">Orar</span> - Programa cursurilor
+                  • <span className="font-medium">Orar</span> - Programa
+                  cursurilor
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href="#/databases"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
-                  • <span className="font-medium">Baze de date</span> - Resurse pentru analiză
+                  • <span className="font-medium">Baze de date</span> - Resurse
+                  pentru analiză
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href="#/instrumente-analiza"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
-                  • <span className="font-medium">Instrumente</span> - Software pentru analiză
+                  • <span className="font-medium">Instrumente</span> - Software
+                  pentru analiză
                 </a>
               </li>
               <li>
                 <button
                   onClick={() => setIsMapOpen(true)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block text-left w-full"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block text-left w-full cursor-pointer"
                 >
-                  • <span className="font-medium">Clădiri</span> - Locații și săli
+                  • <span className="font-medium">Campus ASE</span> - Locații și
+                  săli
                 </button>
               </li>
             </ul>
@@ -122,7 +142,7 @@ export function CardsSection() {
             </a>
             <ul className="space-y-4 card-section-list">
               <li>
-                <a 
+                <a
                   href="#/icas"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
@@ -130,7 +150,7 @@ export function CardsSection() {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href="#/jses"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
@@ -138,7 +158,7 @@ export function CardsSection() {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href="#/centrul-sondaje"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >

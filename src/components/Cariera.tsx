@@ -47,17 +47,6 @@ export function Cariera() {
     }
   ];
 
-  const companies = [
-    { name: 'Google', sector: 'Technology' },
-    { name: 'Amazon', sector: 'E-commerce' },
-    { name: 'BCR', sector: 'Banking' },
-    { name: 'ING', sector: 'Banking' },
-    { name: 'Deloitte', sector: 'Consulting' },
-    { name: 'PwC', sector: 'Consulting' },
-    { name: 'Microsoft', sector: 'Technology' },
-    { name: 'Oracle', sector: 'Technology' }
-  ];
-
   return (
     <section id="cariera" className="pt-6 pb-24 bg-gradient-to-br from-gray-50 via-white to-[#4CC9F0]/5 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800" style={{ scrollMarginTop: 'calc(20vh - 3.5cm)' }}>
       <div className="container mx-auto px-4">

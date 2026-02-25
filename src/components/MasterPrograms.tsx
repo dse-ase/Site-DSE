@@ -1,6 +1,6 @@
 import { motion, useInView } from 'motion/react';
-import { useRef, useState } from 'react';
-import { GraduationCap, Users, Globe, Award, Database, ArrowRight, ChevronDown, ChevronUp, BookOpen, TrendingUp } from 'lucide-react';
+import { useRef } from 'react';
+import { GraduationCap, Users, Globe, Award, Database, ArrowRight, BookOpen, TrendingUp } from 'lucide-react';
 
 const masterASDS = {
   title: 'Statistică Aplicată și Data Science',
@@ -32,8 +32,6 @@ const masterADA = {
 export function MasterPrograms() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
-
-  const [showAllCoursesASDS, setShowAllCoursesASDS] = useState(false);
 
   return (
     <div ref={sectionRef} className="py-20 bg-white dark:bg-gray-900" id="master" style={{ scrollMarginTop: 'calc(20vh - 3.5cm)' }}>

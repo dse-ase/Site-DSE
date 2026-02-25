@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Sun, Moon, Home } from 'lucide-react';
 import { useDarkMode } from '../contexts/DarkModeContext';
