@@ -1,5 +1,40 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, BookOpen, Users, Crown, FileText, ExternalLink } from 'lucide-react';
+
+// Avatar cu fallback la initiale
+const MemberAvatar = ({ email, initials, photo, colorClass }: { email: string, initials: string, photo: string, colorClass: string }) => {
+  const username = email.split('@')[0];
+  const [imgSrc, setImgSrc] = useState(
+    photo ? photo : `src/assets/photos/${username}.jpg`
+  );
+  const [imgError, setImgError] = useState(false);
+
+  const handleError = () => {
+    if (imgSrc.endsWith('.jpg') && !photo) {
+      setImgSrc(`src/assets/photos/${username}.png`);
+    } else {
+      setImgError(true);
+    }
+  };
+
+  if (imgError) {
+    return (
+      <div className={`${colorClass} rounded-full w-16 h-16 flex items-center justify-center text-white mb-4 flex-shrink-0`}>
+        <span className="text-xl">{initials}</span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={imgSrc}
+      alt={initials}
+      onError={handleError}
+      className="rounded-full w-16 h-16 object-cover mb-4 border-2 border-[#4361EE]/30 flex-shrink-0"
+    />
+  );
+};
 
 export function CadreDidactice() {
   const conducere = {
@@ -7,17 +42,19 @@ export function CadreDidactice() {
     initials: 'ME',
     role: 'Director Departament',
     email: 'erika.marin@csie.ase.ro',
+    photo: '',
     hasPage: true,
     cvUrl: 'src/assets/cv/Prof. Univ. Dr. Marin Erika CV.pdf'
   };
 
-const consiliu = [
+  const consiliu = [
     {
       name: 'APOSTU Simona Andreea',
       initials: 'AS',
       role: 'Membru Consiliu',
       position: 'Conferențiar Universitar',
       email: 'simona.apostu@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Lect. Univ. Dr. Apostu Simona Andreea CV.pdf'
     },
@@ -27,6 +64,7 @@ const consiliu = [
       role: 'Membru Consiliu',
       position: 'Profesor Universitar',
       email: 'cristina.boboc@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Cristina Boboc.jpeg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Cristina Boboc CV.pdf'
     },
@@ -36,6 +74,7 @@ const consiliu = [
       role: 'Membru Consiliu',
       position: 'Profesor Universitar',
       email: 'constanta.mihaescu@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Constanța Mihăescu CV.pdf'
     },
@@ -45,6 +84,7 @@ const consiliu = [
       role: 'Membru Consiliu',
       position: 'Profesor Universitar',
       email: 'monica.roman@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Monica Roman CV.pdf'
     }
@@ -56,6 +96,7 @@ const consiliu = [
       initials: 'AN',
       position: 'Asistent Universitar',
       email: 'nicholas.alexander@csie.ase.ro',
+      photo: '',
       cvUrl: 'src/assets/cv/Asist. Univ. Dr. Alexander Nicholas Victor Julius CV.pdf'
     },
     {
@@ -63,6 +104,7 @@ const consiliu = [
       initials: 'AT',
       position: 'Profesor Universitar',
       email: 'tudorel.andrei@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Andrei Tudorel.jpg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Andrei Tudorel CV.pdf'
     },
@@ -71,6 +113,7 @@ const consiliu = [
       initials: 'BR',
       position: 'Lector Universitar',
       email: 'razvan.barbulescu@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Lect univ dr Razvan Barbulescu CV.pdf'
     },
@@ -79,6 +122,7 @@ const consiliu = [
       initials: 'BA',
       position: 'Asistent Universitar',
       email: 'andreea.begu@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Begu Andreea Oana.jpg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Asis. Univ. Dr. Begu Andreea-Oana CV.pdf'
     },
@@ -87,6 +131,7 @@ const consiliu = [
       initials: 'CS',
       position: 'Conferențiar Universitar',
       email: 'smaranda.cimpoeru@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. univ. dr. Smaranda Cimpoeru CV.pdf'
     },
@@ -95,6 +140,7 @@ const consiliu = [
       initials: 'CA',
       position: 'Profesor Universitar',
       email: 'adrian.costea@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Adrian Costea_LThumb.jpeg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Adrian Costea CV.pdf'
     },
@@ -103,6 +149,7 @@ const consiliu = [
       initials: 'CM',
       position: 'Conferențiar Universitar',
       email: 'mihaela.covrig@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. univ. dr. Mihaela Covrig CV.pdf'
     },
@@ -111,6 +158,7 @@ const consiliu = [
       initials: 'CS',
       position: 'Profesor Universitar',
       email: 'silvia.cristache@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Cristache Silvia-Elena CV.pdf'
     },
@@ -119,6 +167,7 @@ const consiliu = [
       initials: 'DA',
       position: 'Conferențiar Universitar',
       email: 'aniela.danciu@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. Univ. dr. Danciu Aniela CV.pdf'
     },
@@ -127,6 +176,7 @@ const consiliu = [
       initials: 'DA',
       position: 'Profesor Universitar',
       email: 'adriana.davidescu@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Adriana Anamaria Davidescu CV.pdf'
     },
@@ -135,6 +185,7 @@ const consiliu = [
       initials: 'DG',
       position: 'Profesor Universitar',
       email: 'gina.dimian@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Dimian Gina Cristina CV.pdf'
     },
@@ -143,6 +194,7 @@ const consiliu = [
       initials: 'DI',
       position: 'Conferențiar Universitar',
       email: 'irina.dragan@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. Univ. Dr. Drăgan Irina-Maria CV.pdf'
     },
@@ -151,6 +203,7 @@ const consiliu = [
       initials: 'GS',
       position: 'Profesor Universitar',
       email: 'ioana.ghita@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Ghiță Simona Ioana CV.pdf'
     },
@@ -159,6 +212,7 @@ const consiliu = [
       initials: 'GR',
       position: 'Profesor Universitar',
       email: 'manuela.gogonea@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. Univ. Dr. Gogonea Rodica-Manuela CV.pdf'
     },
@@ -167,6 +221,7 @@ const consiliu = [
       initials: 'GE',
       position: 'Conferențiar Universitar',
       email: 'emilia.gogu@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Emilia Gogu.png',
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. Univ. Dr. Gogu Emilia CV.pdf'
     },
@@ -175,6 +230,7 @@ const consiliu = [
       initials: 'GG',
       position: 'Profesor Universitar',
       email: 'giani.gradinaru@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Grădinaru Giani Ionel CV.pdf'
     },
@@ -183,6 +239,7 @@ const consiliu = [
       initials: 'HC',
       position: 'Profesor Universitar',
       email: 'claudiu.herteliu@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Claudiu_Herteliu_2021.jpg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Herțeliu Claudiu CV.pdf'
     },
@@ -191,6 +248,7 @@ const consiliu = [
       initials: 'IB',
       position: 'Conferențiar Universitar',
       email: 'bogdan.ileanu@csie.ase.ro',
+      photo: '',
       cvUrl: 'src/assets/cv/Lect. Univ. Dr. Ileanu Bogdan Vasile CV.pdf'
     },
     {
@@ -198,6 +256,7 @@ const consiliu = [
       initials: 'MD',
       position: 'Profesor Universitar',
       email: 'daniela.manea@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Daniela Manea CV.pdf'
     },
@@ -206,21 +265,24 @@ const consiliu = [
       initials: 'ME',
       position: 'Asistent Universitar',
       email: 'eduard.manta@csie.ase.ro',
-      cvUrl: 'src/assets/cv/Asist. Univ. Dr. Manta Eduard Mihai CV.pdf'
+      photo: 'src/assets/Poze Profesori/Eduard Manta.jpg',
+      cvUrl: 'src/assets/cv/Eduard_Manta CV.pdf'
     },
     {
       name: 'MARCU Ana-Maria',
       initials: 'MA',
       position: 'Asistent Cercetare Științifică',
       email: 'ana-maria.marcu@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/MARCU Ana-Maria.jpg',
       hasPage: true,
-      cvUrl: 'src/assets/cv/Asist. Cerc. Dr. Marcu Ana-Maria CV.pdf'
+      cvUrl: 'src/assets/cv/MARCU ANA-MARIA CV.pdf'
     },
     {
       name: 'MARICUȚ Alin Cristian',
       initials: 'MA',
       position: 'Asistent Universitar',
       email: 'alin.maricut@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Maricut.jpg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Asist. Univ. Dr. Maricut Alin Cristian CV.pdf'
     },
@@ -229,6 +291,7 @@ const consiliu = [
       initials: 'MM',
       position: 'Profesor Universitar',
       email: 'marinescu.mazurencu@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/MMazurencu.jpeg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Miruna Mazurencu CV.pdf'
     },
@@ -237,6 +300,7 @@ const consiliu = [
       initials: 'MM',
       position: 'Conferențiar Universitar',
       email: 'mihaela.mihai@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. Univ. Dr. Mihai Mihaela CV.pdf'
     },
@@ -245,6 +309,7 @@ const consiliu = [
       initials: 'MA',
       position: 'Lector Universitar',
       email: 'andreea.mirica@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Lect. Univ. dr. Mirică Andreea CV.pdf'
     },
@@ -253,6 +318,7 @@ const consiliu = [
       initials: 'NI',
       position: 'Profesor Universitar',
       email: 'gabriela.niculescu@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Ileana Gabriela Niculescu-Aron CV.pdf'
     },
@@ -261,14 +327,16 @@ const consiliu = [
       initials: 'OA',
       position: 'Lector Universitar',
       email: 'adrian.otoiu@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg',
       hasPage: true,
-      cvUrl: 'src/assets/cv/Lect. Univ. Dr. Otoiu Adrian CV.pdf'
+      cvUrl: 'src/assets/cv/Adrian Otoiu CV.pdf'
     },
     {
       name: 'PÂRVAN Andrei Teofil',
       initials: 'PA',
       position: 'Asistent Universitar',
       email: 'andrei.parvan@csie.ase.ro',
+      photo: '',
       cvUrl: 'src/assets/cv/Asist. Univ. Dr. Parvan Andrei Teofil CV.pdf'
     },
     {
@@ -276,6 +344,7 @@ const consiliu = [
       initials: 'PD',
       position: 'Profesor Universitar',
       email: 'dan.pele@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Daniel Traian Pele CV.pdf'
     },
@@ -284,6 +353,7 @@ const consiliu = [
       initials: 'PR',
       position: 'Lector Universitar',
       email: 'roxana.petcu@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Lect. Univ. Dr. Petcu Ionela-Roxana CV.pdf'
     },
@@ -292,6 +362,7 @@ const consiliu = [
       initials: 'PE',
       position: 'Lector Universitar',
       email: 'elena.prada@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Lect. Univ. Dr. Prada Elena-Maria CV.pdf'
     },
@@ -300,6 +371,7 @@ const consiliu = [
       initials: 'SM',
       position: 'Asistent Universitar',
       email: 'mihai.sacala@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Mihai Sacala poza.jpeg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Sacală Mihai CV.pdf'
     },
@@ -308,6 +380,7 @@ const consiliu = [
       initials: 'ȘD',
       position: 'Profesor Universitar',
       email: 'daniela.serban@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Șerban Daniela CV.pdf'
     },
@@ -316,6 +389,7 @@ const consiliu = [
       initials: 'SV',
       position: 'Profesor Universitar',
       email: 'vasile.strat@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Vasile Alecsandru STRAT.jpg',
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Strat Vasile Alexandru CV.pdf'
     },
     {
@@ -323,6 +397,7 @@ const consiliu = [
       initials: 'ȚE',
       position: 'Profesor Universitar',
       email: 'emilia.titan@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Emilia Țițan CV.pdf'
     },
@@ -331,6 +406,7 @@ const consiliu = [
       initials: 'ȚL',
       position: 'Lector Universitar',
       email: 'lavinia.totan@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Lect. Univ. Dr. Totan Lavinia-Ștefania CV.pdf'
     },
@@ -339,6 +415,7 @@ const consiliu = [
       initials: 'VR',
       position: 'Asistent Universitar',
       email: 'razvan.vasile@csie.ase.ro',
+      photo: '',
       hasPage: true,
       cvUrl: 'src/assets/cv/Asis. Univ. Dr. Vasile Razvan CV.pdf'
     },
@@ -347,11 +424,12 @@ const consiliu = [
       initials: 'VM',
       position: 'Conferențiar Universitar',
       email: 'maria.vasilescu@csie.ase.ro',
+      photo: 'src/assets/Poze Profesori/Denisa_Vasilescu.jpeg',
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. Univ. Dr. Vasilescu Maria Denisa CV.pdf'
     }
   ];
-  
+
   const stats = [
     { number: '43', label: 'Cadre didactice' },
     { number: '5', label: 'Membri Consiliu' },
@@ -370,27 +448,17 @@ const consiliu = [
   };
 
   const nameToSlug = (name: string) => {
-    // Găsim persoana în arrays și extragem slug din email
-    // Email format: prenume.nume@csie.ase.ro → slug: prenume-nume
-    
-    // Caută în conducere
     if (conducere.name === name) {
       return conducere.email.split('@')[0].replace(/\./g, '-');
     }
-    
-    // Caută în consiliu
     const consiluMember = consiliu.find(m => m.name === name);
     if (consiluMember) {
       return consiluMember.email.split('@')[0].replace(/\./g, '-');
     }
-    
-    // Caută în cadre
     const cadreMember = cadre.find(m => m.name === name);
     if (cadreMember) {
       return cadreMember.email.split('@')[0].replace(/\./g, '-');
     }
-    
-    // Fallback: transformă manual
     const parts = name.split(' ');
     if (parts.length >= 2) {
       const lastName = parts[0];
@@ -398,20 +466,14 @@ const consiliu = [
       const reordered = `${firstName} ${lastName}`;
       return reordered.toLowerCase()
         .replace(/\s+/g, '-')
-        .replace(/ă/g, 'a')
-        .replace(/â/g, 'a')
-        .replace(/î/g, 'i')
-        .replace(/ș/g, 's')
-        .replace(/ț/g, 't')
+        .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+        .replace(/ș/g, 's').replace(/ț/g, 't')
         .replace(/[^a-z0-9-]/g, '');
     }
     return name.toLowerCase()
       .replace(/\s+/g, '-')
-      .replace(/ă/g, 'a')
-      .replace(/â/g, 'a')
-      .replace(/î/g, 'i')
-      .replace(/ș/g, 's')
-      .replace(/ț/g, 't')
+      .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+      .replace(/ș/g, 's').replace(/ț/g, 't')
       .replace(/[^a-z0-9-]/g, '');
   };
 
@@ -423,7 +485,7 @@ const consiliu = [
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -466,12 +528,15 @@ const consiliu = [
             <Crown className="w-5 h-5 text-[#F59E0B]" />
             <h3 className="text-[#3A0CA3] dark:text-[#C77DFF] text-xl">Conducere</h3>
           </div>
-          
-          <div className={`max-w-2xl mx-auto rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700`}>
+
+          <div className="max-w-2xl mx-auto rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
             <div id={nameToSlug(conducere.name)} className="flex flex-col items-center text-center">
-              <div className={`${getInitialsColor(conducere.initials)} rounded-full w-16 h-16 flex items-center justify-center text-white mb-4`}>
-                <span className="text-xl">{conducere.initials}</span>
-              </div>
+              <MemberAvatar
+                email={conducere.email}
+                initials={conducere.initials}
+                photo={conducere.photo}
+                colorClass={getInitialsColor(conducere.initials)}
+              />
               <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-1">{conducere.name}</h4>
               <p className="text-[#F59E0B] text-sm mb-3">{conducere.role}</p>
               <div className="flex gap-2 justify-center">
@@ -510,7 +575,7 @@ const consiliu = [
             <Users className="w-6 h-6 text-[#4361EE]" />
             <h3 className="text-[#3A0CA3] dark:text-[#C77DFF]">Consiliul Departamentului</h3>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {consiliu.map((member, index) => (
               <motion.div
@@ -523,9 +588,12 @@ const consiliu = [
                 className="rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className={`${getInitialsColor(member.initials)} rounded-full w-16 h-16 flex items-center justify-center text-white mb-4`}>
-                    <span className="text-xl">{member.initials}</span>
-                  </div>
+                  <MemberAvatar
+                    email={member.email}
+                    initials={member.initials}
+                    photo={member.photo}
+                    colorClass={getInitialsColor(member.initials)}
+                  />
                   <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-1">{member.name}</h4>
                   <p className="text-[#4361EE] text-sm mb-1">{member.role}</p>
                   <p className="text-gray-600 dark:text-gray-400 text-xs mb-3">{member.position}</p>
@@ -566,7 +634,7 @@ const consiliu = [
             <BookOpen className="w-6 h-6 text-[#4361EE]" />
             <h3 className="text-[#3A0CA3] dark:text-[#C77DFF]">Toate Cadrele Didactice</h3>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cadre.map((member, index) => (
               <motion.div
@@ -579,9 +647,12 @@ const consiliu = [
                 className="rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className={`${getInitialsColor(member.initials)} rounded-full w-16 h-16 flex items-center justify-center text-white mb-4`}>
-                    <span className="text-xl">{member.initials}</span>
-                  </div>
+                  <MemberAvatar
+                    email={member.email}
+                    initials={member.initials}
+                    photo={member.photo}
+                    colorClass={getInitialsColor(member.initials)}
+                  />
                   <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-1">{member.name}</h4>
                   <p className="text-gray-600 dark:text-gray-400 text-xs mb-3">{member.position}</p>
                   <div className="flex flex-col gap-2 w-full">

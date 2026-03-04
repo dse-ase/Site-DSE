@@ -117,7 +117,6 @@ const profesorRoutes: Record<string, () => JSX.Element> = {
   'mihai-sacala': () => <MihaiSacalaPage />,
   'daniela-serban': () => <DanielaSerbanPage />,
   'razvan-vasile': () => <RazvanVasilePage />,
-
   'nicholas-alexander': () => <NicholasAlexanderPage/>,
   'bogdan-ileanu': () => <ProfesorComingSoon name="ILEANU Bogdan" email="bogdan.ileanu@csie.ase.ro" />,
   'eduard-manta': () => <EduardMantaPage/>,

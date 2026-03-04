@@ -34,7 +34,10 @@ export function ErikaMarinPage() {
       'Proiecte PNCDI, MENER, CNCSIS',
       'Proiecte de analiză economico-financiară și evaluare pentru finanțare europeană',
       'Activități de training pentru Autorități de Management și Organisme Intermediare'
-    ]
+    ],
+    tezeDoctorat: [],
+    publicatiiRelevante: [],
+    cvProfiluri: []
   };
 
   return <ProfesorProfile data={data} />;
