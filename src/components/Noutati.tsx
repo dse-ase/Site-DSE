@@ -1,12 +1,11 @@
 import { motion } from 'motion/react';
 import { Newspaper, BookOpen, Users, ExternalLink } from 'lucide-react';
-
 export function Noutati() {
   const news = [
     {
       title: 'Conferința Internațională de Statistică Aplicată (ICAS)',
       description: 'Conferința Internațională de Statistică Aplicată (ICAS) este o manifestare științifică anuală organizată de Departamentul de Statistică și Econometrie, fiind la a XVIII-a ediție în anul 2025. Scopul principal al conferinței este de a oferi o oportunitate cadrelor universitare, cercetătorilor, doctoranzilor și profesioniștilor din mediul de afaceri de a se întâlni și de a-și prezenta rezultatele cercetării pe teme legate de analiză cantitativă și statistică aplicată.',
-      image: '/assets/images/research/conference-icas.jpg',
+      image: '/assets/images/research/.jpg',
       link: 'https://simpstat.ase.ro/',
       icon: Newspaper
     },

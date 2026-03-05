@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { BookOpen, Award, Briefcase, GraduationCap, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import EMOS from '../assets/salaEMOS.png';
 
 // Hartă campus ASE din Figma
 
@@ -243,7 +244,7 @@ export function ProgramSection() {
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="src/assets/salaEMOS.png"
+                  src={EMOS}
                   alt="Studenți analizând date"
                   className="w-full h-[500px] object-cover"
                 />

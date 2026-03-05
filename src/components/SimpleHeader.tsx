@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Sun, Moon, Home } from 'lucide-react';
 import { useDarkMode } from '../contexts/DarkModeContext';
+import logo from "../assets/logo.png";
 
 export function SimpleHeader() {
   const { darkMode, setDarkMode } = useDarkMode();
@@ -31,7 +32,7 @@ export function SimpleHeader() {
                 href="#/" 
                 className="cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300 flex items-center gap-2 sm:gap-4 lg:gap-6"
               >
-                <img src={'src/assets/logo.png'} alt="DSE Logo" className="h-12 sm:h-16 lg:h-20 w-auto" />
+                <img src={logo} alt="DSE Logo" className="h-12 sm:h-16 lg:h-20 w-auto" />
                 
                 {/* Text next to logo */}
                 <div className="hidden sm:flex items-center gap-2 lg:gap-3">

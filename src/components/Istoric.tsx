@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Calendar, BookOpen, Users, Award } from 'lucide-react';
-
+import istoricPhoto from "../assets/IStoric.png";
 
 export function Istoric() {
   return (
@@ -42,7 +42,7 @@ export function Istoric() {
           {/* Sinusoidal Timeline Image - Full Display */}
           <div className="relative w-full flex items-center justify-center py-10">
             <img 
-              src={'src/assets/Istoric.png'} 
+              src= {istoricPhoto}
               alt="Cronologia dezvoltării specializării/programului de Statistică în ISEP/ASE în perioada 1948-prezent" 
               className="w-full h-auto max-w-full object-contain rounded-2xl shadow-2xl"
             />

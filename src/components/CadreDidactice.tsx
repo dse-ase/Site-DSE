@@ -23,7 +23,7 @@ import imgDenisaVasilescu from '../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
 // Imports CV-uri
 import cvMarinErika from '../assets/cv/Prof. Univ. Dr. Marin Erika CV.pdf';
 import cvApostuSimona from '../assets/cv/Lect. Univ. Dr. Apostu Simona Andreea CV.pdf';
-import cvCristinaBoboc from '../assets/cv/Prof. Univ. Dr. Cristina Boboc CV.pdf';
+import cvCristinaBoboc from '../assets/cv/Prof. Univ. dr. Cristina Boboc CV.pdf';
 import cvMihaescu from '../assets/cv/Prof. univ. dr. Constanța Mihăescu CV.pdf';
 import cvMonicaRoman from '../assets/cv/Prof. univ. dr. Monica Roman CV.pdf';
 import cvAlexander from '../assets/cv/Asist. Univ. Dr. Alexander Nicholas Victor Julius CV.pdf';
