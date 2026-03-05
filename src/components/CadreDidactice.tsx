@@ -51,15 +51,15 @@ import photoDenisaVasilescu   from '../assets/Poze Profesori/Denisa_Vasilescu.jp
 // ── CV-uri (import static — obligatoriu pentru GitHub Pages) ─────────────────
 import cvErikaMarin        from '../assets/cv/Prof. Univ. Dr. Marin Erika CV.pdf';
 import cvSimonaApostu      from '../assets/cv/Lect. Univ. Dr. Apostu Simona Andreea CV.pdf';
-import cvCristinaBoboc from '../assets/cv/Prof. univ. dr. Cristina Boboc CV.pdf';
+import cvCristinaBoboc     from '../assets/cv/Prof. Univ. dr. Cristina Boboc CV.pdf';
 import cvConstantaMihaescu from '../assets/cv/Prof. univ. dr. Constanța Mihăescu CV.pdf';
-import cvMonicaRoman from '../assets/cv/Prof. univ. dr. Monica Roman CV.pdf';
+import cvMonicaRoman       from '../assets/cv/Prof. univ. dr. Monica Roman CV.pdf';
 import cvNicholasAlexander from '../assets/cv/Alexander-Nicholas-Victor-Julius-cv.pdf';
 import cvAndreiTudorel     from '../assets/cv/Prof. Univ. Dr. Andrei Tudorel CV.pdf';
 import cvRazvanBarbulescu  from '../assets/cv/Lect univ dr Razvan Barbulescu CV.pdf';
 import cvBeguAndreea       from '../assets/cv/Asis. Univ. Dr. Begu Andreea-Oana CV.pdf';
 import cvSmarandaCimpoeru  from '../assets/cv/Conf. univ. dr. Smaranda Cimpoeru CV.pdf';
-import cvAdrianCostea from '../assets/cv/Prof. univ. dr. Adrian Costea CV.pdf';
+import cvAdrianCostea      from '../assets/cv/Prof. univ. dr. Adrian Costea CV.pdf';
 import cvCovrigMihaela     from '../assets/cv/Conf. univ. dr. Mihaela Covrig CV.pdf';
 import cvSilviaCristache   from '../assets/cv/Prof. Univ. Dr. Cristache Silvia-Elena CV.pdf';
 import cvAnielaDanciu      from '../assets/cv/Conf. Univ. dr. Danciu Aniela CV.pdf';
@@ -71,7 +71,7 @@ import cvRodicaGogonea     from '../assets/cv/Conf. Univ. Dr. Gogonea Rodica-Man
 import cvEmiliaGogu        from '../assets/cv/Conf. Univ. Dr. Gogu Emilia CV.pdf';
 import cvGianiGradinaru    from '../assets/cv/Prof. Univ. Dr. Grădinaru Giani Ionel CV.pdf';
 import cvClaudiuHerteliu   from '../assets/cv/Prof. Univ. Dr. Herțeliu Claudiu CV.pdf';
-import cvBogdanIleanu      from '../assets/cv/Ileanu-Bogdan-Vasile-CV.pdf';
+import cvBogdanIleanu      from '../assets/cv/Ileanu-Bogdan-Vasile-cv.pdf';
 import cvDanielaManea      from '../assets/cv/Prof. univ. dr. Daniela Manea CV.pdf';
 import cvEduardManta       from '../assets/cv/Eduard_Manta CV.pdf';
 import cvMarcuAnaMaria     from '../assets/cv/MARCU ANA-MARIA CV.pdf';
@@ -81,7 +81,7 @@ import cvMihaelaMihai      from '../assets/cv/Conf. Univ. Dr. Mihai Mihaela CV.p
 import cvAndreeaMirica     from '../assets/cv/Lect. Univ. dr. Mirică Andreea CV.pdf';
 import cvIleanaNiculescu   from '../assets/cv/Prof. univ. dr. Ileana Gabriela Niculescu-Aron CV.pdf';
 import cvAdrianOtoiu       from '../assets/cv/Adrian Otoiu CV.pdf';
-import cvAndreiParvan      from '../assets/cv/Parvan Andrei Teofil CV.pdf'; // TODO
+import cvAndreiParvan      from '../assets/cv/Parvan Andrei Teofil CV.pdf';
 import cvDanielPele        from '../assets/cv/Prof. univ. dr. Daniel Traian Pele CV.pdf';
 import cvRoxanaPetcu       from '../assets/cv/Lect. Univ. Dr. Petcu Ionela-Roxana CV.pdf';
 import cvElenaPrada        from '../assets/cv/Lect. Univ. Dr. Prada Elena-Maria CV.pdf';
