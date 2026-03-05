@@ -2,96 +2,96 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, BookOpen, Users, Crown, FileText, ExternalLink } from 'lucide-react';
 
-// ── Poze profesori (pune calea corectă; cele cu TODO nu au poză încă) ─────────
-import photoErikaMarin         from '../assets/Poze Profesori/Erika-Marin.png';
-import photoSimonaApostu       from '../assets/Poze Profesori/Simona apostu.jfif.jpeg';
-import photoCristinaBoboc      from '../assets/Poze Profesori/Cristina Boboc.jpeg';
-import photoConstantaMihaescu  from '../assets/Poze Profesori/Mihaescu-Constanta.jpeg';
-import photoMonicaRoman        from '../assets/Poze Profesori/Monica Roman.jpg';           // TODO
-import photoNicholasAlexander  from '../assets/Poze Profesori/Nicholas Alexander.jpg';     // TODO
-import photoAndreiTudorel      from '../assets/Poze Profesori/Andrei Tudorel.jpg';
-import photoRazvanBarbulescu   from '../assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg';
-import photoBeguAndreea        from '../assets/Poze Profesori/Begu Andreea Oana.jpg';
-import photoSmarandaCimpoeru   from '../assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg';
-import photoAdrianCostea       from '../assets/Poze Profesori/adrian costea_LThumb.jpeg';
-import photoCovrigMihaela      from '../assets/Poze Profesori/Covrig Mihaela.png';
-import photoSilviaClristache   from '../assets/Poze Profesori/Silvia Cristache.jpg';       // TODO
-import photoAnielaDanciu       from '../assets/Poze Profesori/Aniela Danciu.jpg';          // TODO
-import photoAdrianaGavidescu   from '../assets/Poze Profesori/Adriana Davidescu.jpg';     // TODO
-import photoGinaDimian         from '../assets/Poze Profesori/Gina Dimian.jpg';            // TODO
-import photoIrinaDragan        from '../assets/Poze Profesori/Irina Dragan.jpg';           // TODO
-import photoSimonaGhita        from '../assets/Poze Profesori/Simona Ghita.jpg';           // TODO
-import photoRodicaGogonea      from '../assets/Poze Profesori/Rodica Gogonea.jpg';        // TODO
-import photoEmiliaGogu         from '../assets/Poze Profesori/Emilia Gogu.png';
-import photoGianiGradinaru     from '../assets/Poze Profesori/Giani Gradinaru.jpg';       // TODO
-import photoClaudiuHerteliu    from '../assets/Poze Profesori/Claudiu_Herteliu_2021.jpg';
-import photoBogdanIleanu       from '../assets/Poze Profesori/Bogdan Ileanu.jpg';          // TODO
-import photoDanielaManea       from '../assets/Poze Profesori/Daniela Manea.jpg';          // TODO
-import photoEduardManta        from '../assets/Poze Profesori/Eduard Manta.jpg';
-import photoMarcuAnaMaria      from '../assets/Poze Profesori/MARCU Ana-Maria.jpg';
-import photoMaricut            from '../assets/Poze Profesori/Maricut.jpg';
-import photoMiruna             from '../assets/Poze Profesori/MMazurencu.jpeg';
-import photoMihaelaMihai       from '../assets/Poze Profesori/Mihaela Mihai.jpg';         // TODO
-import photoAndreeaMirica      from '../assets/Poze Profesori/Andreea Mirica.jpg';        // TODO
-import photoIleanaaNiculescu   from '../assets/Poze Profesori/Ileana Niculescu Aron.jpg'; // TODO
-import photoAdrianOtoiu        from '../assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg';
-import photoAndreiParvan       from '../assets/Poze Profesori/Andrei Parvan.jpg';          // TODO
-import photoDanielPele         from '../assets/Poze Profesori/Daniel Pele.jpg';            // TODO
-import photoRoxanaPetcu        from '../assets/Poze Profesori/Roxana Petcu.jpg';           // TODO
-import photoElenaPrada         from '../assets/Poze Profesori/Elena Prada.jpg';            // TODO
-import photoMihaiSacala        from '../assets/Poze Profesori/Mihai Sacala poza.jpeg';
-import photoDanielaSerban      from '../assets/Poze Profesori/Daniela Serban.jpg';         // TODO
-import photoVasileStrat        from '../assets/Poze Profesori/Vasile Alecsandru STRAT.jpg';
-import photoEmiliaTitan        from '../assets/Poze Profesori/Emilia Titan.jpg';           // TODO
-import photoLaviniaTotan       from '../assets/Poze Profesori/Lavinia Totan.jpg';          // TODO
-import photoRazvanVasile       from '../assets/Poze Profesori/Razvan Vasile.jpg';          // TODO
-import photoDenisaVasilescu    from '../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
+// ── Poze profesori ────────────────────────────────────────────────────────────
+import photoErikaMarin        from '../assets/Poze Profesori/Erika-Marin.png';
+import photoSimonaApostu      from '../assets/Poze Profesori/Simona apostu.jfif.jpeg';
+import photoCristinaBoboc     from '../assets/Poze Profesori/Cristina Boboc.jpeg';
+import photoConstantaMihaescu from '../assets/Poze Profesori/Mihaescu-Constanta.jpeg';
+import photoMonicaRoman       from '../assets/Poze Profesori/Monica Roman.jpg';           // TODO
+import photoNicholasAlexander from '../assets/Poze Profesori/Nicholas Alexander.jpg';     // TODO
+import photoAndreiTudorel     from '../assets/Poze Profesori/Andrei Tudorel.jpg';
+import photoRazvanBarbulescu  from '../assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg';
+import photoBeguAndreea       from '../assets/Poze Profesori/Begu Andreea Oana.jpg';
+import photoSmarandaCimpoeru  from '../assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg';
+import photoAdrianCostea      from '../assets/Poze Profesori/adrian costea_LThumb.jpeg';
+import photoCovrigMihaela     from '../assets/Poze Profesori/Covrig Mihaela.png';
+import photoSilviaCristache   from '../assets/Poze Profesori/Silvia Cristache.jpg';       // TODO
+import photoAnielaDanciu      from '../assets/Poze Profesori/Aniela Danciu.jpg';          // TODO
+import photoAdrianaDavidescu  from '../assets/Poze Profesori/Adriana Davidescu.jpg';     // TODO
+import photoGinaDimian        from '../assets/Poze Profesori/Gina Dimian.jpg';            // TODO
+import photoIrinaDragan       from '../assets/Poze Profesori/Irina Dragan.jpg';           // TODO
+import photoSimonaGhita       from '../assets/Poze Profesori/Simona Ghita.jpg';           // TODO
+import photoRodicaGogonea     from '../assets/Poze Profesori/Rodica Gogonea.jpg';         // TODO
+import photoEmiliaGogu        from '../assets/Poze Profesori/Emilia Gogu.png';
+import photoGianiGradinaru    from '../assets/Poze Profesori/Giani Gradinaru.jpg';        // TODO
+import photoClaudiuHerteliu   from '../assets/Poze Profesori/Claudiu_Herteliu_2021.jpg';
+import photoBogdanIleanu      from '../assets/Poze Profesori/Bogdan Ileanu.jpg';          // TODO
+import photoDanielaManea      from '../assets/Poze Profesori/Daniela Manea.jpg';          // TODO
+import photoEduardManta       from '../assets/Poze Profesori/Eduard Manta.jpg';
+import photoMarcuAnaMaria     from '../assets/Poze Profesori/MARCU Ana-Maria.jpg';
+import photoMaricut           from '../assets/Poze Profesori/Maricut.jpg';
+import photoMiruna            from '../assets/Poze Profesori/MMazurencu.jpeg';
+import photoMihaelaMihai      from '../assets/Poze Profesori/Mihaela Mihai.jpg';          // TODO
+import photoAndreeaMirica     from '../assets/Poze Profesori/Andreea Mirica.jpg';         // TODO
+import photoIleanaNiculescu   from '../assets/Poze Profesori/Ileana Niculescu Aron.jpg';  // TODO
+import photoAdrianOtoiu       from '../assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg';
+import photoAndreiParvan      from '../assets/Poze Profesori/Andrei Parvan.jpg';           // TODO
+import photoDanielPele        from '../assets/Poze Profesori/Daniel Pele.jpg';             // TODO
+import photoRoxanaPetcu       from '../assets/Poze Profesori/Roxana Petcu.jpg';            // TODO
+import photoElenaPrada        from '../assets/Poze Profesori/Elena Prada.jpg';             // TODO
+import photoMihaiSacala       from '../assets/Poze Profesori/Mihai Sacala poza.jpeg';
+import photoDanielaSerban     from '../assets/Poze Profesori/Daniela Serban.jpg';          // TODO
+import photoVasileStrat       from '../assets/Poze Profesori/Vasile Alecsandru STRAT.jpg';
+import photoEmiliaTitan       from '../assets/Poze Profesori/Emilia Titan.jpg';            // TODO
+import photoLaviniaTotan      from '../assets/Poze Profesori/Lavinia Totan.jpg';           // TODO
+import photoRazvanVasile      from '../assets/Poze Profesori/Razvan Vasile.jpg';           // TODO
+import photoDenisaVasilescu   from '../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
 // ─────────────────────────────────────────────────────────────────────────────
 
-// ── CV-uri (pune calea corectă; cele cu TODO nu au CV încă) ──────────────────
-const cvErikaMarin         = '../assets/cv/Erika_Marin CV.pdf';
-const cvSimonaApostu       = '../assets/cv/Lect. Univ. Dr. Apostu Simona Andreea CV.pdf';
-const cvCristinaBoboc      = '../assets/cv/Prof. Univ. Dr. Cristina Boboc CV.pdf';
-const cvConstantaMihaescu  = '../assets/cv/Prof. univ. dr. Constanța Mihăescu CV.pdf';
-const cvMonicaRoman        = '../assets/cv/Prof. univ. dr. Monica Roman CV.pdf';
-const cvNicholasAlexander  = '../assets/cv/Asist. Univ. Dr. Alexander Nicholas Victor Julius CV.pdf';
-const cvAndreiTudorel      = '../assets/cv/Prof. Univ. Dr. Andrei Tudorel CV.pdf';
-const cvRazvanBarbulescu   = '../assets/cv/Lect univ dr Razvan Barbulescu CV.pdf';
-const cvBeguAndreea        = '../assets/cv/Asis. Univ. Dr. Begu Andreea-Oana CV.pdf';
-const cvSmarandaCimpoeru   = '../assets/cv/Conf. univ. dr. Smaranda Cimpoeru CV.pdf';
-const cvAdrianCostea       = '../assets/cv/Prof. univ. dr. Adrian Costea CV.pdf';
-const cvCovrigMihaela      = '../assets/cv/Conf. univ. dr. Mihaela Covrig CV.pdf';
-const cvSilviaCristache    = '../assets/cv/Prof. Univ. Dr. Cristache Silvia-Elena CV.pdf';
-const cvAnielaDanciu       = '../assets/cv/Conf. Univ. dr. Danciu Aniela CV.pdf';
-const cvAdrianaGavidescu   = '../assets/cv/Prof. univ. dr. Adriana Anamaria Davidescu CV.pdf';
-const cvGinaDimian         = '../assets/cv/Prof. Univ. Dr. Dimian Gina Cristina CV.pdf';
-const cvIrinaDragan        = '../assets/cv/Conf. Univ. Dr. Drăgan Irina-Maria CV.pdf';
-const cvSimonaGhita        = '../assets/cv/Prof. Univ. Dr. Ghiță Simona Ioana CV.pdf';
-const cvRodicaGogonea      = '../assets/cv/Conf. Univ. Dr. Gogonea Rodica-Manuela CV.pdf';
-const cvEmiliaGogu         = '../assets/cv/Conf. Univ. Dr. Gogu Emilia CV.pdf';
-const cvGianiGradinaru     = '../assets/cv/Prof. Univ. Dr. Grădinaru Giani Ionel CV.pdf';
-const cvClaudiuHerteliu    = '../assets/cv/Prof. Univ. Dr. Herțeliu Claudiu CV.pdf';
-const cvBogdanIleanu       = '../assets/cv/Conf. Univ. Dr. Ileanu Bogdan Vasile CV.pdf';
-const cvDanielaManea       = '../assets/cv/Prof. univ. dr. Daniela Manea CV.pdf';
-const cvEduardManta        = '../assets/cv/Eduard_Manta CV.pdf';
-const cvMarcuAnaMaria      = '../assets/cv/MARCU ANA-MARIA CV.pdf';
-const cvMaricut            = '../assets/cv/Asist. Univ. Dr. Maricut Alin Cristian CV.pdf';
-const cvMiruna             = '../assets/cv/Prof. univ. dr. Miruna Mazurencu CV.pdf';
-const cvMihaelaMihai       = '../assets/cv/Conf. Univ. Dr. Mihai Mihaela CV.pdf';
-const cvAndreeaMirica      = '../assets/cv/Lect. Univ. dr. Mirică Andreea CV.pdf';
-const cvIleanaNiculescu    = '../assets/cv/Prof. univ. dr. Ileana Gabriela Niculescu-Aron CV.pdf';
-const cvAdrianOtoiu        = '../assets/cv/Adrian Otoiu CV.pdf';
-const cvAndreiParvan       = '../assets/cv/Asist. Univ. Dr. Parvan Andrei Teofil CV.pdf';
-const cvDanielPele         = '../assets/cv/Prof. univ. dr. Daniel Traian Pele CV.pdf';
-const cvRoxanaPetcu        = '../assets/cv/Lect. Univ. Dr. Petcu Ionela-Roxana CV.pdf';
-const cvElenaPrada         = '../assets/cv/Lect. Univ. Dr. Prada Elena-Maria CV.pdf';
-const cvMihaiSacala        = '../assets/cv/Prof. Univ. Dr. Sacală Mihai CV.pdf';
-const cvDanielaSerban      = '../assets/cv/Prof. Univ. Dr. Șerban Daniela CV.pdf';
-const cvVasileStrat        = '../assets/cv/Prof. Univ. Dr. Strat Vasile Alexandru CV.pdf';
-const cvEmiliaTitan        = '../assets/cv/Prof. univ. dr. Emilia Țițan CV.pdf';
-const cvLaviniaTotan       = '../assets/cv/Lect. Univ. Dr. Totan Lavinia-Ștefania CV.pdf';
-const cvRazvanVasile       = '../assets/cv/Asis. Univ. Dr. Vasile Razvan CV.pdf';
-const cvDenisaVasilescu    = '../assets/cv/Conf. Univ. Dr. Vasilescu Maria Denisa CV.pdf';
+// ── CV-uri (import static — obligatoriu pentru GitHub Pages) ─────────────────
+import cvErikaMarin        from '../assets/cv/Prof. Univ. Dr. Marin Erika CV.pdf';
+import cvSimonaApostu      from '../assets/cv/Lect. Univ. Dr. Apostu Simona Andreea CV.pdf';
+import cvCristinaBoboc     from '../assets/cv/Prof. Univ. Dr. Cristina Boboc CV.pdf';
+import cvConstantaMihaescu from '../assets/cv/Prof. univ. dr. Constanța Mihăescu CV.pdf';
+import cvMonicaRoman       from '../assets/cv/Prof. univ. dr. Monica Roman CV.pdf';
+import cvNicholasAlexander from '../assets/cv/Alexander-Nicholas-Victor-Julius-cv.pdf';
+import cvAndreiTudorel     from '../assets/cv/Prof. Univ. Dr. Andrei Tudorel CV.pdf';
+import cvRazvanBarbulescu  from '../assets/cv/Lect univ dr Razvan Barbulescu CV.pdf';
+import cvBeguAndreea       from '../assets/cv/Asis. Univ. Dr. Begu Andreea-Oana CV.pdf';
+import cvSmarandaCimpoeru  from '../assets/cv/Conf. univ. dr. Smaranda Cimpoeru CV.pdf';
+import cvAdrianCostea      from '../assets/cv/Prof. univ. dr. Adrian Costea CV.pdf';
+import cvCovrigMihaela     from '../assets/cv/Conf. univ. dr. Mihaela Covrig CV.pdf';
+import cvSilviaCristache   from '../assets/cv/Prof. Univ. Dr. Cristache Silvia-Elena CV.pdf';
+import cvAnielaDanciu      from '../assets/cv/Conf. Univ. dr. Danciu Aniela CV.pdf';
+import cvAdrianaDavidescu  from '../assets/cv/Prof. univ. dr. Adriana Anamaria Davidescu CV.pdf';
+import cvGinaDimian        from '../assets/cv/Prof. Univ. Dr. Dimian Gina Cristina CV.pdf';
+import cvIrinaDragan       from '../assets/cv/Conf. Univ. Dr. Drăgan Irina-Maria CV.pdf';
+import cvSimonaGhita       from '../assets/cv/Prof. Univ. Dr. Ghiță Simona Ioana CV.pdf';
+import cvRodicaGogonea     from '../assets/cv/Conf. Univ. Dr. Gogonea Rodica-Manuela CV.pdf';
+import cvEmiliaGogu        from '../assets/cv/Conf. Univ. Dr. Gogu Emilia CV.pdf';
+import cvGianiGradinaru    from '../assets/cv/Prof. Univ. Dr. Grădinaru Giani Ionel CV.pdf';
+import cvClaudiuHerteliu   from '../assets/cv/Prof. Univ. Dr. Herțeliu Claudiu CV.pdf';
+import cvBogdanIleanu      from '../assets/cv/Ileanu-Bogdan-Vasile-CV.pdf';
+import cvDanielaManea      from '../assets/cv/Prof. univ. dr. Daniela Manea CV.pdf';
+import cvEduardManta       from '../assets/cv/Eduard_Manta CV.pdf';
+import cvMarcuAnaMaria     from '../assets/cv/MARCU ANA-MARIA CV.pdf';
+import cvMaricut           from '../assets/cv/Maricut-Alin-Cristian-cv.pdf';
+import cvMiruna            from '../assets/cv/Prof. univ. dr. Miruna Mazurencu CV.pdf';
+import cvMihaelaMihai      from '../assets/cv/Conf. Univ. Dr. Mihai Mihaela CV.pdf';
+import cvAndreeaMirica     from '../assets/cv/Lect. Univ. dr. Mirică Andreea CV.pdf';
+import cvIleanaNiculescu   from '../assets/cv/Prof. univ. dr. Ileana Gabriela Niculescu-Aron CV.pdf';
+import cvAdrianOtoiu       from '../assets/cv/Adrian Otoiu CV.pdf';
+import cvAndreiParvan      from '../assets/cv/Parvan Andrei Teofil CV.pdf'; // TODO
+import cvDanielPele        from '../assets/cv/Prof. univ. dr. Daniel Traian Pele CV.pdf';
+import cvRoxanaPetcu       from '../assets/cv/Lect. Univ. Dr. Petcu Ionela-Roxana CV.pdf';
+import cvElenaPrada        from '../assets/cv/Lect. Univ. Dr. Prada Elena-Maria CV.pdf';
+import cvMihaiSacala       from '../assets/cv/Prof. Univ. Dr. Sacală Mihai CV.pdf';
+import cvDanielaSerban     from '../assets/cv/Prof. Univ. Dr. Șerban Daniela CV.pdf';
+import cvVasileStrat       from '../assets/cv/Vasile Alecsandru STRAT_RO_2023.pdf';
+import cvEmiliaTitan       from '../assets/cv/Prof. univ. dr. Emilia Țițan CV.pdf';
+import cvLaviniaTotan      from '../assets/cv/Lect. Univ. Dr. Totan Lavinia-Ștefania CV.pdf';
+import cvRazvanVasile      from '../assets/cv/Asis. Univ. Dr. Vasile Razvan CV.pdf';
+import cvDenisaVasilescu   from '../assets/cv/Conf. Univ. Dr. Vasilescu Maria Denisa CV.pdf';
 // ─────────────────────────────────────────────────────────────────────────────
 
 const MemberAvatar = ({ initials, photo, colorClass }: { initials: string, photo: string, colorClass: string }) => {
@@ -238,7 +238,7 @@ export function CadreDidactice() {
       initials: 'CS',
       position: 'Profesor Universitar',
       email: 'silvia.cristache@csie.ase.ro',
-      photo: photoSilviaClristache,
+      photo: photoSilviaCristache,
       hasPage: true,
       cvUrl: cvSilviaCristache,
     },
@@ -256,9 +256,9 @@ export function CadreDidactice() {
       initials: 'DA',
       position: 'Profesor Universitar',
       email: 'adriana.davidescu@csie.ase.ro',
-      photo: photoAdrianaGavidescu,
+      photo: photoAdrianaDavidescu,
       hasPage: true,
-      cvUrl: cvAdrianaGavidescu,
+      cvUrl: cvAdrianaDavidescu,
     },
     {
       name: 'DIMIAN Gina Cristina',
@@ -400,7 +400,7 @@ export function CadreDidactice() {
       initials: 'NI',
       position: 'Profesor Universitar',
       email: 'gabriela.niculescu@csie.ase.ro',
-      photo: photoIleanaaNiculescu,
+      photo: photoIleanaNiculescu,
       hasPage: true,
       cvUrl: cvIleanaNiculescu,
     },
