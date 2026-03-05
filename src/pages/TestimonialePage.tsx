@@ -2,11 +2,11 @@ import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
 import { MessageCircle, Quote, Award } from 'lucide-react';
 
-// Imagini testimoniale din Figma
-const widsImage = 'src/assets/WIDS primul testimonial.jpg';
-const vladImage = 'src/assets/vlad teleaba.png';
-const adrianaImage = 'src/assets/Adriana Pedra.jpg';
-const oanaImage = 'src/assets/Oana Pascalache.jpg';
+// Imports imagini
+import widsImage from '../assets/WIDS primul testimonial.jpg';
+import vladImage from '../assets/vlad teleaba.png';
+import adrianaImage from '../assets/Adriana Pedra.jpg';
+import oanaImage from '../assets/Oana Pascalache.jpg';
 
 export default function TestimonialePage() {
   const testimoniale = [
@@ -77,9 +77,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header */}
-          <div
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8">
               <MessageCircle className="w-4 h-4" />
               <span className="text-sm">TESTIMONIALE</span>
@@ -100,7 +98,6 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                 {testimonial.image && (
                   <>
                     {testimonial.awards && testimonial.awards.length > 0 ? (
-                      // Layout pentru testimonialul cu awards (WiDS - imagine full width)
                       <div className="relative w-full h-96 overflow-hidden">
                         <img 
                           src={testimonial.image} 
@@ -108,8 +105,6 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                        
-                        {/* Awards Badge */}
                         <div className="absolute bottom-6 left-6 right-6">
                           <div className="flex flex-wrap gap-2">
                             {testimonial.awards.map((award, idx) => (
@@ -125,7 +120,6 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                         </div>
                       </div>
                     ) : (
-                      // Layout pentru testimoniale individuale - imagine circulară mai mică
                       <div className="flex justify-center pt-8">
                         <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-[#4361EE]/20 dark:border-[#4CC9F0]/30 shadow-xl">
                           <img 
@@ -141,14 +135,12 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
 
                 {/* Content Section */}
                 <div className="p-8 md:p-12">
-                  {/* Quote Icon */}
                   <div className="flex justify-center mb-8">
                     <div className="w-16 h-16 bg-gradient-to-br from-[#7209B7] to-[#4361EE] rounded-full flex items-center justify-center">
                       <Quote className="w-8 h-8 text-white" />
                     </div>
                   </div>
 
-                  {/* Testimonial Text */}
                   <div className="prose prose-lg max-w-none mb-8">
                     {testimonial.text.split('\n\n').map((paragraph, idx) => (
                       <p key={idx} className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-justify">
@@ -157,7 +149,6 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                     ))}
                   </div>
 
-                  {/* Authors Section */}
                   <div className="pt-8 border-t border-[#4CC9F0]/20 dark:border-gray-700">
                     <div className="text-center">
                       <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">Testimonial oferit de:</p>
