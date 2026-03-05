@@ -2,23 +2,29 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, BookOpen, Users, Crown, FileText, ExternalLink } from 'lucide-react';
 
-// Avatar cu fallback la initiale
-const MemberAvatar = ({ email, initials, photo, colorClass }: { email: string, initials: string, photo: string, colorClass: string }) => {
-  const username = email.split('@')[0];
-  const [imgSrc, setImgSrc] = useState(
-    photo ? photo : `src/assets/photos/${username}.jpg`
-  );
+// ── Import static photos (Vite bundlează acestea corect pe GitHub Pages) ──────
+import photoCristinaBoboc from '../assets/Poze Profesori/Cristina Boboc.jpeg';
+import photoAndreiTudorel from '../assets/Poze Profesori/Andrei Tudorel.jpg';
+import photoRazvanBarbulescu from '../assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg';
+import photoBeguAndreea from '../assets/Poze Profesori/Begu Andreea Oana.jpg';
+import photoSmarandaCimpoeru from '../assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg';
+import photoAdrianCostea from '../assets/Poze Profesori/Adrian Costea_LThumb.jpeg';
+import photoEmiliaGogu from '../assets/Poze Profesori/Emilia Gogu.png';
+import photoClaudiuHerteliu from '../assets/Poze Profesori/Claudiu_Herteliu_2021.jpg';
+import photoEduardManta from '../assets/Poze Profesori/Eduard Manta.jpg';
+import photoMarcuAnaMaria from '../assets/Poze Profesori/MARCU Ana-Maria.jpg';
+import photoMaricut from '../assets/Poze Profesori/Maricut.jpg';
+import photoMiruna from '../assets/Poze Profesori/MMazurencu.jpeg';
+import photoAdrianOtoiu from '../assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg';
+import photoMihaiSacala from '../assets/Poze Profesori/Mihai Sacala poza.jpeg';
+import photoVasileStrat from '../assets/Poze Profesori/Vasile Alecsandru STRAT.jpg';
+import photoDenisaVasilescu from '../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
+// ─────────────────────────────────────────────────────────────────────────────
+
+const MemberAvatar = ({ initials, photo, colorClass }: { initials: string, photo: string, colorClass: string }) => {
   const [imgError, setImgError] = useState(false);
 
-  const handleError = () => {
-    if (imgSrc.endsWith('.jpg') && !photo) {
-      setImgSrc(`src/assets/photos/${username}.png`);
-    } else {
-      setImgError(true);
-    }
-  };
-
-  if (imgError) {
+  if (!photo || imgError) {
     return (
       <div className={`${colorClass} rounded-full w-16 h-16 flex items-center justify-center text-white mb-4 flex-shrink-0`}>
         <span className="text-xl">{initials}</span>
@@ -28,9 +34,9 @@ const MemberAvatar = ({ email, initials, photo, colorClass }: { email: string, i
 
   return (
     <img
-      src={imgSrc}
+      src={photo}
       alt={initials}
-      onError={handleError}
+      onError={() => setImgError(true)}
       className="rounded-full w-16 h-16 object-cover mb-4 border-2 border-[#4361EE]/30 flex-shrink-0"
     />
   );
@@ -64,7 +70,7 @@ export function CadreDidactice() {
       role: 'Membru Consiliu',
       position: 'Profesor Universitar',
       email: 'cristina.boboc@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Cristina Boboc.jpeg',
+      photo: photoCristinaBoboc,
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Cristina Boboc CV.pdf'
     },
@@ -104,7 +110,7 @@ export function CadreDidactice() {
       initials: 'AT',
       position: 'Profesor Universitar',
       email: 'tudorel.andrei@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Andrei Tudorel.jpg',
+      photo: photoAndreiTudorel,
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Andrei Tudorel CV.pdf'
     },
@@ -113,7 +119,7 @@ export function CadreDidactice() {
       initials: 'BR',
       position: 'Lector Universitar',
       email: 'razvan.barbulescu@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg',
+      photo: photoRazvanBarbulescu,
       hasPage: true,
       cvUrl: 'src/assets/cv/Lect univ dr Razvan Barbulescu CV.pdf'
     },
@@ -122,7 +128,7 @@ export function CadreDidactice() {
       initials: 'BA',
       position: 'Asistent Universitar',
       email: 'andreea.begu@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Begu Andreea Oana.jpg',
+      photo: photoBeguAndreea,
       hasPage: true,
       cvUrl: 'src/assets/cv/Asis. Univ. Dr. Begu Andreea-Oana CV.pdf'
     },
@@ -131,7 +137,7 @@ export function CadreDidactice() {
       initials: 'CS',
       position: 'Conferențiar Universitar',
       email: 'smaranda.cimpoeru@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg',
+      photo: photoSmarandaCimpoeru,
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. univ. dr. Smaranda Cimpoeru CV.pdf'
     },
@@ -140,7 +146,7 @@ export function CadreDidactice() {
       initials: 'CA',
       position: 'Profesor Universitar',
       email: 'adrian.costea@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Adrian Costea_LThumb.jpeg',
+      photo: photoAdrianCostea,
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Adrian Costea CV.pdf'
     },
@@ -221,7 +227,7 @@ export function CadreDidactice() {
       initials: 'GE',
       position: 'Conferențiar Universitar',
       email: 'emilia.gogu@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Emilia Gogu.png',
+      photo: photoEmiliaGogu,
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. Univ. Dr. Gogu Emilia CV.pdf'
     },
@@ -239,7 +245,7 @@ export function CadreDidactice() {
       initials: 'HC',
       position: 'Profesor Universitar',
       email: 'claudiu.herteliu@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Claudiu_Herteliu_2021.jpg',
+      photo: photoClaudiuHerteliu,
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Herțeliu Claudiu CV.pdf'
     },
@@ -265,7 +271,7 @@ export function CadreDidactice() {
       initials: 'ME',
       position: 'Asistent Universitar',
       email: 'eduard.manta@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Eduard Manta.jpg',
+      photo: photoEduardManta,
       cvUrl: 'src/assets/cv/Eduard_Manta CV.pdf'
     },
     {
@@ -273,7 +279,7 @@ export function CadreDidactice() {
       initials: 'MA',
       position: 'Asistent Cercetare Științifică',
       email: 'ana-maria.marcu@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/MARCU Ana-Maria.jpg',
+      photo: photoMarcuAnaMaria,
       hasPage: true,
       cvUrl: 'src/assets/cv/MARCU ANA-MARIA CV.pdf'
     },
@@ -282,7 +288,7 @@ export function CadreDidactice() {
       initials: 'MA',
       position: 'Asistent Universitar',
       email: 'alin.maricut@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Maricut.jpg',
+      photo: photoMaricut,
       hasPage: true,
       cvUrl: 'src/assets/cv/Asist. Univ. Dr. Maricut Alin Cristian CV.pdf'
     },
@@ -291,7 +297,7 @@ export function CadreDidactice() {
       initials: 'MM',
       position: 'Profesor Universitar',
       email: 'marinescu.mazurencu@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/MMazurencu.jpeg',
+      photo: photoMiruna,
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. univ. dr. Miruna Mazurencu CV.pdf'
     },
@@ -327,7 +333,7 @@ export function CadreDidactice() {
       initials: 'OA',
       position: 'Lector Universitar',
       email: 'adrian.otoiu@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg',
+      photo: photoAdrianOtoiu,
       hasPage: true,
       cvUrl: 'src/assets/cv/Adrian Otoiu CV.pdf'
     },
@@ -371,7 +377,7 @@ export function CadreDidactice() {
       initials: 'SM',
       position: 'Asistent Universitar',
       email: 'mihai.sacala@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Mihai Sacala poza.jpeg',
+      photo: photoMihaiSacala,
       hasPage: true,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Sacală Mihai CV.pdf'
     },
@@ -389,7 +395,7 @@ export function CadreDidactice() {
       initials: 'SV',
       position: 'Profesor Universitar',
       email: 'vasile.strat@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Vasile Alecsandru STRAT.jpg',
+      photo: photoVasileStrat,
       cvUrl: 'src/assets/cv/Prof. Univ. Dr. Strat Vasile Alexandru CV.pdf'
     },
     {
@@ -424,7 +430,7 @@ export function CadreDidactice() {
       initials: 'VM',
       position: 'Conferențiar Universitar',
       email: 'maria.vasilescu@csie.ase.ro',
-      photo: 'src/assets/Poze Profesori/Denisa_Vasilescu.jpeg',
+      photo: photoDenisaVasilescu,
       hasPage: true,
       cvUrl: 'src/assets/cv/Conf. Univ. Dr. Vasilescu Maria Denisa CV.pdf'
     }
@@ -448,38 +454,18 @@ export function CadreDidactice() {
   };
 
   const nameToSlug = (name: string) => {
-    if (conducere.name === name) {
-      return conducere.email.split('@')[0].replace(/\./g, '-');
-    }
-    const consiluMember = consiliu.find(m => m.name === name);
-    if (consiluMember) {
-      return consiluMember.email.split('@')[0].replace(/\./g, '-');
-    }
-    const cadreMember = cadre.find(m => m.name === name);
-    if (cadreMember) {
-      return cadreMember.email.split('@')[0].replace(/\./g, '-');
-    }
-    const parts = name.split(' ');
-    if (parts.length >= 2) {
-      const lastName = parts[0];
-      const firstName = parts[1];
-      const reordered = `${firstName} ${lastName}`;
-      return reordered.toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
-        .replace(/ș/g, 's').replace(/ț/g, 't')
-        .replace(/[^a-z0-9-]/g, '');
-    }
-    return name.toLowerCase()
-      .replace(/\s+/g, '-')
+    if (conducere.name === name) return conducere.email.split('@')[0].replace(/\./g, '-');
+    const cm = consiliu.find(m => m.name === name);
+    if (cm) return cm.email.split('@')[0].replace(/\./g, '-');
+    const cadm = cadre.find(m => m.name === name);
+    if (cadm) return cadm.email.split('@')[0].replace(/\./g, '-');
+    return name.toLowerCase().replace(/\s+/g, '-')
       .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
-      .replace(/ș/g, 's').replace(/ț/g, 't')
-      .replace(/[^a-z0-9-]/g, '');
+      .replace(/ș/g, 's').replace(/ț/g, 't').replace(/[^a-z0-9-]/g, '');
   };
 
   const navigateToProfesor = (name: string) => {
-    const slug = nameToSlug(name);
-    window.location.hash = `#/profesor/${slug}`;
+    window.location.hash = `#/profesor/${nameToSlug(name)}`;
   };
 
   return (
@@ -487,13 +473,7 @@ export function CadreDidactice() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
-          className="text-center mb-16"
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }} className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
             <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="text-xs sm:text-sm">ECHIPA NOASTRĂ</span>
@@ -501,13 +481,7 @@ export function CadreDidactice() {
         </motion.div>
 
         {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1 }} className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-2xl sm:text-3xl lg:text-4xl text-[#4361EE] mb-1 sm:mb-2">{stat.number}</div>
@@ -517,45 +491,23 @@ export function CadreDidactice() {
         </motion.div>
 
         {/* Conducere */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.15 }}
-          className="mb-16"
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.15 }} className="mb-16">
           <div className="flex items-center justify-center gap-2 mb-8">
             <Crown className="w-5 h-5 text-[#F59E0B]" />
             <h3 className="text-[#3A0CA3] dark:text-[#C77DFF] text-xl">Conducere</h3>
           </div>
-
           <div className="max-w-2xl mx-auto rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
             <div id={nameToSlug(conducere.name)} className="flex flex-col items-center text-center">
-              <MemberAvatar
-                email={conducere.email}
-                initials={conducere.initials}
-                photo={conducere.photo}
-                colorClass={getInitialsColor(conducere.initials)}
-              />
+              <MemberAvatar initials={conducere.initials} photo={conducere.photo} colorClass={getInitialsColor(conducere.initials)} />
               <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-1">{conducere.name}</h4>
               <p className="text-[#F59E0B] text-sm mb-3">{conducere.role}</p>
               <div className="flex gap-2 justify-center">
-                <button
-                  onClick={() => navigateToProfesor(conducere.name)}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-sm"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Mai mult despre</span>
+                <button onClick={() => navigateToProfesor(conducere.name)} className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-sm">
+                  <ExternalLink className="w-4 h-4" /><span>Mai mult despre</span>
                 </button>
                 {conducere.cvUrl && (
-                  <a
-                    href={conducere.cvUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-sm"
-                  >
-                    <FileText className="w-4 h-4" />
-                    <span>CV</span>
+                  <a href={conducere.cvUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-sm">
+                    <FileText className="w-4 h-4" /><span>CV</span>
                   </a>
                 )}
               </div>
@@ -564,56 +516,26 @@ export function CadreDidactice() {
         </motion.div>
 
         {/* Consiliul Departamentului */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-          className="mb-16"
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.2 }} className="mb-16">
           <div className="flex items-center justify-center gap-2 mb-8">
             <Users className="w-6 h-6 text-[#4361EE]" />
             <h3 className="text-[#3A0CA3] dark:text-[#C77DFF]">Consiliul Departamentului</h3>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {consiliu.map((member, index) => (
-              <motion.div
-                key={index}
-                id={nameToSlug(member.name)}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700"
-              >
+              <motion.div key={index} id={nameToSlug(member.name)} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }} className="rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
                 <div className="flex flex-col items-center text-center">
-                  <MemberAvatar
-                    email={member.email}
-                    initials={member.initials}
-                    photo={member.photo}
-                    colorClass={getInitialsColor(member.initials)}
-                  />
+                  <MemberAvatar initials={member.initials} photo={member.photo} colorClass={getInitialsColor(member.initials)} />
                   <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-1">{member.name}</h4>
                   <p className="text-[#4361EE] text-sm mb-1">{member.role}</p>
                   <p className="text-gray-600 dark:text-gray-400 text-xs mb-3">{member.position}</p>
                   <div className="flex flex-col gap-2 w-full">
-                    <button
-                      onClick={() => navigateToProfesor(member.name)}
-                      className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                      <span>Mai mult despre</span>
+                    <button onClick={() => navigateToProfesor(member.name)} className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full">
+                      <ExternalLink className="w-3 h-3" /><span>Mai mult despre</span>
                     </button>
                     {member.cvUrl && (
-                      <a
-                        href={member.cvUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
-                      >
-                        <FileText className="w-3 h-3" />
-                        <span>CV</span>
+                      <a href={member.cvUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full">
+                        <FileText className="w-3 h-3" /><span>CV</span>
                       </a>
                     )}
                   </div>
@@ -624,54 +546,25 @@ export function CadreDidactice() {
         </motion.div>
 
         {/* Toate Cadrele Didactice */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }}>
           <div className="flex items-center justify-center gap-2 mb-8">
             <BookOpen className="w-6 h-6 text-[#4361EE]" />
             <h3 className="text-[#3A0CA3] dark:text-[#C77DFF]">Toate Cadrele Didactice</h3>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cadre.map((member, index) => (
-              <motion.div
-                key={index}
-                id={nameToSlug(member.name)}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: index * 0.05 }}
-                className="rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700"
-              >
+              <motion.div key={index} id={nameToSlug(member.name)} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.25, delay: index * 0.05 }} className="rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
                 <div className="flex flex-col items-center text-center">
-                  <MemberAvatar
-                    email={member.email}
-                    initials={member.initials}
-                    photo={member.photo}
-                    colorClass={getInitialsColor(member.initials)}
-                  />
+                  <MemberAvatar initials={member.initials} photo={member.photo} colorClass={getInitialsColor(member.initials)} />
                   <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-1">{member.name}</h4>
                   <p className="text-gray-600 dark:text-gray-400 text-xs mb-3">{member.position}</p>
                   <div className="flex flex-col gap-2 w-full">
-                    <button
-                      onClick={() => navigateToProfesor(member.name)}
-                      className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                      <span>Mai mult despre</span>
+                    <button onClick={() => navigateToProfesor(member.name)} className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full">
+                      <ExternalLink className="w-3 h-3" /><span>Mai mult despre</span>
                     </button>
                     {member.cvUrl && (
-                      <a
-                        href={member.cvUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
-                      >
-                        <FileText className="w-3 h-3" />
-                        <span>CV</span>
+                      <a href={member.cvUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full">
+                        <FileText className="w-3 h-3" /><span>CV</span>
                       </a>
                     )}
                   </div>
