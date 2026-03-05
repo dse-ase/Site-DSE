@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { MapPin, X, ExternalLink } from 'lucide-react';
-
+import harta from '../assets/harta_ASE_nou.jpg';
 interface CampusMapPopupProps {
   isOpen: boolean;
   onClose: () => void;
@@ -37,7 +37,7 @@ export function CampusMapPopup({ isOpen, onClose }: CampusMapPopupProps) {
         <div className="p-6">
           <div className="rounded-xl overflow-hidden shadow-lg mb-6">
             <img
-              src={'src/assets/harta_ASE_nou.jpg'}
+              src={harta}
               alt="Harta Campusului ASE București"
               className="w-full h-auto"
             />

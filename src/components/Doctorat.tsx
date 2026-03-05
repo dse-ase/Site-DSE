@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import { GraduationCap, BookOpen, Award, Search } from "lucide-react";
+import DataLunch2 from "../assets/DataLunch2.jpg";
+import DataLunch1 from "../assets/DataLunch1.png";
 
 export function Doctorat() {
   return (
@@ -166,7 +168,7 @@ export function Doctorat() {
                 {/* Imagine 1 */}
                 <div className="overflow-hidden rounded-2xl shadow-md border border-[#4361EE]/20 dark:border-gray-700">
                   <img
-                    src="src/assets/DataLunch1.png"
+                    src={DataLunch1}
                     alt="Data&Lunch ediție anterioară"
                     className="w-full h-80 object-cover"
                   />
@@ -175,7 +177,7 @@ export function Doctorat() {
                 {/* Imagine 2 */}
                 <div className="overflow-hidden rounded-2xl shadow-md border border-[#4361EE]/20 dark:border-gray-700">
                   <img
-                    src="src/assets/DataLunch2.jpg"
+                    src={DataLunch2}
                     alt="Data&Lunch ediție anterioară"
                     className="w-full h-80 object-cover"
                   />
