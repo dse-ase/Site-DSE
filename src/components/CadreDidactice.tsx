@@ -8,7 +8,7 @@ import photoAndreiTudorel from '../assets/Poze Profesori/Andrei Tudorel.jpg';
 import photoRazvanBarbulescu from '../assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg';
 import photoBeguAndreea from '../assets/Poze Profesori/Begu Andreea Oana.jpg';
 import photoSmarandaCimpoeru from '../assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg';
-import photoAdrianCostea from '../assets/Poze Profesori/Adrian Costea_LThumb.jpeg';
+import photoAdrianCostea from '../assets/Poze Profesori/Adrian Costea.jpg';
 import photoEmiliaGogu from '../assets/Poze Profesori/Emilia Gogu.png';
 import photoClaudiuHerteliu from '../assets/Poze Profesori/Claudiu_Herteliu_2021.jpg';
 import photoEduardManta from '../assets/Poze Profesori/Eduard Manta.jpg';
@@ -19,6 +19,8 @@ import photoAdrianOtoiu from '../assets/Poze Profesori/Adrian Otoiu poza dse v2.
 import photoMihaiSacala from '../assets/Poze Profesori/Mihai Sacala poza.jpeg';
 import photoVasileStrat from '../assets/Poze Profesori/Vasile Alecsandru STRAT.jpg';
 import photoDenisaVasilescu from '../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
+
+
 // ─────────────────────────────────────────────────────────────────────────────
 
 const MemberAvatar = ({ initials, photo, colorClass }: { initials: string, photo: string, colorClass: string }) => {
