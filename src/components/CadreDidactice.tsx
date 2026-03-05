@@ -2,17 +2,27 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, BookOpen, Users, Crown, FileText, ExternalLink } from 'lucide-react';
 
+// Helper pentru imagini dinamice compatibil cu Vite build
+const getImageUrl = (path: string) => {
+  if (!path) return '';
+  // Inlocuieste 'src/assets' cu calea corecta pentru Vite
+  const cleanPath = path.replace('src/assets/', '');
+  return new URL(`../assets/${cleanPath}`, import.meta.url).href;
+};
+
 // Avatar cu fallback la initiale
 const MemberAvatar = ({ email, initials, photo, colorClass }: { email: string, initials: string, photo: string, colorClass: string }) => {
   const username = email.split('@')[0];
   const [imgSrc, setImgSrc] = useState(
-    photo ? photo : `src/assets/photos/${username}.jpg`
+    photo ? getImageUrl(photo) : getImageUrl(`src/assets/photos/${username}.jpg`)
   );
+  const [triedPng, setTriedPng] = useState(false);
   const [imgError, setImgError] = useState(false);
 
   const handleError = () => {
-    if (imgSrc.endsWith('.jpg') && !photo) {
-      setImgSrc(`src/assets/photos/${username}.png`);
+    if (!triedPng && !photo) {
+      setTriedPng(true);
+      setImgSrc(getImageUrl(`src/assets/photos/${username}.png`));
     } else {
       setImgError(true);
     }
@@ -482,6 +492,12 @@ export function CadreDidactice() {
     window.location.hash = `#/profesor/${slug}`;
   };
 
+  const getCvUrl = (cvPath: string) => {
+    if (!cvPath) return '';
+    const cleanPath = cvPath.replace('src/assets/', '');
+    return new URL(`../assets/${cleanPath}`, import.meta.url).href;
+  };
+
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -549,7 +565,7 @@ export function CadreDidactice() {
                 </button>
                 {conducere.cvUrl && (
                   <a
-                    href={conducere.cvUrl}
+                    href={getCvUrl(conducere.cvUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-sm"
@@ -607,7 +623,7 @@ export function CadreDidactice() {
                     </button>
                     {member.cvUrl && (
                       <a
-                        href={member.cvUrl}
+                        href={getCvUrl(member.cvUrl)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
@@ -665,7 +681,7 @@ export function CadreDidactice() {
                     </button>
                     {member.cvUrl && (
                       <a
-                        href={member.cvUrl}
+                        href={getCvUrl(member.cvUrl)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
