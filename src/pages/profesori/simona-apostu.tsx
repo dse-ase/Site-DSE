@@ -1,9 +1,10 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoSimonaApostu from '../../assets/Poze Profesori/Simona apostu.jfif.jpeg';
 export function SimonaApostuPage() {
   const data = {
     name: "APOSTU Simona Andreea",
     initials: "SA",
+    photo: photoSimonaApostu,
     role: "Conf. Univ. dr.",
     specializations: [
       "Statistică aplicată și econometrie",

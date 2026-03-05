@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoRazvanBarbulescu from '../../assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg';
 export function RazvanBarbulescuPage() {
   const data = {
     name: 'BĂRBULESCU Răzvan',
     initials: 'BR',
+    photo: photoRazvanBarbulescu,
     role: 'Lector Universitar Dr.',
     specializations: [
       'Demografie și previziuni privind fertilitatea, mortalitatea și migrația în România',

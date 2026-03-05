@@ -7,44 +7,44 @@ import photoErikaMarin        from '../assets/Poze Profesori/Erika-Marin.png';
 import photoSimonaApostu      from '../assets/Poze Profesori/Simona apostu.jfif.jpeg';
 import photoCristinaBoboc     from '../assets/Poze Profesori/Cristina Boboc.jpeg';
 import photoConstantaMihaescu from '../assets/Poze Profesori/Mihaescu-Constanta.jpeg';
-import photoMonicaRoman       from '../assets/Poze Profesori/Monica Roman.jpg';           // TODO
-import photoNicholasAlexander from '../assets/Poze Profesori/Nicholas Alexander.jpg';     // TODO
+import photoMonicaRoman       from '../assets/Poze Profesori/Monica Roman.jpg';           
+import photoNicholasAlexander from '../assets/Poze Profesori/Nicholas Alexander.jpg';     
 import photoAndreiTudorel     from '../assets/Poze Profesori/Andrei Tudorel.jpg';
 import photoRazvanBarbulescu  from '../assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg';
 import photoBeguAndreea       from '../assets/Poze Profesori/Begu Andreea Oana.jpg';
 import photoSmarandaCimpoeru  from '../assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg';
 import photoAdrianCostea      from '../assets/Poze Profesori/adrian costea_LThumb.jpeg';
 import photoCovrigMihaela     from '../assets/Poze Profesori/Covrig Mihaela.png';
-import photoSilviaCristache   from '../assets/Poze Profesori/Silvia Cristache.jpg';       // TODO
-import photoAnielaDanciu      from '../assets/Poze Profesori/Aniela Danciu.jpg';          // TODO
-import photoAdrianaDavidescu  from '../assets/Poze Profesori/Adriana Davidescu.jpg';     // TODO
-import photoGinaDimian        from '../assets/Poze Profesori/Gina Dimian.jpg';            // TODO
-import photoIrinaDragan       from '../assets/Poze Profesori/Irina Dragan.jpg';           // TODO
-import photoSimonaGhita       from '../assets/Poze Profesori/Simona Ghita.jpg';           // TODO
-import photoRodicaGogonea     from '../assets/Poze Profesori/Rodica Gogonea.jpg';         // TODO
+import photoSilviaCristache   from '../assets/Poze Profesori/Silvia Cristache.jpg';       
+import photoAnielaDanciu      from '../assets/Poze Profesori/Aniela Danciu.jpg';          
+import photoAdrianaDavidescu  from '../assets/Poze Profesori/Adriana Davidescu.jpg';     
+import photoGinaDimian        from '../assets/Poze Profesori/Gina Dimian.jpg';            
+import photoIrinaDragan       from '../assets/Poze Profesori/Irina Dragan.jpg';           
+import photoSimonaGhita       from '../assets/Poze Profesori/Simona Ghita.jpg';           
+import photoRodicaGogonea     from '../assets/Poze Profesori/Rodica Gogonea.jpg';         
 import photoEmiliaGogu        from '../assets/Poze Profesori/Emilia Gogu.png';
-import photoGianiGradinaru    from '../assets/Poze Profesori/Giani Gradinaru.jpg';        // TODO
+import photoGianiGradinaru    from '../assets/Poze Profesori/Giani Gradinaru.jpg';        
 import photoClaudiuHerteliu   from '../assets/Poze Profesori/Claudiu_Herteliu_2021.jpg';
-import photoBogdanIleanu      from '../assets/Poze Profesori/Bogdan Ileanu.jpg';          // TODO
-import photoDanielaManea      from '../assets/Poze Profesori/Daniela Manea.jpg';          // TODO
+import photoBogdanIleanu      from '../assets/Poze Profesori/Bogdan Ileanu.jpg';          
+import photoDanielaManea      from '../assets/Poze Profesori/Daniela Manea.jpg';          
 import photoEduardManta       from '../assets/Poze Profesori/Eduard Manta.jpg';
 import photoMarcuAnaMaria     from '../assets/Poze Profesori/MARCU Ana-Maria.jpg';
 import photoMaricut           from '../assets/Poze Profesori/Maricut.jpg';
 import photoMiruna            from '../assets/Poze Profesori/MMazurencu.jpeg';
-import photoMihaelaMihai      from '../assets/Poze Profesori/Mihaela Mihai.jpg';          // TODO
-import photoAndreeaMirica     from '../assets/Poze Profesori/Andreea Mirica.jpg';         // TODO
-import photoIleanaNiculescu   from '../assets/Poze Profesori/Ileana Niculescu Aron.jpg';  // TODO
+import photoMihaelaMihai      from '../assets/Poze Profesori/Mihaela Mihai.jpg';          
+import photoAndreeaMirica     from '../assets/Poze Profesori/Andreea Mirica.jpg';         
+import photoIleanaNiculescu   from '../assets/Poze Profesori/Ileana Niculescu Aron.jpg';  
 import photoAdrianOtoiu       from '../assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg';
-import photoAndreiParvan      from '../assets/Poze Profesori/Andrei Parvan.jpg';           // TODO
-import photoDanielPele        from '../assets/Poze Profesori/Daniel Pele.jpg';             // TODO
-import photoRoxanaPetcu       from '../assets/Poze Profesori/Roxana Petcu.jpg';            // TODO
-import photoElenaPrada        from '../assets/Poze Profesori/Elena Prada.jpg';             // TODO
+import photoAndreiParvan      from '../assets/Poze Profesori/Andrei Parvan.jpg';           
+import photoDanielPele        from '../assets/Poze Profesori/Daniel Pele.jpg';             
+import photoRoxanaPetcu       from '../assets/Poze Profesori/Roxana Petcu.jpg';            
+import photoElenaPrada        from '../assets/Poze Profesori/Elena Prada.jpg';             
 import photoMihaiSacala       from '../assets/Poze Profesori/Mihai Sacala poza.jpeg';
-import photoDanielaSerban     from '../assets/Poze Profesori/Daniela Serban.jpg';          // TODO
+import photoDanielaSerban     from '../assets/Poze Profesori/Daniela Serban.jpg';          
 import photoVasileStrat       from '../assets/Poze Profesori/Vasile Alecsandru STRAT.jpg';
-import photoEmiliaTitan       from '../assets/Poze Profesori/Emilia Titan.jpg';            // TODO
-import photoLaviniaTotan      from '../assets/Poze Profesori/Lavinia Totan.jpg';           // TODO
-import photoRazvanVasile      from '../assets/Poze Profesori/Razvan Vasile.jpg';           // TODO
+import photoEmiliaTitan       from '../assets/Poze Profesori/Emilia Titan.jpg';            
+import photoLaviniaTotan      from '../assets/Poze Profesori/Lavinia Totan.jpg';           
+import photoRazvanVasile      from '../assets/Poze Profesori/Razvan Vasile.jpg';          
 import photoDenisaVasilescu   from '../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -81,7 +81,7 @@ import cvMihaelaMihai      from '../assets/cv/Conf. Univ. Dr. Mihai Mihaela CV.p
 import cvAndreeaMirica     from '../assets/cv/Lect. Univ. dr. Mirică Andreea CV.pdf';
 import cvIleanaNiculescu   from '../assets/cv/Prof. univ. dr. Ileana Gabriela Niculescu-Aron CV.pdf';
 import cvAdrianOtoiu       from '../assets/cv/Adrian Otoiu CV.pdf';
-import cvAndreiParvan      from '../assets/cv/Parvan Andrei Teofil CV.pdf';
+import cvAndreiParvan      from '../assets/cv/Parvan Andrei Teofil CV.pdf';  // TODO
 import cvDanielPele        from '../assets/cv/Prof. univ. dr. Daniel Traian Pele CV.pdf';
 import cvRoxanaPetcu       from '../assets/cv/Lect. Univ. Dr. Petcu Ionela-Roxana CV.pdf';
 import cvElenaPrada        from '../assets/cv/Lect. Univ. Dr. Prada Elena-Maria CV.pdf';

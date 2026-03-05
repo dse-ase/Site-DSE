@@ -1,9 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
+import photoDanielaManea from '../../assets/Poze Profesori/Daniela Manea.jpg';
 
 export function DanielaManea() {
   const data = {
     name: 'MANEA Daniela Ioana',
     initials: 'MD',
+    photo: photoDanielaManea,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Analize cantitative socio-economice la nivel macroeconomic',

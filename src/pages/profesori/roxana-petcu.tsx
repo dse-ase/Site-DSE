@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoRoxanaPetcu from '../../assets/Poze Profesori/Roxana Petcu.jpg';
 export function RoxanaPetcuPage() {
   const data = {
     name: 'PETCU Ionela-Roxana',
     initials: 'PR',
+    photo: photoRoxanaPetcu,
     role: 'Lector Universitar Dr.',
     specializations: [
       'Statistică socială',

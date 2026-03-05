@@ -1,10 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoRodicaGogonea from '../../assets/Poze Profesori/Rodica Gogonea.jpg';
 export function ManuelaGogoneaPage() {
   const data = {
     name: 'GOGONEA Rodica-Manuela',
     initials: 'GR',
     role: 'Conferențiar Universitar Dr.',
+    photo: photoRodicaGogonea,
     specializations: [
       'Analiză macroeconomică',
       'Econometrie și modelare economică',

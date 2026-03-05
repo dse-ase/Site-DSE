@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoSilviaCristache from '../../assets/Poze Profesori/Silvia Cristache.jpg';
 export function SilviaCristachePage() {
   const data = {
     name: 'CRISTACHE Silvia-Elena',
     initials: 'CS',
+    photo: photoSilviaCristache,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Statistică economică și socială',

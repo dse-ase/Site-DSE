@@ -1,10 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoAndreiTudorel from '../../assets/Poze Profesori/Andrei Tudorel.jpg';
 export function TudorelAndreiPage() {
   const data = {
     name: 'ANDREI Tudorel',
     initials: 'AT',
     role: 'Profesor Universitar Dr.',
+    photo: photoAndreiTudorel,
     specializations: [
       'Statistică economică și socială',
       'Econometrie și modelare economică',

@@ -1,10 +1,11 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoCristinaBoboc from '../../assets/Poze Profesori/Cristina Boboc.jpeg';
 export function CristinaBobocPage() {
   const data = {
     name: "BOBOC Cristina Rodica",
     initials: "CB",
     role: "Prof. univ. dr.",
+    photo: photoCristinaBoboc,
     specializations: [
       "Metode de inteligență artificială și Machine Learning aplicate în economie și științe sociale",
       "Analiza pieței muncii: nepotrivirea competențelor (skill mismatching), echilibrul între viața profesională și cea personală, migrația și șomajul",

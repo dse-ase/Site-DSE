@@ -1,9 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
+import photoErikaMarin from '../../assets/Poze Profesori/Erika-Marin.png';
 
 export function ErikaMarinPage() {
   const data = {
     name: 'MARIN Erika',
     initials: 'ME',
+    photo: photoErikaMarin,
     role: 'Profesor Universitar Dr. | Director Departament',
     specializations: [
       'Director Departament de Statistică și Econometrie',

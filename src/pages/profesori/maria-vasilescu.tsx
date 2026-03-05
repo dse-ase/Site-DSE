@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoDenisaVasilescu from '../../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
 export function MariaVasilescuPage() {
   const data = {
     name: 'VASILESCU Maria Denisa',
     initials: 'VM',
+    photo: photoDenisaVasilescu,
     role: 'Conferențiar Universitar Dr.',
     specializations: [
       'Piața muncii, ocuparea forței de muncă, salariul minim, reziliența pieței muncii',

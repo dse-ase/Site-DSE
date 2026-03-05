@@ -1,9 +1,10 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoEduardManta from '../../assets/Poze Profesori/Eduard Manta.jpg';
 export function EduardMantaPage() {
   const data = {
     name: "MANTA Eduard Mihai",
     initials: "EM",
+    photo: photoEduardManta,
     role: "Asis. Univ. dr.",
     specializations: [
       "Economie informală",

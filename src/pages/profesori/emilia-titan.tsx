@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoEmiliaTitan from '../../assets/Poze Profesori/Emilia Titan.jpg';
 export function EmiliaTitanPage() {
   const data = {
     name: 'ȚIȚAN Emilia',
     initials: 'ȚE',
+    photo: photoEmiliaTitan,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Statistică socială',

@@ -1,9 +1,10 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoNicholasAlexander from '../../assets/Poze Profesori/Nicholas Alexander.jpg';
 export function NicholasAlexanderPage() {
   const data = {
     name: "ALEXANDER Nicholas",
     initials: "NA",
+    photo: photoNicholasAlexander,
     role: "Asis. Univ. dr.",
     specializations: [
       "Statistică",

@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoMihaelaMihai from '../../assets/Poze Profesori/Mihaela Mihai.jpg';
 export function MihaelaMihaiPage() {
   const data = {
     name: 'MIHAI Mihaela',
     initials: 'MM',
+    photo: photoMihaelaMihai,
     role: 'Conferențiar Universitar Dr.',
     specializations: [
       'Statistică aplicată și econometrie',

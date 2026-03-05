@@ -1,9 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
+import photoAdrianOtoiu from '../../assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg';
 
 export function AdrianOtoiuPage() {
   const data = {
     name: 'OȚOIU Adrian',
     initials: 'OA',
+    photo: photoAdrianOtoiu,
     role: 'Lector Universitar Dr.',
     specializations: [
       'Statistică aplicată și econometrie',

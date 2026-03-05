@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoIrinaDragan from '../../assets/Poze Profesori/Irina Dragan.jpg';
 export function IrinaDraganPage() {
   const data = {
     name: 'Irina-Maria DRĂGAN',
     initials: 'ID',
+    photo: photoIrinaDragan,
     role: 'Conferențiar Universitar Dr.',
     specializations: ['Statistică economică și socială', 'Econometrie și modele econometrice', 'Măsurarea și analiza statistică a calității vieții', 'Analiza riscului în economie', 'Indicatori macroeconomici și conturi naționale'],
     email: 'irina.dragan@csie.ase.ro',

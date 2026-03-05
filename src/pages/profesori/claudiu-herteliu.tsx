@@ -1,9 +1,10 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoClaudiuHerteliu from '../../assets/Poze Profesori/Claudiu_Herteliu_2021.jpg';
 export function ClaudiuHerteliuPage() {
   const data = {
     name: "HERȚELIU Claudiu",
     initials: "HC",
+    photo: photoClaudiuHerteliu,
     role: "Prof. univ. dr.",
     specializations: [
       "Statistică computațională și econofizică",

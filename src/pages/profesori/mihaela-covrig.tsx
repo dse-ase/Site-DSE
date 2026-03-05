@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoCovrigMihaela from '../../assets/Poze Profesori/Covrig Mihaela.png';
 export function MihaelaCovrigPage() {
   const data = {
     name: 'COVRIG Mihaela',
     initials: 'CM',
+    photo: photoCovrigMihaela,
     role: 'Conferențiar Universitar Dr.',
     specializations: [
       'Statistică și econometrie',

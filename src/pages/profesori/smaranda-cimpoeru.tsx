@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoSmarandaCimpoeru from '../../assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg';
 export function SmarandaCimpoeruPage() {
   const data = {
     name: 'CIMPOERU Smaranda',
     initials: 'CS',
+    photo: photoSmarandaCimpoeru,
     role: 'Conferențiar Universitar Dr.',
     specializations: [
       'Econometrie aplicată și statistică',

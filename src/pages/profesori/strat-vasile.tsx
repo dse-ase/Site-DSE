@@ -1,10 +1,11 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoVasileStrat from '../../assets/Poze Profesori/Vasile Alecsandru STRAT.jpg';
 export function VasileStratPage() {
   const data = {
     name: "STRAT Vasile Alecsandru",
     initials: "VS",
     role: "Prof. Univ. dr.",
+    photo: photoVasileStrat,
     specializations: [
       "Statistică pentru afaceri",
       "Econometrie",

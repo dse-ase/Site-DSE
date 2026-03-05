@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoGinaDimian from '../../assets/Poze Profesori/Gina Dimian.jpg';
 export function GinaDimianPage() {
   const data = {
     name: 'DIMIAN Gina Cristina',
     initials: 'DG',
+    photo: photoGinaDimian,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Econometria Mediului și a Digitalizării',

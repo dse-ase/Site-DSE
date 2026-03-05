@@ -3,7 +3,7 @@ import { Footer } from '../components/Footer';
 import { MessageCircle, Quote, Award } from 'lucide-react';
 
 // Imports imagini
-import widsImage from '../assets/WIDS primul testimonial.jpg';
+import widsImage from '../assets/datathon_1.jpg.jpeg';
 import vladImage from '../assets/vlad teleaba.png';
 import adrianaImage from '../assets/Adriana Pedra.jpg';
 import oanaImage from '../assets/Oana Pascalache.jpg';

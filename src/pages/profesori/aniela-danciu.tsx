@@ -1,9 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
+import photoAnielaDanciu from '../../assets/Poze Profesori/Aniela Danciu.jpg';
 
 export function AnielaDanciuPage() {
   const data = {
     name: 'Aniela Raluca DANCIU',
     initials: 'AD',
+    photo: photoAnielaDanciu,
     role: 'Conf. Univ. Dr.',
     specializations: ['Econometrie', 'Statistică financiar-bancară', 'Serii temporale'],
     email: 'aniela.danciu@csie.ase.ro',

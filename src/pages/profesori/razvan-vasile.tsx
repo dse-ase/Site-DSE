@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoRazvanVasile from '../../assets/Poze Profesori/Razvan Vasile.jpg';
 export function RazvanVasilePage() {
   const data = {
     name: 'VASILE Răzvan',
     initials: 'VR',
+    photo: photoRazvanVasile,
     role: 'Asistent Universitar Dr.',
     specializations: [
       'Econometrie și analiză statistică aplicată în economie',

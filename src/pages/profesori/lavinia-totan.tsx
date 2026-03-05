@@ -1,10 +1,11 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoLaviniaTotan from '../../assets/Poze Profesori/Lavinia Totan.jpg';
 export function LaviniaTotanPage() {
   const data = {
     name: "ȚOȚAN Lavinia-Ștefania",
     initials: "ȚL",
     role: "Lect. Univ. dr.",
+    photo: photoLaviniaTotan,
     specializations: [
       "Statistică economică și socială",
       "Econometrie aplicată",

@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoGianiGradinaru from '../../assets/Poze Profesori/Giani Gradinaru.jpg';
 export function GianiGradinaruPage() {
   const data = {
     name: 'GRĂDINARU Giani Ionel',
     initials: 'GG',
+    photo: photoGianiGradinaru,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Modele de business inovativ și economie digitală',

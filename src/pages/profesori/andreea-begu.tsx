@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoBeguAndreea from '../../assets/Poze Profesori/Begu Andreea Oana.jpg';
 export function AndreeaBeguPage() {
   const data = {
     name: 'Andreea Oana BEGU',
     initials: 'AB',
+    photo: photoBeguAndreea,
     role: 'Asistent Universitar Dr.',
     specializations: ['Migrație internațională și dezvoltare durabilă', 'Economie regională', 'Indicatori de dezvoltare economică și socială', 'Econometrie și analiză statistică aplicată', 'Patrimoniu cultural și dezvoltare rurală'],
     email: 'andreea.begu@csie.ase.ro',

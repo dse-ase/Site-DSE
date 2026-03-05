@@ -1,9 +1,10 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoEmiliaGogu from '../../assets/Poze Profesori/Emilia Gogu.png';
 export function EmiliaGoguPage() {
   const data = {
     name: "GOGU Emilia",
     initials: "EG",
+    photo: photoEmiliaGogu,
     role: "Conf. univ. dr.",
     specializations: [
       "Statistică economică și socială",

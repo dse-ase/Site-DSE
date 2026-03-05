@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoElenaPrada from '../../assets/Poze Profesori/Elena Prada.jpg';
 export function ElenaPradaPage() {
   const data = {
     name: 'PRADA Elena-Maria',
     initials: 'PE',
+    photo: photoElenaPrada,
     role: 'Lector Universitar Dr.',
     specializations: [
       'Statistică aplicată și econometrie',

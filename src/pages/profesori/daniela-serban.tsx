@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoDanielaSerban from '../../assets/Poze Profesori/Daniela Serban.jpg';
 export function DanielaSerbanPage() {
   const data = {
     name: 'ȘERBAN Daniela',
     initials: 'ȘD',
+    photo: photoDanielaSerban,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Statistică aplicată în afaceri',

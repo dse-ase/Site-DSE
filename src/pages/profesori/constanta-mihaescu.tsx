@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoConstantaMihaescu from '../../assets/Poze Profesori/Mihaescu-Constanta.jpeg';
 export function ConstantaMihaescuPage() {
   const data = {
     name: 'MIHĂESCU Constanța',
     initials: 'MC',
+    photo: photoConstantaMihaescu,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Demografie și îmbătrânire demografică',

@@ -1,9 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
+import photoMaricut from '../../assets/Poze Profesori/Maricut.jpg';
 
 export function AlinMaricut() {
   const data = {
     name: 'Alin-Cristian MARICUȚ',
     initials: 'AM',
+    photo: photoMaricut,
     role: 'Asistent Universitar Dr.',
     specializations: ['Statistică microeconomică', 'Previziune economică', 'Econometrie'],
     email: 'alin.maricut@csie.ase.ro',

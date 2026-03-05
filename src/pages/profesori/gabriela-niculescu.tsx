@@ -1,9 +1,10 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoIleanaNiculescu from '../../assets/Poze Profesori/Ileana Niculescu Aron.jpg';
 export function GabrielaNiculescuPage() {
   const data = {
     name: "NICULESCU-ARON Ileana Gabriela",
     initials: "IN",
+    photo: photoIleanaNiculescu,
     role: "Prof. univ. dr.",
     specializations: [
       "Statistică teoretică și statistică economică",

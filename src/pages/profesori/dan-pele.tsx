@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoDanielPele from '../../assets/Poze Profesori/Daniel Pele.jpg';
 export function DanPelePage() {
   const data = {
     name: 'PELE Daniel Traian',
     initials: 'PD',
+    photo: photoDanielPele,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Econometrie și analiză statistică avansată',

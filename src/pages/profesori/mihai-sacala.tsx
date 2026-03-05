@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoMihaiSacala from '../../assets/Poze Profesori/Mihai Sacala poza.jpeg';
 export function MihaiSacalaPage() {
   const data = {
     name: 'SACALĂ Mihai Dumitru',
     initials: 'SM',
+    photo: photoMihaiSacala,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Econometrie aplicată',

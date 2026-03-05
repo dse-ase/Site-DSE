@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoSimonaGhita from '../../assets/Poze Profesori/Simona Ghita.jpg';
 export function IoanaGhitaPage() {
   const data = {
     name: 'GHIȚĂ Simona Ioana',
     initials: 'GS',
+    photo: photoSimonaGhita,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Piața muncii și vulnerabilități sociale',

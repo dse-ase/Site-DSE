@@ -1,9 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
+import photoAdrianCostea from '../../assets/Poze Profesori/adrian costea_LThumb.jpeg';
 
 export function AdrianCosteaPage() {
   const data = {
     name: 'COSTEA Adrian',
     initials: 'CA',
+    photo: photoAdrianCostea,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Econometrie și statistică aplicată',

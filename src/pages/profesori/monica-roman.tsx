@@ -1,9 +1,10 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
-
+import photoMonicaRoman from '../../assets/Poze Profesori/Monica Roman.jpg';
 export function MonicaRomanPage() {
   const data = {
     name: 'ROMAN Monica Mihaela',
     initials: 'RM',
+    photo: photoMonicaRoman,
     role: 'Profesor Universitar Dr. | Membru Consiliu Departament',
     specializations: [
       'Membru Consiliu Departamentului de Statistică și Econometrie',

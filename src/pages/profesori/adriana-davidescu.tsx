@@ -1,9 +1,11 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
+import photoAdrianaDavidescu from '../../assets/Poze Profesori/Adriana Davidescu.jpg';  // TODO
 
 export function AdrianaDavidescuPage() {
   const data = {
     name: 'DAVIDESCU Adriana Anamaria',
     initials: 'DA',
+    photo: photoAdrianaDavidescu,
     role: 'Profesor Universitar Dr.',
     specializations: [
       'Econometrie aplicată și statistică economică',

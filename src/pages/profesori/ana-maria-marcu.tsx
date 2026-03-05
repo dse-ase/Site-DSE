@@ -1,9 +1,12 @@
 import { ProfesorProfile } from '../../components/ProfesorProfile';
+import photoMarcuAnaMaria from '../../assets/Poze Profesori/MARCU Ana-Maria.jpg';
 
 export function AnaMariaMarcuPage() {
   const data = {
     name: 'Ana-Maria MARCU',
     initials: 'AM',
+    photo: photoMarcuAnaMaria,
+
     role: 'Asistent Cercetare drd.',
     specializations: ['Statistică aplicată', 'Econometrie', 'Dezvoltare regională'],
     email: 'anamaria.marcu@csie.ase.ro',

@@ -66,10 +66,6 @@ export function Contact() {
             <a href="mailto:diana.burciu@ase.ro" className="text-gray-600 dark:text-gray-300 hover:text-[#4361EE] transition-colors text-lg block">
               diana.burciu@ase.ro
             </a>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-              Răspundem în maxim<br />
-              24 de ore lucrătoare
-            </p>
           </motion.div>
 
           {/* Secretariat (Phone) */}

@@ -1,9 +1,10 @@
 import { ProfesorProfile } from "../../components/ProfesorProfile";
-
+import photoMiruna from '../../assets/Poze Profesori/MMazurencu.jpeg';
 export function MirunaMazurencuPage() {
   const data = {
     name: "MAZURENCU-MARINESCU-PELE Miruna",
     initials: "MM",
+    photo: photoMiruna,
     role: "Prof. univ. dr.",
     specializations: [
       "Modelare econometrică și statistică aplicată",
