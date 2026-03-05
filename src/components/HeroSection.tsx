@@ -2,17 +2,21 @@ import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Imagini slideshow din Unsplash
+// Imports imagini slideshow
+import imgCSIE from '../assets/CSIE.jpg';
+import imgGradinaCSIE from '../assets/gradinacsie.jpg';
+import imgASE from '../assets/ASE.jpg';
+import imgGradinaCSIE2 from '../assets/gradina csie 2.jpg';
+
 const slideImages = [
-  'src/assets/CSIE.jpg',
-  'src/assets/gradinacsie.jpg',
-  'src/assets/ASE.jpg',
-  'src/assets/gradina csie 2.jpg'
+  imgCSIE,
+  imgGradinaCSIE,
+  imgASE,
+  imgGradinaCSIE2
 ];
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,9 +39,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div 
-      className="relative overflow-hidden bg-white dark:bg-gray-900 py-10 sm:py-16 lg:py-20 section-padding-mobile"
-    >
+    <div className="relative overflow-hidden bg-white dark:bg-gray-900 py-10 sm:py-16 lg:py-20 section-padding-mobile">
       <div className="relative z-10 px-4 w-full px-mobile-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 gap-mobile-4">
           {/* Left Side - Text */}
