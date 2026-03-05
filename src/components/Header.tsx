@@ -4,6 +4,7 @@ import { ChevronDown, Menu, X, Sun, Moon } from "lucide-react";
 import { CampusMapPopup } from "./CampusMapPopup";
 import { useDarkMode } from "../contexts/DarkModeContext";
 import { scrollToSection } from "./scroll";
+import logo from "./assets/logo.png"
 
 interface HeaderProps {
   showContent?: boolean;
@@ -74,7 +75,7 @@ export default function Header({ showContent = true }: HeaderProps) {
                 className="cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300"
               >
                 <img
-                  src={"src/assets/logo.png"}
+                  src={logo}
                   alt="DSE Logo"
                   className="h-16 sm:h-20 lg:h-28 w-auto"
                 />
