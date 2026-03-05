@@ -2,25 +2,96 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, BookOpen, Users, Crown, FileText, ExternalLink } from 'lucide-react';
 
-// ── Import static photos (Vite bundlează acestea corect pe GitHub Pages) ──────
-import photoCristinaBoboc from '../assets/Poze Profesori/Cristina Boboc.jpeg';
-import photoAndreiTudorel from '../assets/Poze Profesori/Andrei Tudorel.jpg';
-import photoRazvanBarbulescu from '../assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg';
-import photoBeguAndreea from '../assets/Poze Profesori/Begu Andreea Oana.jpg';
-import photoSmarandaCimpoeru from '../assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg';
-import photoAdrianCostea from '../assets/Poze Profesori/Adrian Costea.jpg';
-import photoEmiliaGogu from '../assets/Poze Profesori/Emilia Gogu.png';
-import photoClaudiuHerteliu from '../assets/Poze Profesori/Claudiu_Herteliu_2021.jpg';
-import photoEduardManta from '../assets/Poze Profesori/Eduard Manta.jpg';
-import photoMarcuAnaMaria from '../assets/Poze Profesori/MARCU Ana-Maria.jpg';
-import photoMaricut from '../assets/Poze Profesori/Maricut.jpg';
-import photoMiruna from '../assets/Poze Profesori/MMazurencu.jpeg';
-import photoAdrianOtoiu from '../assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg';
-import photoMihaiSacala from '../assets/Poze Profesori/Mihai Sacala poza.jpeg';
-import photoVasileStrat from '../assets/Poze Profesori/Vasile Alecsandru STRAT.jpg';
-import photoDenisaVasilescu from '../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
+// ── Poze profesori (pune calea corectă; cele cu TODO nu au poză încă) ─────────
+import photoErikaMarin         from '../assets/Poze Profesori/Erika-Marin.png';
+import photoSimonaApostu       from '../assets/Poze Profesori/Simona apostu.jfif.jpeg';
+import photoCristinaBoboc      from '../assets/Poze Profesori/Cristina Boboc.jpeg';
+import photoConstantaMihaescu  from '../assets/Poze Profesori/Mihaescu-Constanta.jpeg';
+import photoMonicaRoman        from '../assets/Poze Profesori/Monica Roman.jpg';           // TODO
+import photoNicholasAlexander  from '../assets/Poze Profesori/Nicholas Alexander.jpg';     // TODO
+import photoAndreiTudorel      from '../assets/Poze Profesori/Andrei Tudorel.jpg';
+import photoRazvanBarbulescu   from '../assets/Poze Profesori/Razvan Barbulescu LinkedIn Pic.jpg';
+import photoBeguAndreea        from '../assets/Poze Profesori/Begu Andreea Oana.jpg';
+import photoSmarandaCimpoeru   from '../assets/Poze Profesori/Smaranda_Cimpoeru_photo.jpeg';
+import photoAdrianCostea       from '../assets/Poze Profesori/adrian costea_LThumb.jpeg';
+import photoCovrigMihaela      from '../assets/Poze Profesori/Covrig Mihaela.png';
+import photoSilviaClristache   from '../assets/Poze Profesori/Silvia Cristache.jpg';       // TODO
+import photoAnielaDanciu       from '../assets/Poze Profesori/Aniela Danciu.jpg';          // TODO
+import photoAdrianaGavidescu   from '../assets/Poze Profesori/Adriana Davidescu.jpg';     // TODO
+import photoGinaDimian         from '../assets/Poze Profesori/Gina Dimian.jpg';            // TODO
+import photoIrinaDragan        from '../assets/Poze Profesori/Irina Dragan.jpg';           // TODO
+import photoSimonaGhita        from '../assets/Poze Profesori/Simona Ghita.jpg';           // TODO
+import photoRodicaGogonea      from '../assets/Poze Profesori/Rodica Gogonea.jpg';        // TODO
+import photoEmiliaGogu         from '../assets/Poze Profesori/Emilia Gogu.png';
+import photoGianiGradinaru     from '../assets/Poze Profesori/Giani Gradinaru.jpg';       // TODO
+import photoClaudiuHerteliu    from '../assets/Poze Profesori/Claudiu_Herteliu_2021.jpg';
+import photoBogdanIleanu       from '../assets/Poze Profesori/Bogdan Ileanu.jpg';          // TODO
+import photoDanielaManea       from '../assets/Poze Profesori/Daniela Manea.jpg';          // TODO
+import photoEduardManta        from '../assets/Poze Profesori/Eduard Manta.jpg';
+import photoMarcuAnaMaria      from '../assets/Poze Profesori/MARCU Ana-Maria.jpg';
+import photoMaricut            from '../assets/Poze Profesori/Maricut.jpg';
+import photoMiruna             from '../assets/Poze Profesori/MMazurencu.jpeg';
+import photoMihaelaMihai       from '../assets/Poze Profesori/Mihaela Mihai.jpg';         // TODO
+import photoAndreeaMirica      from '../assets/Poze Profesori/Andreea Mirica.jpg';        // TODO
+import photoIleanaaNiculescu   from '../assets/Poze Profesori/Ileana Niculescu Aron.jpg'; // TODO
+import photoAdrianOtoiu        from '../assets/Poze Profesori/Adrian Otoiu poza dse v2.jpg';
+import photoAndreiParvan       from '../assets/Poze Profesori/Andrei Parvan.jpg';          // TODO
+import photoDanielPele         from '../assets/Poze Profesori/Daniel Pele.jpg';            // TODO
+import photoRoxanaPetcu        from '../assets/Poze Profesori/Roxana Petcu.jpg';           // TODO
+import photoElenaPrada         from '../assets/Poze Profesori/Elena Prada.jpg';            // TODO
+import photoMihaiSacala        from '../assets/Poze Profesori/Mihai Sacala poza.jpeg';
+import photoDanielaSerban      from '../assets/Poze Profesori/Daniela Serban.jpg';         // TODO
+import photoVasileStrat        from '../assets/Poze Profesori/Vasile Alecsandru STRAT.jpg';
+import photoEmiliaTitan        from '../assets/Poze Profesori/Emilia Titan.jpg';           // TODO
+import photoLaviniaTotan       from '../assets/Poze Profesori/Lavinia Totan.jpg';          // TODO
+import photoRazvanVasile       from '../assets/Poze Profesori/Razvan Vasile.jpg';          // TODO
+import photoDenisaVasilescu    from '../assets/Poze Profesori/Denisa_Vasilescu.jpeg';
+// ─────────────────────────────────────────────────────────────────────────────
 
-
+// ── CV-uri (pune calea corectă; cele cu TODO nu au CV încă) ──────────────────
+const cvErikaMarin         = '../assets/cv/Erika_Marin CV.pdf';
+const cvSimonaApostu       = '../assets/cv/Lect. Univ. Dr. Apostu Simona Andreea CV.pdf';
+const cvCristinaBoboc      = '../assets/cv/Prof. Univ. Dr. Cristina Boboc CV.pdf';
+const cvConstantaMihaescu  = '../assets/cv/Prof. univ. dr. Constanța Mihăescu CV.pdf';
+const cvMonicaRoman        = '../assets/cv/Prof. univ. dr. Monica Roman CV.pdf';
+const cvNicholasAlexander  = '../assets/cv/Asist. Univ. Dr. Alexander Nicholas Victor Julius CV.pdf';
+const cvAndreiTudorel      = '../assets/cv/Prof. Univ. Dr. Andrei Tudorel CV.pdf';
+const cvRazvanBarbulescu   = '../assets/cv/Lect univ dr Razvan Barbulescu CV.pdf';
+const cvBeguAndreea        = '../assets/cv/Asis. Univ. Dr. Begu Andreea-Oana CV.pdf';
+const cvSmarandaCimpoeru   = '../assets/cv/Conf. univ. dr. Smaranda Cimpoeru CV.pdf';
+const cvAdrianCostea       = '../assets/cv/Prof. univ. dr. Adrian Costea CV.pdf';
+const cvCovrigMihaela      = '../assets/cv/Conf. univ. dr. Mihaela Covrig CV.pdf';
+const cvSilviaCristache    = '../assets/cv/Prof. Univ. Dr. Cristache Silvia-Elena CV.pdf';
+const cvAnielaDanciu       = '../assets/cv/Conf. Univ. dr. Danciu Aniela CV.pdf';
+const cvAdrianaGavidescu   = '../assets/cv/Prof. univ. dr. Adriana Anamaria Davidescu CV.pdf';
+const cvGinaDimian         = '../assets/cv/Prof. Univ. Dr. Dimian Gina Cristina CV.pdf';
+const cvIrinaDragan        = '../assets/cv/Conf. Univ. Dr. Drăgan Irina-Maria CV.pdf';
+const cvSimonaGhita        = '../assets/cv/Prof. Univ. Dr. Ghiță Simona Ioana CV.pdf';
+const cvRodicaGogonea      = '../assets/cv/Conf. Univ. Dr. Gogonea Rodica-Manuela CV.pdf';
+const cvEmiliaGogu         = '../assets/cv/Conf. Univ. Dr. Gogu Emilia CV.pdf';
+const cvGianiGradinaru     = '../assets/cv/Prof. Univ. Dr. Grădinaru Giani Ionel CV.pdf';
+const cvClaudiuHerteliu    = '../assets/cv/Prof. Univ. Dr. Herțeliu Claudiu CV.pdf';
+const cvBogdanIleanu       = '../assets/cv/Conf. Univ. Dr. Ileanu Bogdan Vasile CV.pdf';
+const cvDanielaManea       = '../assets/cv/Prof. univ. dr. Daniela Manea CV.pdf';
+const cvEduardManta        = '../assets/cv/Eduard_Manta CV.pdf';
+const cvMarcuAnaMaria      = '../assets/cv/MARCU ANA-MARIA CV.pdf';
+const cvMaricut            = '../assets/cv/Asist. Univ. Dr. Maricut Alin Cristian CV.pdf';
+const cvMiruna             = '../assets/cv/Prof. univ. dr. Miruna Mazurencu CV.pdf';
+const cvMihaelaMihai       = '../assets/cv/Conf. Univ. Dr. Mihai Mihaela CV.pdf';
+const cvAndreeaMirica      = '../assets/cv/Lect. Univ. dr. Mirică Andreea CV.pdf';
+const cvIleanaNiculescu    = '../assets/cv/Prof. univ. dr. Ileana Gabriela Niculescu-Aron CV.pdf';
+const cvAdrianOtoiu        = '../assets/cv/Adrian Otoiu CV.pdf';
+const cvAndreiParvan       = '../assets/cv/Asist. Univ. Dr. Parvan Andrei Teofil CV.pdf';
+const cvDanielPele         = '../assets/cv/Prof. univ. dr. Daniel Traian Pele CV.pdf';
+const cvRoxanaPetcu        = '../assets/cv/Lect. Univ. Dr. Petcu Ionela-Roxana CV.pdf';
+const cvElenaPrada         = '../assets/cv/Lect. Univ. Dr. Prada Elena-Maria CV.pdf';
+const cvMihaiSacala        = '../assets/cv/Prof. Univ. Dr. Sacală Mihai CV.pdf';
+const cvDanielaSerban      = '../assets/cv/Prof. Univ. Dr. Șerban Daniela CV.pdf';
+const cvVasileStrat        = '../assets/cv/Prof. Univ. Dr. Strat Vasile Alexandru CV.pdf';
+const cvEmiliaTitan        = '../assets/cv/Prof. univ. dr. Emilia Țițan CV.pdf';
+const cvLaviniaTotan       = '../assets/cv/Lect. Univ. Dr. Totan Lavinia-Ștefania CV.pdf';
+const cvRazvanVasile       = '../assets/cv/Asis. Univ. Dr. Vasile Razvan CV.pdf';
+const cvDenisaVasilescu    = '../assets/cv/Conf. Univ. Dr. Vasilescu Maria Denisa CV.pdf';
 // ─────────────────────────────────────────────────────────────────────────────
 
 const MemberAvatar = ({ initials, photo, colorClass }: { initials: string, photo: string, colorClass: string }) => {
@@ -50,9 +121,9 @@ export function CadreDidactice() {
     initials: 'ME',
     role: 'Director Departament',
     email: 'erika.marin@csie.ase.ro',
-    photo: '',
+    photo: photoErikaMarin,
     hasPage: true,
-    cvUrl: 'src/assets/cv/Prof. Univ. Dr. Marin Erika CV.pdf'
+    cvUrl: cvErikaMarin,
   };
 
   const consiliu = [
@@ -62,9 +133,9 @@ export function CadreDidactice() {
       role: 'Membru Consiliu',
       position: 'Conferențiar Universitar',
       email: 'simona.apostu@csie.ase.ro',
-      photo: '',
+      photo: photoSimonaApostu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Lect. Univ. Dr. Apostu Simona Andreea CV.pdf'
+      cvUrl: cvSimonaApostu,
     },
     {
       name: 'BOBOC Cristina Rodica',
@@ -74,7 +145,7 @@ export function CadreDidactice() {
       email: 'cristina.boboc@csie.ase.ro',
       photo: photoCristinaBoboc,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Cristina Boboc CV.pdf'
+      cvUrl: cvCristinaBoboc,
     },
     {
       name: 'MIHAESCU Constanța',
@@ -82,9 +153,9 @@ export function CadreDidactice() {
       role: 'Membru Consiliu',
       position: 'Profesor Universitar',
       email: 'constanta.mihaescu@csie.ase.ro',
-      photo: '',
+      photo: photoConstantaMihaescu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Constanța Mihăescu CV.pdf'
+      cvUrl: cvConstantaMihaescu,
     },
     {
       name: 'ROMAN Monica Mihaela',
@@ -92,10 +163,10 @@ export function CadreDidactice() {
       role: 'Membru Consiliu',
       position: 'Profesor Universitar',
       email: 'monica.roman@csie.ase.ro',
-      photo: '',
+      photo: photoMonicaRoman,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Monica Roman CV.pdf'
-    }
+      cvUrl: cvMonicaRoman,
+    },
   ];
 
   const cadre = [
@@ -104,8 +175,9 @@ export function CadreDidactice() {
       initials: 'AN',
       position: 'Asistent Universitar',
       email: 'nicholas.alexander@csie.ase.ro',
-      photo: '',
-      cvUrl: 'src/assets/cv/Asist. Univ. Dr. Alexander Nicholas Victor Julius CV.pdf'
+      photo: photoNicholasAlexander,
+      hasPage: false,
+      cvUrl: cvNicholasAlexander,
     },
     {
       name: 'ANDREI Tudorel',
@@ -114,7 +186,7 @@ export function CadreDidactice() {
       email: 'tudorel.andrei@csie.ase.ro',
       photo: photoAndreiTudorel,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Andrei Tudorel CV.pdf'
+      cvUrl: cvAndreiTudorel,
     },
     {
       name: 'BĂRBULESCU Răzvan',
@@ -123,7 +195,7 @@ export function CadreDidactice() {
       email: 'razvan.barbulescu@csie.ase.ro',
       photo: photoRazvanBarbulescu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Lect univ dr Razvan Barbulescu CV.pdf'
+      cvUrl: cvRazvanBarbulescu,
     },
     {
       name: 'BEGU Andreea Oana',
@@ -132,7 +204,7 @@ export function CadreDidactice() {
       email: 'andreea.begu@csie.ase.ro',
       photo: photoBeguAndreea,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Asis. Univ. Dr. Begu Andreea-Oana CV.pdf'
+      cvUrl: cvBeguAndreea,
     },
     {
       name: 'CIMPOERU Smaranda',
@@ -141,7 +213,7 @@ export function CadreDidactice() {
       email: 'smaranda.cimpoeru@csie.ase.ro',
       photo: photoSmarandaCimpoeru,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Conf. univ. dr. Smaranda Cimpoeru CV.pdf'
+      cvUrl: cvSmarandaCimpoeru,
     },
     {
       name: 'COSTEA Adrian',
@@ -150,79 +222,79 @@ export function CadreDidactice() {
       email: 'adrian.costea@csie.ase.ro',
       photo: photoAdrianCostea,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Adrian Costea CV.pdf'
+      cvUrl: cvAdrianCostea,
     },
     {
       name: 'COVRIG Mihaela',
       initials: 'CM',
       position: 'Conferențiar Universitar',
       email: 'mihaela.covrig@csie.ase.ro',
-      photo: '',
+      photo: photoCovrigMihaela,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Conf. univ. dr. Mihaela Covrig CV.pdf'
+      cvUrl: cvCovrigMihaela,
     },
     {
       name: 'CRISTACHE Silvia Elena',
       initials: 'CS',
       position: 'Profesor Universitar',
       email: 'silvia.cristache@csie.ase.ro',
-      photo: '',
+      photo: photoSilviaClristache,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Cristache Silvia-Elena CV.pdf'
+      cvUrl: cvSilviaCristache,
     },
     {
       name: 'DANCIU Aniela Raluca',
       initials: 'DA',
       position: 'Conferențiar Universitar',
       email: 'aniela.danciu@csie.ase.ro',
-      photo: '',
+      photo: photoAnielaDanciu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Conf. Univ. dr. Danciu Aniela CV.pdf'
+      cvUrl: cvAnielaDanciu,
     },
     {
       name: 'DAVIDESCU Adriana Anamaria',
       initials: 'DA',
       position: 'Profesor Universitar',
       email: 'adriana.davidescu@csie.ase.ro',
-      photo: '',
+      photo: photoAdrianaGavidescu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Adriana Anamaria Davidescu CV.pdf'
+      cvUrl: cvAdrianaGavidescu,
     },
     {
       name: 'DIMIAN Gina Cristina',
       initials: 'DG',
       position: 'Profesor Universitar',
       email: 'gina.dimian@csie.ase.ro',
-      photo: '',
+      photo: photoGinaDimian,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Dimian Gina Cristina CV.pdf'
+      cvUrl: cvGinaDimian,
     },
     {
       name: 'DRĂGAN Irina Maria',
       initials: 'DI',
       position: 'Conferențiar Universitar',
       email: 'irina.dragan@csie.ase.ro',
-      photo: '',
+      photo: photoIrinaDragan,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Conf. Univ. Dr. Drăgan Irina-Maria CV.pdf'
+      cvUrl: cvIrinaDragan,
     },
     {
       name: 'GHIȚĂ Simona Ioana',
       initials: 'GS',
       position: 'Profesor Universitar',
       email: 'ioana.ghita@csie.ase.ro',
-      photo: '',
+      photo: photoSimonaGhita,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Ghiță Simona Ioana CV.pdf'
+      cvUrl: cvSimonaGhita,
     },
     {
       name: 'GOGONEA Rodica Manuela',
       initials: 'GR',
       position: 'Profesor Universitar',
       email: 'manuela.gogonea@csie.ase.ro',
-      photo: '',
+      photo: photoRodicaGogonea,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Conf. Univ. Dr. Gogonea Rodica-Manuela CV.pdf'
+      cvUrl: cvRodicaGogonea,
     },
     {
       name: 'GOGU Emilia',
@@ -231,16 +303,16 @@ export function CadreDidactice() {
       email: 'emilia.gogu@csie.ase.ro',
       photo: photoEmiliaGogu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Conf. Univ. Dr. Gogu Emilia CV.pdf'
+      cvUrl: cvEmiliaGogu,
     },
     {
       name: 'GRĂDINARU Giani Ionel',
       initials: 'GG',
       position: 'Profesor Universitar',
       email: 'giani.gradinaru@csie.ase.ro',
-      photo: '',
+      photo: photoGianiGradinaru,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Grădinaru Giani Ionel CV.pdf'
+      cvUrl: cvGianiGradinaru,
     },
     {
       name: 'HERȚELIU Claudiu',
@@ -249,24 +321,25 @@ export function CadreDidactice() {
       email: 'claudiu.herteliu@csie.ase.ro',
       photo: photoClaudiuHerteliu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Herțeliu Claudiu CV.pdf'
+      cvUrl: cvClaudiuHerteliu,
     },
     {
       name: 'ILEANU Bogdan Vasile',
       initials: 'IB',
       position: 'Conferențiar Universitar',
       email: 'bogdan.ileanu@csie.ase.ro',
-      photo: '',
-      cvUrl: 'src/assets/cv/Lect. Univ. Dr. Ileanu Bogdan Vasile CV.pdf'
+      photo: photoBogdanIleanu,
+      hasPage: false,
+      cvUrl: cvBogdanIleanu,
     },
     {
       name: 'MANEA Daniela Ioana',
       initials: 'MD',
       position: 'Profesor Universitar',
       email: 'daniela.manea@csie.ase.ro',
-      photo: '',
+      photo: photoDanielaManea,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Daniela Manea CV.pdf'
+      cvUrl: cvDanielaManea,
     },
     {
       name: 'MANTA Eduard Mihai',
@@ -274,7 +347,8 @@ export function CadreDidactice() {
       position: 'Asistent Universitar',
       email: 'eduard.manta@csie.ase.ro',
       photo: photoEduardManta,
-      cvUrl: 'src/assets/cv/Eduard_Manta CV.pdf'
+      hasPage: false,
+      cvUrl: cvEduardManta,
     },
     {
       name: 'MARCU Ana-Maria',
@@ -283,7 +357,7 @@ export function CadreDidactice() {
       email: 'ana-maria.marcu@csie.ase.ro',
       photo: photoMarcuAnaMaria,
       hasPage: true,
-      cvUrl: 'src/assets/cv/MARCU ANA-MARIA CV.pdf'
+      cvUrl: cvMarcuAnaMaria,
     },
     {
       name: 'MARICUȚ Alin Cristian',
@@ -292,7 +366,7 @@ export function CadreDidactice() {
       email: 'alin.maricut@csie.ase.ro',
       photo: photoMaricut,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Asist. Univ. Dr. Maricut Alin Cristian CV.pdf'
+      cvUrl: cvMaricut,
     },
     {
       name: 'MAZURENCU-MARINESCU-PELE Miruna',
@@ -301,34 +375,34 @@ export function CadreDidactice() {
       email: 'marinescu.mazurencu@csie.ase.ro',
       photo: photoMiruna,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Miruna Mazurencu CV.pdf'
+      cvUrl: cvMiruna,
     },
     {
       name: 'MIHAI Mihaela',
       initials: 'MM',
       position: 'Conferențiar Universitar',
       email: 'mihaela.mihai@csie.ase.ro',
-      photo: '',
+      photo: photoMihaelaMihai,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Conf. Univ. Dr. Mihai Mihaela CV.pdf'
+      cvUrl: cvMihaelaMihai,
     },
     {
       name: 'MIRICĂ Andreea',
       initials: 'MA',
       position: 'Lector Universitar',
       email: 'andreea.mirica@csie.ase.ro',
-      photo: '',
+      photo: photoAndreeaMirica,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Lect. Univ. dr. Mirică Andreea CV.pdf'
+      cvUrl: cvAndreeaMirica,
     },
     {
       name: 'NICULESCU ARON Ileana Gabriela',
       initials: 'NI',
       position: 'Profesor Universitar',
       email: 'gabriela.niculescu@csie.ase.ro',
-      photo: '',
+      photo: photoIleanaaNiculescu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Ileana Gabriela Niculescu-Aron CV.pdf'
+      cvUrl: cvIleanaNiculescu,
     },
     {
       name: 'OȚOIU Adrian',
@@ -337,42 +411,43 @@ export function CadreDidactice() {
       email: 'adrian.otoiu@csie.ase.ro',
       photo: photoAdrianOtoiu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Adrian Otoiu CV.pdf'
+      cvUrl: cvAdrianOtoiu,
     },
     {
       name: 'PÂRVAN Andrei Teofil',
       initials: 'PA',
       position: 'Asistent Universitar',
       email: 'andrei.parvan@csie.ase.ro',
-      photo: '',
-      cvUrl: 'src/assets/cv/Asist. Univ. Dr. Parvan Andrei Teofil CV.pdf'
+      photo: photoAndreiParvan,
+      hasPage: false,
+      cvUrl: cvAndreiParvan,
     },
     {
       name: 'PELE Daniel Traian',
       initials: 'PD',
       position: 'Profesor Universitar',
       email: 'dan.pele@csie.ase.ro',
-      photo: '',
+      photo: photoDanielPele,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Daniel Traian Pele CV.pdf'
+      cvUrl: cvDanielPele,
     },
     {
       name: 'PETCU Roxana Ionela',
       initials: 'PR',
       position: 'Lector Universitar',
       email: 'roxana.petcu@csie.ase.ro',
-      photo: '',
+      photo: photoRoxanaPetcu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Lect. Univ. Dr. Petcu Ionela-Roxana CV.pdf'
+      cvUrl: cvRoxanaPetcu,
     },
     {
       name: 'PRADA Elena Maria',
       initials: 'PE',
       position: 'Lector Universitar',
       email: 'elena.prada@csie.ase.ro',
-      photo: '',
+      photo: photoElenaPrada,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Lect. Univ. Dr. Prada Elena-Maria CV.pdf'
+      cvUrl: cvElenaPrada,
     },
     {
       name: 'SACALĂ Mihai Dumitru',
@@ -381,16 +456,16 @@ export function CadreDidactice() {
       email: 'mihai.sacala@csie.ase.ro',
       photo: photoMihaiSacala,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Sacală Mihai CV.pdf'
+      cvUrl: cvMihaiSacala,
     },
     {
       name: 'ȘERBAN Daniela',
       initials: 'ȘD',
       position: 'Profesor Universitar',
       email: 'daniela.serban@csie.ase.ro',
-      photo: '',
+      photo: photoDanielaSerban,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Șerban Daniela CV.pdf'
+      cvUrl: cvDanielaSerban,
     },
     {
       name: 'STRAT Vasile Alexandru',
@@ -398,34 +473,35 @@ export function CadreDidactice() {
       position: 'Profesor Universitar',
       email: 'vasile.strat@csie.ase.ro',
       photo: photoVasileStrat,
-      cvUrl: 'src/assets/cv/Prof. Univ. Dr. Strat Vasile Alexandru CV.pdf'
+      hasPage: false,
+      cvUrl: cvVasileStrat,
     },
     {
       name: 'ȚIȚAN Emilia',
       initials: 'ȚE',
       position: 'Profesor Universitar',
       email: 'emilia.titan@csie.ase.ro',
-      photo: '',
+      photo: photoEmiliaTitan,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Prof. univ. dr. Emilia Țițan CV.pdf'
+      cvUrl: cvEmiliaTitan,
     },
     {
       name: 'ȚOȚAN Lavinia Stefania',
       initials: 'ȚL',
       position: 'Lector Universitar',
       email: 'lavinia.totan@csie.ase.ro',
-      photo: '',
+      photo: photoLaviniaTotan,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Lect. Univ. Dr. Totan Lavinia-Ștefania CV.pdf'
+      cvUrl: cvLaviniaTotan,
     },
     {
       name: 'VASILE Răzvan',
       initials: 'VR',
       position: 'Asistent Universitar',
       email: 'razvan.vasile@csie.ase.ro',
-      photo: '',
+      photo: photoRazvanVasile,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Asis. Univ. Dr. Vasile Razvan CV.pdf'
+      cvUrl: cvRazvanVasile,
     },
     {
       name: 'VASILESCU Maria Denisa',
@@ -434,15 +510,15 @@ export function CadreDidactice() {
       email: 'maria.vasilescu@csie.ase.ro',
       photo: photoDenisaVasilescu,
       hasPage: true,
-      cvUrl: 'src/assets/cv/Conf. Univ. Dr. Vasilescu Maria Denisa CV.pdf'
-    }
+      cvUrl: cvDenisaVasilescu,
+    },
   ];
 
   const stats = [
     { number: '43', label: 'Cadre didactice' },
     { number: '5', label: 'Membri Consiliu' },
     { number: '100+', label: 'Publicații' },
-    { number: '20+', label: 'Ani experiență medie' }
+    { number: '20+', label: 'Ani experiență medie' },
   ];
 
   const getInitialsColor = (initials: string) => {
@@ -450,7 +526,7 @@ export function CadreDidactice() {
       'bg-gradient-to-br from-[#7209B7] to-[#4361EE]',
       'bg-gradient-to-br from-[#4361EE] to-[#4895EF]',
       'bg-gradient-to-br from-[#4895EF] to-[#4CC9F0]',
-      'bg-gradient-to-br from-[#4CC9F0] to-[#7209B7]'
+      'bg-gradient-to-br from-[#4CC9F0] to-[#7209B7]',
     ];
     return colors[initials.charCodeAt(0) % colors.length];
   };
