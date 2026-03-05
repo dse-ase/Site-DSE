@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, BookOpen, Users, Crown, FileText, ExternalLink } from 'lucide-react';
-
+//--
 // ── Poze profesori ────────────────────────────────────────────────────────────
 import photoErikaMarin        from '../assets/Poze Profesori/Erika-Marin.png';
 import photoSimonaApostu      from '../assets/Poze Profesori/Simona apostu.jfif.jpeg';
