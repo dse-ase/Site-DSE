@@ -4,7 +4,7 @@ import { ChevronDown, Menu, X, Sun, Moon } from "lucide-react";
 import { CampusMapPopup } from "./CampusMapPopup";
 import { useDarkMode } from "../contexts/DarkModeContext";
 import { scrollToSection } from "./scroll";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 
 interface HeaderProps {
   showContent?: boolean;
@@ -333,15 +333,21 @@ export default function Header({ showContent = true }: HeaderProps) {
                 Cercetare
               </a>
 
-              <a
-                href="/#contact"
-                className="text-lg text-gray-300 hover:text-[#4CC9F0] hover:scale-105 transition-all duration-200 border-r border-[whitesmoke] pr-8"
-              >
-                Contact
-              </a>
+{/* În interiorul <nav className="hidden lg:flex ..."> */}
+<a
+  href="#contact"
+  onClick={(e) => {
+    e.preventDefault();
+    scrollToSection("contact");
+  }}
+  className="text-lg text-gray-300 hover:text-[#4CC9F0] hover:scale-105 transition-all duration-200 border-r border-[whitesmoke] pr-8 cursor-pointer"
+>
+  Contact
+</a>
 
               <a
-                href="#/erasmus"
+                href="https://csie.ase.ro/oferta-de-mobilitati-erasmus/"
+                target= "_blank"
                 className="px-5 py-2.5 text-white rounded-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-base font-medium"
                 style={{
                   background:
@@ -558,16 +564,20 @@ export default function Header({ showContent = true }: HeaderProps) {
                     Cercetare
                   </a>
 
+<a
+  href="#contact"
+  onClick={(e) => {
+    e.preventDefault();
+    setIsMenuOpen(false); // Închidem meniul întâi
+    scrollToSection("contact"); // Executăm scroll-ul
+  }}
+  className="block py-2 text-white font-semibold hover:text-[#4CC9F0] transition-colors text-center cursor-pointer"
+>
+  Contact
+</a>
                   <a
-                    href="/#contact"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block py-2 text-white font-semibold hover:text-[#4CC9F0] transition-colors text-center"
-                  >
-                    Contact
-                  </a>
-
-                  <a
-                    href="#/erasmus"
+                    href="https://csie.ase.ro/oferta-de-mobilitati-erasmus/"
+                    target="_blank"
                     onClick={() => setIsMenuOpen(false)}
                     className="block py-2 px-4 text-center text-white rounded-md transition-all font-medium"
                     style={{
