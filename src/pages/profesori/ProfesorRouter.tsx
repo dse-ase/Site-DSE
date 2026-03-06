@@ -39,6 +39,7 @@ import { RazvanVasilePage } from './razvan-vasile';
 import { VasileStratPage } from './strat-vasile';
 import { EduardMantaPage } from './eduard-manta';
 import { NicholasAlexanderPage } from './nicholas-alexander';
+import { IleanuBogdanPage } from './ileanu-bogdan';
 import { JSX } from 'react';
 
 // Component simplu pentru profesorii în așteptare (fără date false)
@@ -118,7 +119,7 @@ const profesorRoutes: Record<string, () => JSX.Element> = {
   'daniela-serban': () => <DanielaSerbanPage />,
   'razvan-vasile': () => <RazvanVasilePage />,
   'nicholas-alexander': () => <NicholasAlexanderPage/>,
-  'bogdan-ileanu': () => <ProfesorComingSoon name="ILEANU Bogdan" email="bogdan.ileanu@csie.ase.ro" />,
+  'bogdan-ileanu': () => <IleanuBogdanPage/>,
   'eduard-manta': () => <EduardMantaPage/>,
   'andrei-parvan': () => <ProfesorComingSoon name="PÂRVAN Andrei" email="andrei.parvan@csie.ase.ro" />,
   'vasile-strat': () => <VasileStratPage/>,

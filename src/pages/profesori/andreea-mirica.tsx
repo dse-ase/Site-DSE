@@ -110,7 +110,10 @@ export function AndreeaMiricaPage() {
         tip: "LinkedIn",
         url: "https://www.linkedin.com/in/andreea-mirica-b4a101b8",
       },
-      "Google Scholar: Andreea Mirica - Google Scholar",
+      {
+        tip: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=ukq5h34AAAAJ&hl=en",
+      },
       { tip: "ORCID", url: "https://orcid.org/0000-0002-3794-1387" },
     ],
   };
