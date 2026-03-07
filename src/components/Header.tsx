@@ -5,7 +5,7 @@ import { CampusMapPopup } from "./CampusMapPopup";
 import { useDarkMode } from "../contexts/DarkModeContext";
 import { scrollToSection } from "./scroll";
 import logo from "../assets/logo.png";
-
+// 
 interface HeaderProps {
   showContent?: boolean;
 }
