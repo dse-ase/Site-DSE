@@ -2,13 +2,12 @@ import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Imports imagini slideshow
 import imgCSIE from "../assets/CSIE.jpg";
 import imgGradinaCSIE from "../assets/gradinacsie.jpg";
 import imgASE from "../assets/ASE.jpg";
 import imgGradinaCSIE2 from "../assets/gradina csie 2.jpg";
 
-const slideImages = [imgCSIE, imgGradinaCSIE, imgASE, imgGradinaCSIE2];
+const slideImages = [imgCSIE, imgGradinaCSIE, imgASE, imgGradinaCSIE2, imgCSIE];
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,7 +16,6 @@ export default function HeroSection() {
     const interval = setInterval(() => {
       setCurrentSlide((prevIndex) => (prevIndex + 1) % slideImages.length);
     }, 6700);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -47,8 +45,7 @@ export default function HeroSection() {
                 Departamentul de{" "}
                 <span
                   style={{
-                    background:
-                      "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
+                    background: "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -61,8 +58,7 @@ export default function HeroSection() {
                 Departamentul de{" "}
                 <span
                   style={{
-                    background:
-                      "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
+                    background: "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -82,8 +78,7 @@ export default function HeroSection() {
               }}
             >
               <span className="dark:hidden">
-                Educaţie, cercetare şi analiză cantitativă pentru economia
-                modernă
+                Educaţie, cercetare și analiză cantitativă pentru economia modernă
               </span>
               <span
                 className="hidden dark:inline"
@@ -92,8 +87,7 @@ export default function HeroSection() {
                   color: "#e5e7eb",
                 }}
               >
-                Educaţie, cercetare şi analiză cantitativă pentru economia
-                modernă
+                Educaţie, cercetare și analiză cantitativă pentru economia modernă
               </span>
             </p>
           </motion.div>
@@ -105,7 +99,10 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex-1 w-full slideshow-wrapper"
           >
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl group slideshow-container">
+            <div
+              className="relative w-full rounded-2xl overflow-hidden shadow-2xl group slideshow-container"
+              style={{ aspectRatio: "4/3" }}
+            >
               {slideImages.map((image, index) => (
                 <div
                   key={index}
@@ -118,7 +115,7 @@ export default function HeroSection() {
                   <img
                     src={image}
                     alt={`ASE Slide ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain bg-white dark:bg-gray-900"
                   />
                 </div>
               ))}

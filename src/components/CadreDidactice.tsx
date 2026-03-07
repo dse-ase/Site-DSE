@@ -469,7 +469,7 @@ export function CadreDidactice() {
     {
       name: "SACALĂ Mihai Dumitru",
       initials: "SM",
-      position: "Asistent Universitar",
+      position: "Profesor Universitar",
       email: "mihai.sacala@csie.ase.ro",
       photo: photoMihaiSacala,
       hasPage: true,
@@ -571,7 +571,7 @@ export function CadreDidactice() {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="mt-3  bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -579,7 +579,7 @@ export function CadreDidactice() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3 }}
-          className="text-center mb-16"
+          className="text-center mb-4"
         >
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
             <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -737,7 +737,7 @@ export function CadreDidactice() {
           <div className="flex items-center justify-center gap-2 mb-8">
             <BookOpen className="w-6 h-6 text-[#4361EE]" />
             <h3 className="text-[#3A0CA3] dark:text-[#C77DFF]">
-              Toate Cadrele Didactice
+              Cadrele Didactice
             </h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -786,6 +786,34 @@ export function CadreDidactice() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+        {/* Secretarul Departamentului */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, delay: 0.18 }}
+          className="mt-16"
+        >
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <BookOpen className="w-5 h-5 text-[#4895EF]" />
+            <h3 className="text-[#3A0CA3] dark:text-[#C77DFF] text-xl">
+              Secretarul Departamentului
+            </h3>
+          </div>
+          <div className="max-w-2xl mx-auto rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
+            <div className="flex flex-col items-center text-center gap-1">
+              <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0]">
+                BURCIU Diana
+              </h4>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
+                diana.burciu@ase.ro
+              </p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
+                +40 21 319 19 00
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

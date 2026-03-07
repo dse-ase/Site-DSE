@@ -118,7 +118,7 @@ export function DoctoralProgram() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[#7209B7] dark:text-[#4CC9F0] hover:text-[#F72585] dark:hover:text-[#F72585] transition-colors group mt-4"
           >
-            Vezi Școala Doctorală DSE
+            Vezi Școala Doctorală CSE
             <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
