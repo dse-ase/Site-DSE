@@ -794,7 +794,7 @@ export function CadreDidactice() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.18 }}
-          className="mt-16"
+          className="mt-16 mb-20"
         >
           <div className="flex items-center justify-center gap-2 mb-8">
             <BookOpen className="w-5 h-5 text-[#4895EF]" />
