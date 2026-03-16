@@ -77,7 +77,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" style={{ marginTop: "1.5cm" }}>
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8">
               <MessageCircle className="w-4 h-4" />
               <span className="text-sm">TESTIMONIALE</span>

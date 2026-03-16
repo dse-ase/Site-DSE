@@ -30,8 +30,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative overflow-hidden bg-white dark:bg-gray-900 py-10 sm:py-16 lg:py-20 section-padding-mobile">
-      <div className="relative z-10 px-4 w-full px-mobile-4">
+<div className="relative overflow-hidden bg-white dark:bg-gray-900 py-10 sm:py-16 lg:py-20 section-padding-mobile w-full max-w-full">      <div className="relative z-10 px-4 w-full px-mobile-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 gap-mobile-4">
           {/* Left Side - Text */}
           <motion.div

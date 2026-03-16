@@ -34,6 +34,20 @@ const macrodata = [
     icon: '🌍'
   },
   {
+    name: 'FMI — Fondul Monetar Internațional',
+    description: 'Platforma de date a FMI oferă acces la statistici financiare internaționale, previziuni economice, date privind balanța de plăți și indicatori de stabilitate financiară pentru peste 190 de țări membre.',
+    url: 'https://data.imf.org/en',
+    color: 'from-[#3F37C9] via-[#4361EE] to-[#4895EF]',
+    icon: '💱'
+  },
+  {
+    name: 'BCE — Banca Centrală Europeană',
+    description: 'Banca Centrală Europeană publică date statistice privind politica monetară, ratele dobânzilor, agregaatele monetare, cursurile de schimb și stabilitatea financiară în zona euro.',
+    url: 'https://www.ecb.europa.eu/home/html/index.en.html',
+    color: 'from-[#4895EF] via-[#4CC9F0] to-[#3F37C9]',
+    icon: '🏛️'
+  },
+  {
     name: 'Data Sweep',
     description: 'Platformă pentru colectarea și analiza datelor din surse multiple. Instrumente pentru prelucrarea și vizualizarea datelor economice.',
     url: 'https://datasweep.app/',
@@ -61,17 +75,18 @@ export default function DatabasesPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <SimpleHeader/>
-      
+      <SimpleHeader />
+
       <main className="pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
+            style={{ marginTop: '1.5cm' }}
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
               <Database className="w-4 h-4" />
@@ -99,8 +114,9 @@ export default function DatabasesPage() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {macrodata.map((db, index) => (
+            {/* First 6 in 2-col grid */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              {macrodata.slice(0, 6).map((db, index) => (
                 <motion.a
                   key={db.name}
                   href={db.url}
@@ -109,37 +125,58 @@ export default function DatabasesPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className={`group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700 ${
-                    index === 4 ? 'md:col-span-2 md:max-w-[calc(50%-0.75rem)] md:mx-auto' : ''
-                  }`}
+                  className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-                  
                   <div className="p-8 relative">
-                    {/* Icon */}
                     <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${db.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                       <span className="text-3xl">{db.icon}</span>
                     </div>
-                    
-                    {/* Content */}
                     <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
                       {db.name}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[80px]">
                       {db.description}
                     </p>
-                    
-                    {/* CTA */}
                     <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#4CC9F0] font-semibold">
                       <span>Vizitează platforma</span>
                       <ExternalLink className="w-5 h-5" />
                     </div>
                   </div>
-
-                  {/* Decorative corner */}
                   <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${db.color} opacity-10 rounded-bl-full`}></div>
                 </motion.a>
               ))}
+            </div>
+
+            {/* Last item centered */}
+            <div className="flex justify-center">
+              <motion.a
+                href={macrodata[6].url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700 w-full md:w-[calc(50%-0.75rem)]"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${macrodata[6].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                <div className="p-8 relative">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${macrodata[6].color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-3xl">{macrodata[6].icon}</span>
+                  </div>
+                  <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
+                    {macrodata[6].name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[80px]">
+                    {macrodata[6].description}
+                  </p>
+                  <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#4CC9F0] font-semibold">
+                    <span>Vizitează platforma</span>
+                    <ExternalLink className="w-5 h-5" />
+                  </div>
+                </div>
+                <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${macrodata[6].color} opacity-10 rounded-bl-full`}></div>
+              </motion.a>
             </div>
           </motion.div>
 
@@ -173,24 +210,18 @@ export default function DatabasesPage() {
                   className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-                  
                   <div className="p-8 relative">
                     <div className="flex items-start gap-6">
-                      {/* Icon */}
                       <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${db.color} group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                         <span className="text-3xl">{db.icon}</span>
                       </div>
-                      
                       <div className="flex-1">
-                        {/* Content */}
                         <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
                           {db.name}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                           {db.description}
                         </p>
-                        
-                        {/* CTA */}
                         <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#4CC9F0] font-semibold">
                           <span>Vizitează platforma</span>
                           <ExternalLink className="w-5 h-5" />
@@ -198,8 +229,6 @@ export default function DatabasesPage() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Decorative corner */}
                   <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${db.color} opacity-10 rounded-bl-full`}></div>
                 </motion.a>
               ))}

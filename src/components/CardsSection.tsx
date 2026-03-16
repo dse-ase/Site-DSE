@@ -143,7 +143,7 @@ export function CardsSection() {
             <ul className="space-y-4 card-section-list">
               <li>
                 <a
-                  href="#/icas"
+                  href="#/cercetare"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Conferința ICAS</span>
@@ -151,7 +151,7 @@ export function CardsSection() {
               </li>
               <li>
                 <a
-                  href="#/jses"
+                  href="#/cercetare"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Revista JSES</span>
@@ -159,10 +159,26 @@ export function CardsSection() {
               </li>
               <li>
                 <a
-                  href="#/centrul-sondaje"
+                  href="#/cercetare"
                   className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Centrul de sondaje</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#/cercetare"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                >
+                  • <span className="font-medium">Data Science Lab</span>
+                </a>
+              </li>
+                            <li>
+                <a
+                  href="#/cercetare"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                >
+                  • <span className="font-medium">Revista ECOCIB </span>
                 </a>
               </li>
             </ul>

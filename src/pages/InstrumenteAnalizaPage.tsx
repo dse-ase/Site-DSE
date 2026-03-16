@@ -4,7 +4,16 @@ import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
 import { ExternalLink, Code2, Download } from 'lucide-react';
 
-const instrumente = [
+interface Tool {
+  name: string;
+  description: string;
+  url: string;
+  color: string;
+  icon: string;
+  category: string;
+}
+
+const instrumente: Tool[] = [
   {
     name: 'RStudio',
     description: 'Mediu integrat de dezvoltare (IDE) pentru limbajul R, esențial pentru analiză statistică avansată și vizualizare de date. Include editor de cod, console, debugger și workspace manager.',
@@ -38,6 +47,38 @@ const instrumente = [
     category: 'Analiză Spațială'
   },
   {
+    name: 'EViews',
+    description: 'Software econometric de referință pentru analiza seriilor de timp, modele VAR, ARCH/GARCH și previziuni macroeconomice. Utilizat extensiv în cercetare economică și instituții financiare internaționale.',
+    url: 'https://www.eviews.com/home.html',
+    color: 'from-[#3F37C9] via-[#4361EE] to-[#4895EF]',
+    icon: '📉',
+    category: 'Econometrie'
+  },
+  {
+    name: 'SPSS',
+    description: 'Platformă statistică IBM de referință pentru cercetare socială și economică. Oferă analize descriptive, regresii, analize factoriale și clustering, cu interfață vizuală accesibilă.',
+    url: 'https://www.ibm.com/spss',
+    color: 'from-[#4CC9F0] via-[#4895EF] to-[#4361EE]',
+    icon: '🔬',
+    category: 'Statistică Aplicată'
+  },
+  {
+    name: 'JDemetra+',
+    description: 'Instrument oficial recomandat de Eurostat și BCE pentru ajustarea sezonieră și analiza seriilor de timp. Implementează metodele X-13ARIMA-SEATS și TRAMO/SEATS, utilizat în statistică oficială.',
+    url: 'https://jdemetra-new-documentation.netlify.app/',
+    color: 'from-[#B5179E] via-[#7209B7] to-[#3A0CA3]',
+    icon: '📅',
+    category: 'Serii de Timp'
+  },
+  {
+    name: 'Stata',
+    description: 'Software statistic complet pentru econometrie, analize panel, date longitudinale și modele cu variabile instrumentale. Foarte apreciat în cercetarea academică și publicațiile științifice de top.',
+    url: 'https://www.stata.com/',
+    color: 'from-[#F72585] via-[#B5179E] to-[#7209B7]',
+    icon: '📐',
+    category: 'Econometrie & Panel'
+  },
+  {
     name: 'Excel Data Viz',
     description: 'Platformă cu resurse și tutoriale pentru vizualizarea datelor în Excel. Template-uri profesionale, grafice interactive și best practices pentru analiza și prezentarea datelor.',
     url: 'https://exceldataviz.com/',
@@ -47,6 +88,50 @@ const instrumente = [
   }
 ];
 
+function ToolCard({ tool, index }: { tool: Tool; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
+    >
+      <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+
+      <div className="p-8 relative">
+        <div className="flex items-start justify-between mb-6">
+          <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${tool.color} group-hover:scale-110 transition-transform duration-300`}>
+            <span className="text-4xl">{tool.icon}</span>
+          </div>
+          <span className="text-xs bg-[#4CC9F0]/20 dark:bg-[#4CC9F0]/10 text-[#4361EE] dark:text-[#4CC9F0] px-3 py-1 rounded-full font-medium">
+            {tool.category}
+          </span>
+        </div>
+
+        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
+          {tool.name}
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[100px]">
+          {tool.description}
+        </p>
+
+        <a
+          href={tool.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold"
+        >
+          <Download className="w-5 h-5" />
+          <span>Descarcă acum</span>
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      </div>
+
+      <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${tool.color} opacity-10 rounded-bl-full`}></div>
+    </motion.div>
+  );
+}
+
 export default function InstrumenteAnalizaPage() {
   const [, setShowContent] = useState(false);
 
@@ -54,13 +139,16 @@ export default function InstrumenteAnalizaPage() {
     setShowContent(true);
   }, []);
 
+  const gridTools = instrumente.slice(0, 8);
+  const centeredTool = instrumente[8];
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <SimpleHeader/>
-      
+      <SimpleHeader />
+
       <main className="pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -68,8 +156,8 @@ export default function InstrumenteAnalizaPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8">
-              <Code2 className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8" style={{ marginTop: "1.5cm" }}>
+              <Code2 className="w-4 h-8"/>
               <span className="text-sm">INSTRUMENTE</span>
             </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -77,106 +165,22 @@ export default function InstrumenteAnalizaPage() {
             </p>
           </motion.div>
 
-          {/* Tool Cards */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {instrumente.slice(0, 4).map((tool, index) => (
-              <motion.div
-                key={tool.name}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-                
-                <div className="p-8 relative">
-                  {/* Header Section */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${tool.color} group-hover:scale-110 transition-transform duration-300`}>
-                      <span className="text-4xl">{tool.icon}</span>
-                    </div>
-                    <span className="text-xs bg-[#4CC9F0]/20 dark:bg-[#4CC9F0]/10 text-[#4361EE] dark:text-[#4CC9F0] px-3 py-1 rounded-full font-medium">
-                      {tool.category}
-                    </span>
-                  </div>
-                  
-                  {/* Content */}
-                  <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
-                    {tool.name}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[100px]">
-                    {tool.description}
-                  </p>
-                  
-                  {/* CTA Button */}
-                  <a
-                    href={tool.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold"
-                  >
-                    <Download className="w-5 h-5" />
-                    <span>Descarcă acum</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </div>
-
-                {/* Decorative corner */}
-                <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${tool.color} opacity-10 rounded-bl-full`}></div>
-              </motion.div>
+          {/* Tool Cards - 2 col grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {gridTools.map((tool, index) => (
+              <ToolCard key={tool.name} tool={tool} index={index} />
             ))}
           </div>
 
           {/* Excel Data Viz - Centered */}
           <div className="flex justify-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700 w-full md:w-1/2"
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${instrumente[4].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-              
-              <div className="p-8 relative">
-                {/* Header Section */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${instrumente[4].color} group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="text-4xl">{instrumente[4].icon}</span>
-                  </div>
-                  <span className="text-xs bg-[#4CC9F0]/20 dark:bg-[#4CC9F0]/10 text-[#4361EE] dark:text-[#4CC9F0] px-3 py-1 rounded-full font-medium">
-                    {instrumente[4].category}
-                  </span>
-                </div>
-                
-                {/* Content */}
-                <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
-                  {instrumente[4].name}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[100px]">
-                  {instrumente[4].description}
-                </p>
-                
-                {/* CTA Button */}
-                <a
-                  href={instrumente[4].url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold"
-                >
-                  <Download className="w-5 h-5" />
-                  <span>Descarcă acum</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-
-              {/* Decorative corner */}
-              <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${instrumente[4].color} opacity-10 rounded-bl-full`}></div>
-            </motion.div>
+            <div className="w-full md:w-1/2">
+              <ToolCard tool={centeredTool} index={8} />
+            </div>
           </div>
 
           {/* Info Boxes */}
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Installation Guide */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -190,13 +194,12 @@ export default function InstrumenteAnalizaPage() {
                 <div>
                   <h4 className="text-xl mb-2 text-[#3A0CA3] dark:text-[#4CC9F0]">Ghid de instalare</h4>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Toate instrumentele sunt gratuite pentru studenți! Urmează instrucțiunile de instalare de pe site-urile oficiale. Pentru PyCharm, poți beneficia de licență educațională gratuită prin JetBrains Student Program.
+                    Multe dintre instrumente sunt gratuite pentru studenți! Urmează instrucțiunile de instalare de pe site-urile oficiale. Pentru PyCharm, poți beneficia de licență educațională gratuită prin JetBrains Student Program.
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Course Support */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { SimpleHeader } from '../components/SimpleHeader';
-import { Footer } from '../components/Footer';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
+import { SimpleHeader } from "../components/SimpleHeader";
+import { Footer } from "../components/Footer";
+import { Calendar, ArrowRight } from "lucide-react";
 
 export default function ActivitatiViitoarePage() {
   const [, setShowContent] = useState(false);
@@ -14,33 +14,49 @@ export default function ActivitatiViitoarePage() {
   const evenimente = [
     {
       id: 1,
-      titlu: 'Programul de Mobilitate EMOS lansat: finanțare pentru stagii de practică transfrontaliere și evenimente de Statistică Oficială',
-      data: '15 Decembrie 2025',
-      link: 'https://asds-csie.ase.ro/emos-mobility-programme-launched-funding-for-cross-border-internships-and-official-statistics-events/',
-      categorie: 'Mobilitate'
+      titlu:
+        "Programul de Mobilitate EMOS lansat: finanțare pentru stagii de practică transfrontaliere și evenimente de Statistică Oficială",
+      data: "15 Decembrie 2025",
+      link: "https://asds-csie.ase.ro/emos-mobility-programme-launched-funding-for-cross-border-internships-and-official-statistics-events/",
+      categorie: "Mobilitate",
     },
     {
       id: 2,
-      titlu: 'Sesiunea de Comunicări Științifice 2026',
-      data: '1-2 aprilie 2026',
-      link: 'https://csie.ase.ro/sesiunea-de-comunicari-stiintifice-2026/',
-      categorie: 'Eveniment'
-    }
+      titlu: "Sesiunea de Comunicări Științifice 2026",
+      data: "1-2 aprilie 2026",
+      link: "https://csie.ase.ro/sesiunea-de-comunicari-stiintifice-2026/",
+      categorie: "Eveniment",
+    },
+    {
+      id: 3,
+      titlu: "Olimpiada de Statistică 2025-2026",
+      data: "2025-2026",
+      link: "https://insse.ro/cms/ro/esc-olimpiada-2025-2026",
+      categorie: "Competiție",
+    },
+    {
+      id: 4,
+      titlu:
+        "Data&Lunch Seria 3 — ediție dedicată celor pasionați de date, analiză și știință aplicată",
+      data: "Martie-Aprilie 2026",
+      link: "https://www.linkedin.com/posts/business-economics-data-science-lab_%F0%9D%97%97%F0%9D%97%94%F0%9D%97%A7%F0%9D%97%94%F0%9D%97%9F%F0%9D%97%A8%F0%9D%97%A1%F0%9D%97%96%F0%9D%97%9B-%F0%9D%97%A6%F0%9D%97%B2%F0%9D%97%BF%F0%9D%97%B6%F0%9D%97%AE-%F0%9D%9F%AF-%F0%9D%97%BA%F0%9D%97%AE%F0%9D%97%BF%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B2%F0%9D%97%AE%F0%9D%97%BD%F0%9D%97%BF%F0%9D%97%B6%F0%9D%97%B9%F0%9D%97%B6%F0%9D%97%B2-activity-7434870483466121216-WQHV?utm_source=share&utm_medium=member_desktop&rcm=ACoAABAgoqwB-mZfSkZL-dS5DSRsxVdSzdGN-Kw",
+      categorie: "Data&Lunch",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
-      <SimpleHeader/>
-      
+      <SimpleHeader />
+
       <main className="pb-24 flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
+            style={{ marginTop: "1.5cm" }}
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8">
               <Calendar className="w-4 h-4" />
@@ -92,7 +108,6 @@ export default function ActivitatiViitoarePage() {
               </motion.article>
             ))}
           </div>
-
         </div>
       </main>
 

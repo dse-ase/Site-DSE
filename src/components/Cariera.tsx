@@ -57,6 +57,7 @@ export function Cariera() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
+          style={{ marginTop: "1.5cm" }}
         >
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
             <Briefcase className="w-4 h-4" />

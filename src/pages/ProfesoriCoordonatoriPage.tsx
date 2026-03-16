@@ -92,6 +92,7 @@ export default function ProfesoriCoordonatoriPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-12 sm:mb-16"
+            style={{ marginTop: "1.5cm" }}
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
               <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -108,6 +109,7 @@ export default function ProfesoriCoordonatoriPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-16"
+            
           >
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-[#4CC9F0]/20 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-6">

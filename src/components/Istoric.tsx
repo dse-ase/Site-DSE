@@ -4,7 +4,7 @@ import istoricPhoto from "../assets/IStoric.png";
 
 export function Istoric() {
   return (
-    <section id="istoric" className="pt-[0.5cm] pb-24 bg-white dark:bg-gray-900">
+    <section id="istoric" className="pt-[1.5cm] pb-24 bg-white dark:bg-gray-900">
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Header */}

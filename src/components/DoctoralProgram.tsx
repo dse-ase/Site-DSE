@@ -29,6 +29,7 @@ export function DoctoralProgram() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
+          
         >
           <div className="inline-block px-6 py-2 rounded-full mb-6 border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800">
             <span className="text-sm uppercase tracking-wider text-gray-600 dark:text-gray-300 font-medium">

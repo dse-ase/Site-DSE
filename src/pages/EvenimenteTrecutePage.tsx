@@ -1,8 +1,15 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { SimpleHeader } from '../components/SimpleHeader';
-import { Footer } from '../components/Footer';
-import { Calendar, ArrowRight, Award, BookOpen, Users, GraduationCap } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
+import { SimpleHeader } from "../components/SimpleHeader";
+import { Footer } from "../components/Footer";
+import {
+  Calendar,
+  ArrowRight,
+  Award,
+  BookOpen,
+  Users,
+  GraduationCap,
+} from "lucide-react";
 
 export default function EvenimenteTrecutePage() {
   const [, setShowContent] = useState(false);
@@ -14,59 +21,63 @@ export default function EvenimenteTrecutePage() {
   const evenimente = [
     {
       id: 1,
-      titlu: 'Data & Lunch Seria 2: Unde ideile devin cunoaștere',
-      data: '15 Noiembrie 2025',
-      link: 'https://asds-csie.ase.ro/datalunch-seminar-stiintific-saptamanal-noiembrie-2025/',
-      categorie: 'Seminar',
-      icon: BookOpen
+      titlu: "Data & Lunch Seria 2: Unde ideile devin cunoaștere",
+      data: "15 Noiembrie 2025",
+      link: "https://asds-csie.ase.ro/datalunch-seminar-stiintific-saptamanal-noiembrie-2025/",
+      categorie: "Seminar",
+      icon: BookOpen,
     },
     {
       id: 2,
-      titlu: 'Data&Lunch – Seria 1: Dacă vrei să înveți mai mult decât cursurile obișnuite',
-      data: '10 Octombrie 2025',
-      link: 'https://asds-csie.ase.ro/__trashed/',
-      categorie: 'Seminar',
-      icon: BookOpen
+      titlu:
+        "Data&Lunch – Seria 1: Dacă vrei să înveți mai mult decât cursurile obișnuite",
+      data: "10 Octombrie 2025",
+      link: "https://asds-csie.ase.ro/__trashed/",
+      categorie: "Seminar",
+      icon: BookOpen,
     },
     {
       id: 3,
-      titlu: 'Atelier de instruire aplicativă „Resurse educaționale interactive și inovative dedicate dezvoltării abilităților practice ale studenților în domeniul analizei datelor"',
-      data: '14 Septembrie 2023',
-      link: 'https://asds-csie.ase.ro/atelier-de-instruire-aplicativa-resurse-educationale-interactive-si-inovative-dedicate-dezvoltarii-abilitatilor-practice-ale-studentilor-in-domeniul-analizei-datelor-covasna-06/',
-      categorie: 'Workshop',
-      icon: Users
+      titlu:
+        'Atelier de instruire aplicativă „Resurse educaționale interactive și inovative dedicate dezvoltării abilităților practice ale studenților în domeniul analizei datelor"',
+      data: "14 Septembrie 2023",
+      link: "https://asds-csie.ase.ro/atelier-de-instruire-aplicativa-resurse-educationale-interactive-si-inovative-dedicate-dezvoltarii-abilitatilor-practice-ale-studentilor-in-domeniul-analizei-datelor-covasna-06/",
+      categorie: "Workshop",
+      icon: Users,
     },
     {
       id: 4,
-      titlu: 'Școala de Vară „Instrumente avansate de analiză a datelor aplicate în domeniul dezvoltării sustenabile"',
-      data: '5 Octombrie 2022',
-      link: 'https://asds-csie.ase.ro/scoala-de-vara-instrumente-avansate-de-analiza-a-datelor-aplicate-in-domeniul-dezvoltarii-sustenabile-covasna-31-august-2022-03-septembrie-2022/',
-      categorie: 'Școală de Vară',
-      icon: GraduationCap
+      titlu:
+        'Școala de Vară „Instrumente avansate de analiză a datelor aplicate în domeniul dezvoltării sustenabile"',
+      data: "5 Octombrie 2022",
+      link: "https://asds-csie.ase.ro/scoala-de-vara-instrumente-avansate-de-analiza-a-datelor-aplicate-in-domeniul-dezvoltarii-sustenabile-covasna-31-august-2022-03-septembrie-2022/",
+      categorie: "Școală de Vară",
+      icon: GraduationCap,
     },
     {
       id: 5,
-      titlu: 'ASE ocupă podiumul competiției Datathon WiDS – Women in Data Science", ediția 2023',
-      data: '13 Martie 2023',
-      link: 'https://asds-csie.ase.ro/ase-ocupa-podiumul-competitiei-datathon-wids-women-in-data-science-editia-2023/',
-      categorie: 'Competiție',
-      icon: Award
-    }
+      titlu:
+        'ASE ocupă podiumul competiției Datathon WiDS – Women in Data Science", ediția 2023',
+      data: "13 Martie 2023",
+      link: "https://asds-csie.ase.ro/ase-ocupa-podiumul-competitiei-datathon-wids-women-in-data-science-editia-2023/",
+      categorie: "Competiție",
+      icon: Award,
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
       <SimpleHeader />
-      
+
       <main className="pb-24 flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
+            style={{ marginTop: "1.5cm" }}
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8">
               <Calendar className="w-4 h-4" />
@@ -126,7 +137,6 @@ export default function EvenimenteTrecutePage() {
               );
             })}
           </div>
-
         </div>
       </main>
 

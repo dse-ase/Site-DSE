@@ -22,7 +22,8 @@
       }
     ],
     "typescript-config/consistent-casing": "off",
-    "disown-opener": "off"
+    "disown-opener": "off",
+    "meta-viewport": "off"
   },
   "browserslist": [
     "defaults",
