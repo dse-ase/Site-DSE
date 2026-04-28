@@ -7,9 +7,8 @@ import imgGradinaCSIE from "../assets/gradinacsie.jpg";
 import imgASE from "../assets/ASE.jpg";
 import imgGradinaCSIE2 from "../assets/gradina csie 2.jpg";
 import imgSimulare from "../assets/simulare.png";
-import salaDinAse from "../assets/salaDInAse.jpg";
 
-const slideImages = [imgCSIE, imgGradinaCSIE, imgASE, imgGradinaCSIE2, salaDinAse];
+const slideImages = [imgCSIE, imgGradinaCSIE, imgASE, imgGradinaCSIE2];
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);

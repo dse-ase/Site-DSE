@@ -577,7 +577,7 @@ export function SimpleHeader() {
                 </div>
                 <div className="flex items-center justify-center gap-6 pt-4 border-t border-white/20 mt-2">
                   <a
-                    href="https://instagram.com/dse.social/"
+                    href="https://www.instagram.com/dse_ase/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-200 hover:text-white transition-colors"
@@ -591,7 +591,7 @@ export function SimpleHeader() {
                     </svg>
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/departamentul-de-statistic%C4%83-%C8%99i-econometrie-0166403b9/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-200 hover:text-white transition-colors"
@@ -605,7 +605,7 @@ export function SimpleHeader() {
                     </svg>
                   </a>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/Statistica.Econometrie/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-200 hover:text-white transition-colors"
