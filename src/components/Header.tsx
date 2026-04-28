@@ -114,7 +114,7 @@ export default function Header({ showContent = true }: HeaderProps) {
                 className={`${isMobile ? "hidden" : "flex"} items-center gap-4 ml-4 pl-6 border-l-2 border-[whitesmoke]`}
               >
                 <a
-                  href="https://instagram.com/dse.social/"
+                  href="https://www.instagram.com/dse_ase/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
@@ -129,7 +129,7 @@ export default function Header({ showContent = true }: HeaderProps) {
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/departamentul-de-statistic%C4%83-%C8%99i-econometrie-0166403b9/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
@@ -144,7 +144,7 @@ export default function Header({ showContent = true }: HeaderProps) {
                   </svg>
                 </a>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/Statistica.Econometrie/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"

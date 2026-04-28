@@ -6,8 +6,10 @@ import imgCSIE from "../assets/CSIE.jpg";
 import imgGradinaCSIE from "../assets/gradinacsie.jpg";
 import imgASE from "../assets/ASE.jpg";
 import imgGradinaCSIE2 from "../assets/gradina csie 2.jpg";
+import imgSimulare from "../assets/simulare.png";
+import salaDinAse from "../assets/salaDinAse.jpg";
 
-const slideImages = [imgCSIE, imgGradinaCSIE, imgASE, imgGradinaCSIE2, imgCSIE];
+const slideImages = [imgCSIE, imgGradinaCSIE, imgASE, imgGradinaCSIE2, salaDinAse];
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,21 +32,23 @@ export default function HeroSection() {
   };
 
   return (
-<div className="relative overflow-hidden bg-white dark:bg-gray-900 py-10 sm:py-16 lg:py-20 section-padding-mobile w-full max-w-full">      <div className="relative z-10 px-4 w-full px-mobile-4">
+    <div className="relative overflow-hidden bg-white dark:bg-gray-900 py-10 sm:py-16 lg:py-20 section-padding-mobile w-full max-w-full">
+      <div className="relative z-10 px-4 w-full px-mobile-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 gap-mobile-4">
-          {/* Left Side - Text */}
+          {/* Left Side - Text + Simulare Button */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-center lg:text-left flex flex-col"
           >
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight hero-title">
               <span className="dark:hidden" style={{ color: "#22409a" }}>
                 Departamentul de{" "}
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
+                    background:
+                      "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -57,7 +61,8 @@ export default function HeroSection() {
                 Departamentul de{" "}
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
+                    background:
+                      "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -67,8 +72,9 @@ export default function HeroSection() {
                 </span>
               </span>
             </h1>
+
             <p
-              className="text-xl leading-relaxed hero-subtitle"
+              className="text-xl leading-relaxed hero-subtitle mb-8"
               style={{
                 color: "#22409a",
                 lineHeight: "1.6",
@@ -77,7 +83,8 @@ export default function HeroSection() {
               }}
             >
               <span className="dark:hidden">
-                Educaţie, cercetare și analiză cantitativă pentru economia modernă
+                Educaţie, cercetare și analiză cantitativă pentru economia
+                modernă
               </span>
               <span
                 className="hidden dark:inline"
@@ -86,9 +93,33 @@ export default function HeroSection() {
                   color: "#e5e7eb",
                 }}
               >
-                Educaţie, cercetare și analiză cantitativă pentru economia modernă
+                Educaţie, cercetare și analiză cantitativă pentru economia
+                modernă
               </span>
             </p>
+
+            {/* Simulare Examen Button */}
+            <div className="flex justify-center lg:justify-start mt-auto">
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => {
+                  /* adaugă navigarea dorită aici */
+                }}
+                className="focus:outline-none"
+                aria-label="Simulare Examen 16 Mai 2026"
+              >
+                <img
+                  src={imgSimulare}
+                  alt="Simulare Examen 16 Mai 2026"
+                  className="object-contain drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
+                  style={{ width: "220px", height: "220px", marginTop: "50px" }}
+                />
+              </motion.button>
+            </div>
           </motion.div>
 
           {/* Right Side - Image Slideshow */}

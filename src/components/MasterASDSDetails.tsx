@@ -21,6 +21,11 @@ const masterInfo = {
 
 const highlights = [
   {
+    title: "🏅 Acreditat EMOS",
+    description:
+      "Programul deține certificarea European Master in Official Statistics (EMOS), recunoscută la nivel european, oferind acces la stagii și rețele profesionale din statistica oficială.",
+  },
+  {
     title: "Data Science Modern",
     description:
       "Învață cele mai noi tehnici de Machine Learning, Big Data și AI aplicat în statistică economică.",
@@ -330,26 +335,34 @@ export function MasterASDSDetails() {
       className="min-h-screen bg-white dark:bg-gray-900 pb-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Program Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-          style={{ marginTop: "1.5cm" }}
-        >
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-            <div className="inline-block px-6 py-2 rounded-full border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800">
-              <span className="text-sm uppercase tracking-wider text-gray-600 dark:text-gray-300 font-medium">
-                {masterInfo.type}
-              </span>
-            </div>
-            <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border-2 border-[#7209B7] bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white">
-              <span className="text-sm font-semibold uppercase tracking-wider">
-                🏅 Certificat EMOS
-              </span>
-            </div>
-          </div>
+       {/* Program Header */}
+<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+  transition={{ duration: 0.6 }}
+  className="text-center mb-16"
+  style={{ marginTop: "1.5cm" }}
+>
+  <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+    <div className="inline-block px-6 py-2 rounded-full border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800">
+      <span className="text-sm uppercase tracking-wider text-gray-600 dark:text-gray-300 font-medium">
+        {masterInfo.type}
+      </span>
+    </div>
+    
+    {/* MODIFICARE AICI: Div-ul a devenit tag <a> */}
+    <a 
+      href="https://asds-csie.ase.ro/acreditari-si-parteneriate/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 px-6 py-2 rounded-full border-2 border-[#7209B7] bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white hover:scale-105 transition-transform duration-200 cursor-pointer shadow-md hover:shadow-lg"
+    >
+      <span className="text-sm font-semibold uppercase tracking-wider">
+        🏅 Certificat EMOS
+      </span>
+      <ExternalLink className="w-3 h-3" /> {/* Opțional: am adăugat o iconiță mică de link extern */}
+    </a>
+  </div>
           <h1 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-[#7209B7] via-[#F72585] to-[#4361EE] bg-clip-text text-transparent">
             {masterInfo.title}
           </h1>

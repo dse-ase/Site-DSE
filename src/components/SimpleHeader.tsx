@@ -26,14 +26,14 @@ export function SimpleHeader() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-const logoHeight =
-  windowWidth <= 440
-    ? "44px"
-    : windowWidth <= 768
-      ? "56px"
-      : windowWidth <= 1024
-        ? "64px"
-        : "72px";
+  const logoHeight =
+    windowWidth <= 440
+      ? "44px"
+      : windowWidth <= 768
+        ? "56px"
+        : windowWidth <= 1024
+          ? "64px"
+          : "72px";
 
   const navigateAndScroll = (sectionId: string) => {
     setIsMenuOpen(false);
@@ -87,7 +87,7 @@ const logoHeight =
 
               <div className="hidden lg:flex items-center gap-4 ml-4 pl-6 border-l-2 border-[whitesmoke]">
                 <a
-                  href="https://instagram.com/dse.social/"
+                  href="https://www.instagram.com/dse_ase/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
@@ -102,7 +102,7 @@ const logoHeight =
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/departamentul-de-statistic%C4%83-%C8%99i-econometrie-0166403b9/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
@@ -117,7 +117,7 @@ const logoHeight =
                   </svg>
                 </a>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/Statistica.Econometrie"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
@@ -242,7 +242,7 @@ const logoHeight =
                     href="https://biblioteca.ase.ro/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full text-left px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
+                    className="block w-full text-left px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
                     📖 Biblioteca ASE
                   </a>
