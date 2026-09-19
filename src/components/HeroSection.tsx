@@ -6,7 +6,6 @@ import imgCSIE from "../assets/CSIE.jpg";
 import imgGradinaCSIE from "../assets/gradinacsie.jpg";
 import imgASE from "../assets/ASE.jpg";
 import imgGradinaCSIE2 from "../assets/gradina csie 2.jpg";
-import examenAdmitere from "../assets/examen admitere.png";
 
 const slideImages = [imgCSIE, imgGradinaCSIE, imgASE, imgGradinaCSIE2];
 
@@ -34,7 +33,7 @@ export default function HeroSection() {
     <div className="relative overflow-hidden bg-white dark:bg-gray-900 py-10 sm:py-16 lg:py-20 section-padding-mobile w-full max-w-full">
       <div className="relative z-10 px-4 w-full px-mobile-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 gap-mobile-4">
-          {/* Left Side - Text + Simulare Button */}
+          {/* Left Side - Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -84,29 +83,6 @@ export default function HeroSection() {
                 modernă
               </span>
             </p>
-
-            {/* Simulare Examen Button */}
-            <div className="flex justify-center lg:justify-start mt-auto">
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => {
-                  /* adaugă navigarea dorită aici */
-                }}
-                className="focus:outline-none"
-                aria-label="Examen Admitere 21 iulie 2026"
-              >
-                <img
-                  src={examenAdmitere}
-                  alt="Examen Admitere 21 iulie 2026"
-                  className="object-contain drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
-                  style={{ width: "350px", height: "300px", marginTop: "50px" }}
-                />
-              </motion.button>
-            </div>
           </motion.div>
 
           {/* Right Side - Image Slideshow */}

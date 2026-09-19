@@ -37,7 +37,7 @@ npx tsc --noEmit -p tsconfig.json
 
 Use that form, **not `tsc -b`** — see the gotcha below about it emitting `vite.config.js`.
 
-- CI (`.github/workflows/static.yml`) on push to `main`: Node 20, `rm -rf node_modules package-lock.json && npm install --force`, `npm run build`, publish `build/` to Pages. Dependency resolution is expected to need `--force`.
+- CI (`.github/workflows/static2.yml`; `static.yml` is the same pipeline kept as manual-only) on push to `main`: Node 20, `rm -rf node_modules package-lock.json && npm install --force`, `npm run build`, publish `build/` to Pages. Dependency resolution is expected to need `--force`.
 
 ## Architecture
 
