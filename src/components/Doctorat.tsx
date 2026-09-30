@@ -8,7 +8,7 @@ import {
   X,
 } from "lucide-react";
 import DataLunch2 from "../assets/DataLunch2.jpg";
-import DataLunch1 from "../assets/DataLunch1.png";
+import DataLunch1 from "../assets/DataLunch1.jpg";
 
 export function Doctorat() {
   const [popupImage, setPopupImage] = useState<string | null>(null);
@@ -66,7 +66,7 @@ export function Doctorat() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-[#7209B7] rounded-3xl p-12 text-white mb-16 shadow-sm"
+          className="bg-[#7209B7] rounded-xl p-12 text-white mb-16 shadow-sm"
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -239,7 +239,7 @@ export function Doctorat() {
                       <span className="text-[#3A0CA3] dark:text-white">ONLINE:</span>{" "}
                       <a
                         href="mailto:emilia.titan@csie.ase.ro"
-                        className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#72EFDD] hover:underline transition-colors"
+                        className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:hover:text-[#4CC9F0] hover:underline transition-colors"
                       >
                         emilia.titan@csie.ase.ro
                       </a>
@@ -261,7 +261,7 @@ export function Doctorat() {
                       <span className="text-[#3A0CA3] dark:text-white">Email:</span>{" "}
                       <a
                         href="mailto:emilia.titan@csie.ase.ro"
-                        className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#72EFDD] hover:underline transition-colors"
+                        className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:hover:text-[#4CC9F0] hover:underline transition-colors"
                       >
                         emilia.titan@csie.ase.ro
                       </a>
@@ -273,7 +273,7 @@ export function Doctorat() {
                       <span className="text-[#3A0CA3] dark:text-white">Tel:</span>{" "}
                       <a
                         href="tel:+40213191901"
-                        className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#72EFDD] hover:underline transition-colors"
+                        className="inline-block py-1 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:hover:text-[#4CC9F0] hover:underline transition-colors"
                       >
                         +4 021 319 19 01, int. 324
                       </a>

@@ -138,12 +138,12 @@ html {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #4895ef 0%, #4cc9f0 100%);
+  background: #4895ef;
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #4361ee 0%, #4895ef 100%);
+  background: #4361ee;
 }
 
 .slideshow-container {
@@ -271,8 +271,9 @@ html {
     min-height: 44px;
   }
 
-  /* Punctele slideshow-ului au 8px; extindem zona de atingere fără
-     a le schimba aspectul. */
+  /* Punctele slideshow-ului au 8px; extindem zona de atingere la 24×44px
+     (WCAG 2.5.8) fără a le schimba aspectul. Containerul are gap 16px pe
+     mobil, deci zonele vecine nu se suprapun. */
   button.h-2 {
     position: relative;
   }
@@ -280,7 +281,7 @@ html {
   button.h-2::after {
     content: "";
     position: absolute;
-    inset: -18px -6px;
+    inset: -18px -8px;
   }
 }
 
@@ -532,23 +533,20 @@ html {
     font-size: 1rem !important;
   }
 
+  /* Cardurile de discipline (Master ASDS/ADA) pe telefon: doar layout.
+     Culorile vin din clasele Tailwind ale cardului, care au deja variante dark —
+     aici fusese forțat un fundal închis în ambele teme și un buton cu gradient. */
   .master-subject-card-mobile {
-    background: #1e293bcc !important;
-    border: 1px solid #47556980 !important;
-    border-radius: 1rem !important;
     margin-bottom: 1rem !important;
-    padding: 1.5rem !important;
+    padding: 1.25rem !important;
   }
 
   .master-subject-card-mobile h3 {
-    color: #fff !important;
     margin-bottom: .5rem !important;
     font-size: 1.125rem !important;
-    font-weight: 600 !important;
   }
 
   .master-subject-card-mobile p {
-    color: #9ca3af !important;
     margin-bottom: .75rem !important;
     font-size: .875rem !important;
   }
@@ -568,22 +566,9 @@ html {
   }
 
   .master-subject-card-mobile a {
-    color: #fff !important;
-    background: linear-gradient(to right, #4361ee, #4cc9f0) !important;
-    border-radius: .75rem !important;
     justify-content: center !important;
-    align-items: center !important;
-    gap: .5rem !important;
     width: 100% !important;
-    padding: .875rem 1rem !important;
-    font-weight: 500 !important;
-    transition: all .3s !important;
-    display: flex !important;
-  }
-
-  .master-subject-card-mobile a:hover {
-    transform: scale(1.02) !important;
-    box-shadow: 0 10px 25px -5px #4361ee4d !important;
+    padding: .75rem 1rem !important;
   }
 
   .image-mobile {
@@ -608,9 +593,10 @@ html {
     max-width: 100% !important;
   }
 
+  /* Pe telefon înălțimea vine din aspect-ratio 4/3 (inline pe element). Un 400px fix
+     la ~310px lățime lăsa benzi goale uriașe deasupra și dedesubtul fotografiilor. */
   .slideshow-container {
-    height: 400px !important;
-    min-height: 400px !important;
+    height: auto !important;
   }
 
   .cards-section-container {

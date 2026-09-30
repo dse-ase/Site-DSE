@@ -247,7 +247,7 @@ export function StudentiColaboratoriPage() {
                         href={student.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-bold text-lg text-[#047857] dark:text-[#34D399] hover:underline transition-all"
+                        className="inline-block py-1 font-bold text-lg text-[#047857] dark:text-[#34D399] hover:underline transition-colors"
                       >
                         {student.name}
                       </a>
@@ -261,7 +261,7 @@ export function StudentiColaboratoriPage() {
                     href="https://www.linkedin.com/in/maria-soare-9b6669381"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-bold text-lg text-[#047857] dark:text-[#34D399] hover:underline transition-all"
+                    className="inline-block py-1 font-bold text-lg text-[#047857] dark:text-[#34D399] hover:underline transition-colors"
                   >
                     SOARE-IONETE G G Maria-Gabriela
                   </a>

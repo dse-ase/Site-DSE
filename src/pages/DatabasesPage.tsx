@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
-import { ExternalLink, Database } from 'lucide-react';
+import { ExternalLink, Database, BarChart3, TrendingUp, Landmark, Globe, Coins, Building2, Layers, Users, Lightbulb } from 'lucide-react';
 
 const macrodata = [
   {
@@ -9,49 +9,49 @@ const macrodata = [
     description: 'Baza de date oficială a Uniunii Europene cu statistici economice, sociale și demografice pentru toate țările membre.',
     url: 'https://ec.europa.eu/eurostat',
     color: 'bg-[#7209B7]',
-    icon: '🇪🇺'
+    icon: BarChart3
   },
   {
     name: 'Tempo Online',
     description: 'Baza de date a INS România cu serii de timp și statistici naționale actualizate. Acces gratuit la date macroeconomice și demografice.',
     url: 'http://statistici.insse.ro:8077/tempo-online/',
     color: 'bg-[#7209B7]',
-    icon: '📈'
+    icon: TrendingUp
   },
   {
     name: 'BNR - Baza de Date Interactivă',
     description: 'Banca Națională a României oferă acces la indicatori economici și financiari. Date despre rata dobânzii, inflație, cursuri de schimb și statistici monetare.',
     url: 'https://www.bnr.ro/1074-baza-de-date-interactiva',
     color: 'bg-[#4361EE]',
-    icon: '🏦'
+    icon: Landmark
   },
   {
     name: 'World Bank Data',
     description: 'Cea mai comprehensivă colecție de date de dezvoltare la nivel global. Indicatori economici, sociali și de mediu pentru peste 200 de țări.',
     url: 'https://data.worldbank.org/',
     color: 'bg-[#7209B7]',
-    icon: '🌍'
+    icon: Globe
   },
   {
     name: 'FMI — Fondul Monetar Internațional',
     description: 'Platforma de date a FMI oferă acces la statistici financiare internaționale, previziuni economice, date privind balanța de plăți și indicatori de stabilitate financiară pentru peste 190 de țări membre.',
     url: 'https://data.imf.org/en',
     color: 'bg-[#3F37C9]',
-    icon: '💱'
+    icon: Coins
   },
   {
     name: 'BCE — Banca Centrală Europeană',
     description: 'Banca Centrală Europeană publică date statistice privind politica monetară, ratele dobânzilor, agregaatele monetare, cursurile de schimb și stabilitatea financiară în zona euro.',
     url: 'https://www.ecb.europa.eu/home/html/index.en.html',
-    color: 'bg-[#4895EF]',
-    icon: '🏛️'
+    color: 'bg-[#3F37C9]',
+    icon: Building2
   },
   {
     name: 'Data Sweep',
     description: 'Platformă pentru colectarea și analiza datelor din surse multiple. Instrumente pentru prelucrarea și vizualizarea datelor economice.',
     url: 'https://datasweep.app/',
     color: 'bg-[#7209B7]',
-    icon: '🧹'
+    icon: Layers
   }
 ];
 
@@ -60,8 +60,8 @@ const microdata = [
     name: 'European Social Survey',
     description: 'Sondaj academic bienal care măsoară atitudinile, credințele și comportamentele populației europene. Date individuale anonimizate pentru cercetare.',
     url: 'https://www.europeansocialsurvey.org/',
-    color: 'bg-[#4895EF]',
-    icon: '👥'
+    color: 'bg-[#3F37C9]',
+    icon: Users
   }
 ];
 
@@ -99,7 +99,7 @@ return (
           >
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 bg-[#7209B7] rounded-lg flex items-center justify-center">
-                <span className="text-white text-2xl">📊</span>
+                <BarChart3 className="w-6 h-6 text-white" aria-hidden="true" />
               </div>
               <div>
                 <h2 className="text-3xl text-[#3A0CA3] dark:text-[#4CC9F0]">Macrodate</h2>
@@ -118,14 +118,14 @@ return (
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className={`absolute inset-0 ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                   <div className="p-8 relative">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${db.color} mb-6 transition-transform duration-300`}>
-                      <span className="text-3xl">{db.icon}</span>
+                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl ${db.color} mb-6 transition-transform duration-300`}>
+                      <db.icon className="w-8 h-8 text-white" aria-hidden="true" />
                     </div>
-                    <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
+                    <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
                       {db.name}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[80px]">
@@ -150,14 +150,14 @@ return (
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700 w-full md:w-[calc(50%-0.75rem)]"
+                className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700 w-full md:w-[calc(50%-0.75rem)]"
               >
                 <div className={`absolute inset-0 ${macrodata[6].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                 <div className="p-8 relative">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${macrodata[6].color} mb-6 transition-transform duration-300`}>
-                    <span className="text-3xl">{macrodata[6].icon}</span>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl ${macrodata[6].color} mb-6 transition-transform duration-300`}>
+                    {(() => { const Icon = macrodata[6].icon; return <Icon className="w-8 h-8 text-white" aria-hidden="true" />; })()}
                   </div>
-                  <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
+                  <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
                     {macrodata[6].name}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[80px]">
@@ -181,8 +181,8 @@ return (
             className="mb-16"
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-[#4895EF] rounded-lg flex items-center justify-center">
-                <span className="text-white text-2xl">👥</span>
+              <div className="w-12 h-12 bg-[#3F37C9] rounded-lg flex items-center justify-center">
+                <Users className="w-6 h-6 text-white" aria-hidden="true" />
               </div>
               <div>
                 <h2 className="text-3xl text-[#3A0CA3] dark:text-[#4CC9F0]">Microdate</h2>
@@ -200,16 +200,16 @@ return (
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                  className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className={`absolute inset-0 ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                   <div className="p-8 relative">
                     <div className="flex items-start gap-6">
-                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${db.color} transition-transform duration-300 flex-shrink-0`}>
-                        <span className="text-3xl">{db.icon}</span>
+                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl ${db.color} transition-transform duration-300 flex-shrink-0`}>
+                        <db.icon className="w-8 h-8 text-white" aria-hidden="true" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
+                        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
                           {db.name}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
@@ -237,7 +237,7 @@ return (
           >
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-[#4361EE] rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-2xl">💡</span>
+                <Lightbulb className="w-6 h-6 text-white" aria-hidden="true" />
               </div>
               <div>
                 <h4 className="text-xl mb-2 text-[#3A0CA3] dark:text-[#4CC9F0]">Sfat pentru utilizare</h4>

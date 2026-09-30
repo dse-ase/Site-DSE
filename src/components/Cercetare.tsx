@@ -20,7 +20,8 @@ interface Category {
   label: string;
   tagline: string;
   icon: typeof Microscope;
-  gradient: string;
+  /** Fundalul tab-ului activ; textul de pe el e alb, deci doar culori cu contrast >= 4.5:1. */
+  activeBg: string;
 }
 
 const categories: Category[] = [
@@ -29,28 +30,28 @@ const categories: Category[] = [
     label: "Proiecte de cercetare",
     tagline: "Granturi și competiții câștigate",
     icon: Award,
-    gradient: "bg-[#3F37C9]",
+    activeBg: "bg-[#3F37C9]",
   },
   {
     id: "conferinta",
     label: "Conferința ICAS",
     tagline: "Manifestarea științifică anuală",
     icon: Newspaper,
-    gradient: "bg-[#4361EE]",
+    activeBg: "bg-[#4361EE]",
   },
   {
     id: "reviste",
     label: "Reviste științifice",
     tagline: "Publicațiile departamentului",
     icon: BookOpen,
-    gradient: "bg-[#4895EF]",
+    activeBg: "bg-[#7209B7]",
   },
   {
     id: "centre",
     label: "Centre de cercetare",
     tagline: "Sondaje, anchete și data science",
     icon: FlaskConical,
-    gradient: "bg-[#4CC9F0]",
+    activeBg: "bg-[#B5179E]",
   },
 ];
 
@@ -125,21 +126,13 @@ export function Cercetare() {
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`relative text-left p-5 rounded-2xl border transition-all duration-300 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4361EE] ${
+                className={`relative text-left p-5 rounded-xl border transition-colors duration-300 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4361EE] ${
                   isActive
-                    ? "border-transparent shadow-sm"
-                    : "bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700 hover:-translate-y-0.5"
+                    ? `${cat.activeBg} border-transparent shadow-sm`
+                    : "bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700 hover:border-[#4361EE]/50"
                 }`}
               >
-                {/* Fundal gradient animat pentru tab-ul activ */}
-                {isActive && (
-                  <motion.div
-                    layoutId="activeCategoryBg"
-                    className={`absolute inset-0 ${cat.gradient}`}
-                    transition={{ type: "spring", stiffness: 350, damping: 32 }}
-                  />
-                )}
-                <div className="relative z-10">
+                <div className="relative">
                   <Icon
                     className={`w-7 h-7 mb-3 ${
                       isActive ? "text-white" : "text-[#4361EE] dark:text-[#A5B8FF]"
@@ -155,7 +148,7 @@ export function Cercetare() {
                   <p
                     className={`text-sm mt-1 ${
                       isActive
-                        ? "text-white/80"
+                        ? "text-white"
                         : "text-gray-500 dark:text-gray-400"
                     }`}
                   >
@@ -178,7 +171,7 @@ export function Cercetare() {
               animate="visible"
               exit="exit"
             >
-              <div className="rounded-3xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
+              <div className="rounded-xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
                 <div className="grid lg:grid-cols-2">
                   {/* Imaginea proiectului */}
                   <div
@@ -248,7 +241,7 @@ export function Cercetare() {
                       </p>
                     </div>
                     <div className="rounded-xl p-5 bg-[#4361EE]/10 dark:bg-[#4361EE]/25">
-                      <p className="text-sm font-semibold text-[#4361EE] dark:text-[#A5B8FF] uppercase tracking-wide mb-2">
+                      <p className="text-sm font-semibold text-[#3F37C9] dark:text-[#A5B8FF] uppercase tracking-wide mb-2">
                         Cercetători cu experiență
                       </p>
                       <p className="text-gray-800 dark:text-gray-100">
@@ -262,7 +255,7 @@ export function Cercetare() {
                       </p>
                     </div>
                     <div className="rounded-xl p-5 bg-[#4895EF]/10 dark:bg-[#4895EF]/25">
-                      <p className="text-sm font-semibold text-[#4361EE] dark:text-[#4895EF] uppercase tracking-wide mb-2">
+                      <p className="text-sm font-semibold text-[#4361EE] dark:text-[#A5B8FF] uppercase tracking-wide mb-2">
                         Tineri cercetători
                       </p>
                       <p className="text-gray-800 dark:text-gray-100">
@@ -294,7 +287,7 @@ export function Cercetare() {
               animate="visible"
               exit="exit"
             >
-              <div className="rounded-3xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
+              <div className="rounded-xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
                 <div className="p-8 lg:p-10 bg-[#4361EE] text-white">
                   <div className="flex items-center gap-3 mb-2">
                     <Newspaper className="w-8 h-8 shrink-0" />
@@ -334,7 +327,7 @@ export function Cercetare() {
               className="grid md:grid-cols-2 gap-8"
             >
               {/* JSES */}
-              <div className="flex flex-col rounded-3xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
+              <div className="flex flex-col rounded-xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
                 <div className="p-8 bg-[#4361EE] text-white">
                   <BookOpen className="w-8 h-8 mb-3" />
                   <h3 className="text-xl font-bold">
@@ -354,7 +347,7 @@ export function Cercetare() {
                     {["EBSCO", "RePEc", "ERIHPLUS"].map((db) => (
                       <span
                         key={db}
-                        className="px-3 py-1 rounded-full text-sm bg-[#4CC9F0]/15 text-[#4361EE] dark:text-[#A5B8FF] dark:bg-[#4CC9F0]/20 dark:text-[#4CC9F0] font-medium"
+                        className="px-3 py-1 rounded-full text-sm bg-[#4CC9F0]/15 text-[#4361EE] dark:bg-[#4CC9F0]/20 dark:text-[#4CC9F0] font-medium"
                       >
                         {db}
                       </span>
@@ -369,7 +362,7 @@ export function Cercetare() {
               </div>
 
               {/* EcoCyb */}
-              <div className="flex flex-col rounded-3xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
+              <div className="flex flex-col rounded-xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
                 <div className="p-8 bg-[#7209B7] text-white">
                   <BookOpen className="w-8 h-8 mb-3" />
                   <h3 className="text-xl font-bold">
@@ -406,7 +399,7 @@ export function Cercetare() {
               className="space-y-8"
             >
               {/* Centrul de Sondaje și Anchete */}
-              <div className="rounded-3xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
+              <div className="rounded-xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
                 <div className="p-8 lg:p-10 bg-[#4361EE] text-white">
                   <div className="flex items-center gap-3">
                     <Users className="w-8 h-8 shrink-0" />
@@ -443,7 +436,7 @@ export function Cercetare() {
               </div>
 
               {/* Data Science Lab */}
-              <div className="rounded-3xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
+              <div className="rounded-xl overflow-hidden border border-[#4CC9F0]/20 dark:border-gray-700 shadow-sm bg-white dark:bg-gray-800">
                 <div className="p-8 lg:p-10 bg-[#3F37C9] text-white">
                   <div className="flex items-center gap-3">
                     <Database className="w-8 h-8 shrink-0" />

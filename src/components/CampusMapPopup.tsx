@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MapPin, X, ExternalLink } from 'lucide-react';
+import { MapPin, X, ExternalLink, Lightbulb } from 'lucide-react';
 import harta from '../assets/harta_ASE_nou.jpg';
 interface CampusMapPopupProps {
   isOpen: boolean;
@@ -57,7 +57,7 @@ export function CampusMapPopup({ isOpen, onClose }: CampusMapPopupProps) {
                 </span>
               </p>
               <p className="flex items-start gap-2 bg-white dark:bg-gray-800 rounded-lg p-4 border border-purple-200 dark:border-gray-600">
-                <span className="text-2xl">💡</span>
+                <Lightbulb className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#7209B7] dark:text-[#DDB8FF]" aria-hidden="true" />
                 <span>
                   <strong className="dark:text-white">Exemplu:</strong> Sala <span className="bg-[#7209B7] text-white px-2 py-1 rounded">2303</span> înseamnă:{' '}
                   <span className="text-[#7209B7] dark:text-[#DDB8FF] font-semibold">Clădirea 2</span> (din hartă),{' '}

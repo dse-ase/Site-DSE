@@ -68,12 +68,12 @@ Full pages use `Header` + `Footer`; profile and secondary pages use `SimpleHeade
 
 ## Styling: Tailwind v4, compiled at build time
 
-`src/index.css` is a real Tailwind **source** file (~680 lines), not a compiled artifact. `@tailwindcss/vite` compiles it during `dev` and `build`, so any utility class works — including new arbitrary values.
+`src/index.css` is a real Tailwind **source** file (~700 lines), not a compiled artifact. `@tailwindcss/vite` compiles it during `dev` and `build`, so any utility class works — including new arbitrary values.
 
 It was not always so: until the pipeline was restored, `index.css` was a ~4,200-line **precompiled** stylesheet with no compiler in the project, and a class that wasn't already in the file silently did nothing. If you find advice (or an old commit) that says to grep `index.css` before using a class, it is out of date.
 
 Structure of the file, in order:
-- `@import "tailwindcss"` and `@source "./**/*.{ts,tsx}"`. **The `@source` line is required** — automatic content detection found no classes in this project and emitted a utility-free stylesheet, which fails silently and looks like an unstyled site.
+- `@import "tailwindcss"` and `@source "../src"`. **The `@source` line is required** — automatic content detection found no classes in this project and emitted a utility-free stylesheet, which fails silently and looks like an unstyled site.
 - `@custom-variant dark (&:where(.dark, .dark *))`. **Also required.** Dark mode here is class-based (`.dark` on `<html>`, set by `DarkModeContext`), but Tailwind v4 defaults `dark:` to `prefers-color-scheme`. Without this line every `dark:` class on the site breaks.
 - `@theme` — brand palette as `--color-brand-*`, so `bg-brand-purple` and friends generate.
 - `:root` / `.dark` — shadcn tokens plus the legacy `--color-*` brand vars and `--font-size: 20px`, which `html` consumes.
@@ -89,6 +89,13 @@ The DSE brand hues stay (`#7209B7` purple, `#4361EE` blue, `#4CC9F0` cyan, `#3A0
 - **No hover lift.** `hover:scale-*` and `hover:shadow-lg/xl` were removed everywhere. Hover feedback should be a colour or border change.
 - **Calm elevation and radius.** `shadow-sm` and `rounded-xl` on cards, not `shadow-lg` / `rounded-2xl`.
 - **No gradient text.** `bg-clip-text text-transparent` headings are now solid `text-[#3A0CA3] dark:text-[#4CC9F0]`.
+- **No emoji as icons.** Menus, cards and headings use `lucide-react` icons (`aria-hidden="true"` when decorative). Emoji render differently per OS and break the flat style; the site currently has none.
+- **The only heavy shadows allowed** are on genuinely elevated layers: the fixed header (`shadow-lg`) and the campus-map modal (`shadow-2xl`).
+- **Mobile overrides in `index.css` set layout only, never colour.** A `!important` background or text colour there ignores the theme — `.master-subject-card-mobile` once forced a dark slate card with a gradient button in *light* mode on phones.
+
+### Sizing: the root font is 20px
+
+`html { font-size: var(--font-size) }` with `--font-size: 20px`, so every `rem`-based utility is 25% larger than stock Tailwind: `text-5xl` is 60px, `max-w-7xl` is 1600px (wider than a 1440 laptop, so content runs to the `px-4` gutter there). Breakpoints are *not* affected — media queries resolve `rem` against the browser default, so `lg` is still 1024px. The hero title uses `2xl:text-5xl` for this reason: at 60px it wraps to three lines on laptops and pushes the hero content below the fold.
 
 Dark mode is class-based, so every colour needs an explicit `dark:` counterpart; the codebase does this consistently.
 
@@ -120,7 +127,9 @@ Touch targets: `index.css` gives `a`/`button` with `.inline-flex` or `.flex` a `
 - **The project is ESM** (`"type": "module"` in `package.json`), because `@tailwindcss/vite` is ESM-only and Node 20 cannot `require()` it. `vite.config.ts` therefore has no `__dirname`; paths resolve via `fileURLToPath(new URL(...))`.
 
 - **Base path**: `vite.config.ts` sets `base: '/Site-DSE/'`. Any absolute URL you add must keep that prefix or it breaks on Pages while looking fine locally.
-- **Known bug — the favicon 404s in production.** `index.html` requests `/Site-DSE/favicon.ico`, but `publicDir: 'public'` points at a root `public/` directory that does not exist; the icon actually lives at `src/public/favicon.ico` and is never copied into `build/`. Fix by moving the file to a root `public/` or importing it as a module.
+- **Static files live in the root `public/`** (currently only `favicon.ico`, a real 16–64px ICO). Vite copies it into `build/`; `index.html` references it as `/Site-DSE/favicon.ico`.
+- **Shared content data** lives in `src/data/`: `temeCoordonatori.ts` (thesis topics per coordinator; the „Propuneri teme” button renders only for slugs listed there) and `dataSprint.ts` (the DataSprint event, used by both the home-page promo and the Activitate card). `aTrecutZiua()` there compares calendar days in local time — use it instead of `new Date(isoString)`, which parses as UTC midnight.
+- **Keep photos web-sized.** Hero/section photos were 1–3.4 MB each; they are now ≤1600px wide JPEGs. Resize before adding new ones.
 - **Vite aliases**: only `@` → `./src` and `@assets` → `./src/assets`. The Figma export's version-suffixed aliases and the `src/components/ui` kit that needed them have both been deleted.
 - **Assets** are ES-module imports from `src/assets/` — professor photos in `src/assets/Poze Profesori/`, CVs in `src/assets/cv/`. Filenames contain spaces and Romanian diacritics; that is load-bearing for existing imports, so don't rename them casually. Rollup flattens them into `build/assets/[name]-[hash][ext]`.
 - **Animation/icons**: `motion/react` (the `motion` package) and `lucide-react`.

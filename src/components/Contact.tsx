@@ -60,10 +60,10 @@ export function Contact() {
               <Mail className="w-7 h-7 text-white" />
             </div>
             <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-4">Email</h4>
-            <a href="mailto:dse@ase.ro" className="text-gray-600 dark:text-gray-300 hover:text-[#4361EE] dark:text-[#A5B8FF] transition-colors text-lg block mb-2">
+            <a href="mailto:dse@ase.ro" className="text-gray-600 dark:text-gray-300 hover:text-[#4361EE] dark:hover:text-[#A5B8FF] transition-colors text-lg block py-1 mb-1">
               dse@ase.ro
             </a>
-            <a href="mailto:diana.burciu@ase.ro" className="text-gray-600 dark:text-gray-300 hover:text-[#4361EE] dark:text-[#A5B8FF] transition-colors text-lg block">
+            <a href="mailto:diana.burciu@ase.ro" className="text-gray-600 dark:text-gray-300 hover:text-[#4361EE] dark:hover:text-[#A5B8FF] transition-colors text-lg block py-1">
               diana.burciu@ase.ro
             </a>
           </motion.div>
@@ -79,7 +79,7 @@ export function Contact() {
               <Phone className="w-7 h-7 text-white" />
             </div>
             <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-4">Telefon</h4>
-            <a href="tel:+40213191900" className="text-gray-600 dark:text-gray-300 hover:text-[#4361EE] dark:text-[#A5B8FF] transition-colors text-lg">
+            <a href="tel:+40213191900" className="text-gray-600 dark:text-gray-300 hover:text-[#4361EE] dark:hover:text-[#A5B8FF] transition-colors text-lg inline-block py-1">
               +40 21 319 19 00 / interior 383
             </a>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">

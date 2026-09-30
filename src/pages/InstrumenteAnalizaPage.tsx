@@ -1,14 +1,14 @@
 import { motion } from 'motion/react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
-import { ExternalLink, Code2, Download } from 'lucide-react';
+import { ExternalLink, Code2, Download, BarChart3, Sigma, Map, TrendingUp, Microscope, CalendarRange, Ruler, PieChart, Lightbulb, BookOpen } from 'lucide-react';
 
 interface Tool {
   name: string;
   description: string;
   url: string;
   color: string;
-  icon: string;
+  icon: typeof Code2;
   category: string;
 }
 
@@ -18,7 +18,7 @@ const instrumente: Tool[] = [
     description: 'Mediu integrat de dezvoltare (IDE) pentru limbajul R, esențial pentru analiză statistică avansată și vizualizare de date. Include editor de cod, console, debugger și workspace manager.',
     url: 'https://posit.co/download/rstudio-desktop/',
     color: 'bg-[#7209B7]',
-    icon: '📊',
+    icon: BarChart3,
     category: 'Statistică & R'
   },
   {
@@ -26,7 +26,7 @@ const instrumente: Tool[] = [
     description: 'IDE profesional pentru Python, perfect pentru data science și machine learning. Suport complet pentru biblioteci populare precum pandas, NumPy, scikit-learn și TensorFlow.',
     url: 'https://www.jetbrains.com/pycharm/download/?section=windows',
     color: 'bg-[#4361EE]',
-    icon: '🐍',
+    icon: Code2,
     category: 'Python & Data Science'
   },
   {
@@ -34,15 +34,15 @@ const instrumente: Tool[] = [
     description: 'Software gratuit și open-source pentru analiză statistică cu interfață intuitivă. Ideal pentru analiza datelor, teste statistice și modele Bayesiene. Alternativă modernă la SPSS.',
     url: 'https://jasp-stats.org/',
     color: 'bg-[#7209B7]',
-    icon: '📈',
+    icon: Sigma,
     category: 'Analiză Statistică'
   },
   {
     name: 'GeoDa',
     description: 'Instrument specializat pentru analiza spațială și explorarea datelor geografice. Perfect pentru econometrie spațială și analize GIS. Dezvoltat de Center for Spatial Data Science.',
     url: 'https://geodacenter.github.io/',
-    color: 'bg-[#4895EF]',
-    icon: '🗺️',
+    color: 'bg-[#3F37C9]',
+    icon: Map,
     category: 'Analiză Spațială'
   },
   {
@@ -50,15 +50,15 @@ const instrumente: Tool[] = [
     description: 'Software econometric de referință pentru analiza seriilor de timp, modele VAR, ARCH/GARCH și previziuni macroeconomice. Utilizat extensiv în cercetare economică și instituții financiare internaționale.',
     url: 'https://www.eviews.com/home.html',
     color: 'bg-[#3F37C9]',
-    icon: '📉',
+    icon: TrendingUp,
     category: 'Econometrie'
   },
   {
     name: 'SPSS',
     description: 'Platformă statistică IBM de referință pentru cercetare socială și economică. Oferă analize descriptive, regresii, analize factoriale și clustering, cu interfață vizuală accesibilă.',
     url: 'https://www.ibm.com/spss',
-    color: 'bg-[#4CC9F0]',
-    icon: '🔬',
+    color: 'bg-[#4361EE]',
+    icon: Microscope,
     category: 'Statistică Aplicată'
   },
   {
@@ -66,15 +66,15 @@ const instrumente: Tool[] = [
     description: 'Instrument oficial recomandat de Eurostat și BCE pentru ajustarea sezonieră și analiza seriilor de timp. Implementează metodele X-13ARIMA-SEATS și TRAMO/SEATS, utilizat în statistică oficială.',
     url: 'https://jdemetra-new-documentation.netlify.app/',
     color: 'bg-[#B5179E]',
-    icon: '📅',
+    icon: CalendarRange,
     category: 'Serii de Timp'
   },
   {
     name: 'Stata',
     description: 'Software statistic complet pentru econometrie, analize panel, date longitudinale și modele cu variabile instrumentale. Foarte apreciat în cercetarea academică și publicațiile științifice de top.',
     url: 'https://www.stata.com/',
-    color: 'bg-[#F72585]',
-    icon: '📐',
+    color: 'bg-[#B5179E]',
+    icon: Ruler,
     category: 'Econometrie & Panel'
   },
   {
@@ -82,7 +82,7 @@ const instrumente: Tool[] = [
     description: 'Platformă cu resurse și tutoriale pentru vizualizarea datelor în Excel. Template-uri profesionale, grafice interactive și best practices pentru analiza și prezentarea datelor.',
     url: 'https://exceldataviz.com/',
     color: 'bg-[#4361EE]',
-    icon: '📊',
+    icon: PieChart,
     category: 'Vizualizare Date'
   }
 ];
@@ -93,21 +93,21 @@ function ToolCard({ tool, index }: { tool: Tool; index: number }) {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
+      className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700"
     >
       <div className={`absolute inset-0 ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
 
       <div className="p-8 relative">
         <div className="flex items-start justify-between mb-6">
-          <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl ${tool.color} transition-transform duration-300`}>
-            <span className="text-4xl">{tool.icon}</span>
+          <div className={`inline-flex items-center justify-center w-20 h-20 rounded-xl ${tool.color} transition-transform duration-300`}>
+            <tool.icon className="w-10 h-10 text-white" aria-hidden="true" />
           </div>
-          <span className="text-xs bg-[#4CC9F0]/20 dark:bg-[#4CC9F0]/10 text-[#4361EE] dark:text-[#A5B8FF] px-3 py-1 rounded-full font-medium">
+          <span className="text-xs bg-[#4CC9F0]/10 dark:bg-[#4CC9F0]/10 text-[#3F37C9] dark:text-[#A5B8FF] px-3 py-1 rounded-full font-medium">
             {tool.category}
           </span>
         </div>
 
-        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
+        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
           {tool.name}
         </h3>
         <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[100px]">
@@ -182,7 +182,7 @@ const gridTools = instrumente.slice(0, 8);
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-[#4361EE] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-2xl">💡</span>
+                  <Lightbulb className="w-6 h-6 text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <h4 className="text-xl mb-2 text-[#3A0CA3] dark:text-[#4CC9F0]">Ghid de instalare</h4>
@@ -201,7 +201,7 @@ const gridTools = instrumente.slice(0, 8);
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-[#7209B7] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-2xl">📚</span>
+                  <BookOpen className="w-6 h-6 text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <h4 className="text-xl mb-2 text-[#3A0CA3] dark:text-[#4CC9F0]">Utilizare în cursuri</h4>

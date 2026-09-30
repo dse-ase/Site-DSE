@@ -11,7 +11,12 @@ import {
   Users,
   GraduationCap,
   Globe,
+  Trophy,
+  Clock,
+  Mail,
 } from "lucide-react";
+import imgDataSprint from "../assets/datasprint 2026.jpg";
+import { dataSprint, aTrecutZiua } from "../data/dataSprint";
 
 interface Eveniment {
   id: number;
@@ -21,8 +26,15 @@ interface Eveniment {
   dataStart: string; // ISO, folosit pentru sortare
   dataEnd: string; // ISO, folosit pentru clasificarea viitor/trecut
   link: string;
+  linkEticheta?: string;
   categorie: string;
   icon: typeof Calendar;
+  imagine?: string;
+  imagineAlt?: string;
+  /** Termen de înscriere, afișat evidențiat pe card. */
+  termenLimita?: string;
+  /** Adresă de e-mail pentru informații suplimentare. */
+  contact?: string;
 }
 
 /*
@@ -33,8 +45,30 @@ interface Eveniment {
  */
 const evenimente: Eveniment[] = [
   {
+    id: 11,
+    titlu: `${dataSprint.titlu}: 3 zile, date reale, o provocare de business`,
+    descriere:
+      "Datathon organizat cu KPMG România: trei zile în care echipele construiesc un sistem de avertizare timpurie pe date reale.",
+    data: `${dataSprint.dataText} · ${dataSprint.loc}`,
+    dataStart: dataSprint.dataStart,
+    dataEnd: dataSprint.dataEnd,
+    contact: dataSprint.contact,
+    // după termenul de înscriere cardul trimite la formular doar ca informare
+    ...(aTrecutZiua(dataSprint.termenLimita)
+      ? { link: dataSprint.linkAplicare, linkEticheta: "Detalii înscriere" }
+      : {
+          termenLimita: `Aplică până pe ${dataSprint.termenLimitaText} · locuri limitate`,
+          link: dataSprint.linkAplicare,
+          linkEticheta: "Aplică acum",
+        }),
+    categorie: "Datathon",
+    icon: Trophy,
+    imagine: imgDataSprint,
+    imagineAlt: `${dataSprint.titlu}: 3 zile, o provocare reală de business, date reale. ${dataSprint.dataText}, ${dataSprint.loc}. Organizat de ${dataSprint.organizatori}.`,
+  },
+  {
     id: 1,
-    titlu: "🎓 Oportunitate pentru studenții ASDS – Programul EMOS",
+    titlu: "Oportunitate pentru studenții ASDS – Programul EMOS",
     descriere:
       "Studenții masteranzi ASDS pot aplica pentru mobilități internaționale și participări la evenimente de prestigiu precum uRos 2026 sub egida EMOS.",
     data: "Sezonul 2025-2026",
@@ -160,10 +194,19 @@ function EvenimentCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-      className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700 overflow-hidden group flex flex-col ${
+      className={`bg-white dark:bg-gray-800 rounded-xl shadow-sm transition-colors duration-300 border border-[#4CC9F0]/20 dark:border-gray-700 hover:border-[#4361EE]/50 dark:hover:border-[#4361EE]/60 overflow-hidden group flex flex-col ${
         estompat ? "opacity-90 hover:opacity-100" : ""
       }`}
     >
+      {eveniment.imagine && (
+        <img
+          src={eveniment.imagine}
+          alt={eveniment.imagineAlt ?? ""}
+          loading="lazy"
+          className="w-full aspect-video object-cover border-b border-[#4CC9F0]/20 dark:border-gray-700"
+        />
+      )}
+
       <div className="p-8 flex flex-col h-full">
         {/* Icon & Categorie */}
         <div className="flex items-center justify-between mb-4">
@@ -200,14 +243,33 @@ function EvenimentCard({
             <span>{eveniment.data}</span>
           </div>
 
+          {/* Termen de înscriere */}
+          {eveniment.termenLimita && (
+            <div className="flex items-start gap-2 text-sm font-semibold text-[#B45309] dark:text-[#F59E0B] mb-4 -mt-3">
+              <Clock className="w-4 h-4 flex-shrink-0 mt-0.5" />
+              <span>{eveniment.termenLimita}</span>
+            </div>
+          )}
+
+          {/* Contact pentru informații suplimentare */}
+          {eveniment.contact && (
+            <a
+              href={`mailto:${eveniment.contact}`}
+              className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#4361EE] dark:hover:text-[#A5B8FF] mb-4 transition-colors"
+            >
+              <Mail className="w-4 h-4 flex-shrink-0 mt-0.5" />
+              <span className="break-all">{eveniment.contact}</span>
+            </a>
+          )}
+
           {/* Link */}
           <a
             href={eveniment.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#4361EE] dark:text-[#A5B8FF] font-semibold transition-colors group-hover:gap-3 duration-300"
+            className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:hover:text-[#DDB8FF] font-semibold transition-colors group-hover:gap-3 duration-300"
           >
-            <span>Citește mai mult</span>
+            <span>{eveniment.linkEticheta ?? "Citește mai mult"}</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
@@ -217,18 +279,15 @@ function EvenimentCard({
 }
 
 export default function ActivitatePage() {
-  /* Clasificare automată: un eveniment e viitor cât timp dataEnd >= azi */
-  const azi = new Date();
-  azi.setHours(0, 0, 0, 0);
-
+  /* Clasificare automată: un eveniment e viitor până la sfârșitul zilei dataEnd (ora locală) */
   const viitoare = evenimente
-    .filter((e) => new Date(e.dataEnd) >= azi)
+    .filter((e) => !aTrecutZiua(e.dataEnd))
     .sort(
       (a, b) => new Date(a.dataStart).getTime() - new Date(b.dataStart).getTime()
     );
 
   const trecute = evenimente
-    .filter((e) => new Date(e.dataEnd) < azi)
+    .filter((e) => aTrecutZiua(e.dataEnd))
     .sort(
       (a, b) => new Date(b.dataEnd).getTime() - new Date(a.dataEnd).getTime()
     );

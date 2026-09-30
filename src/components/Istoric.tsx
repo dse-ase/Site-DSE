@@ -33,7 +33,7 @@ export function Istoric() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-full md:w-[100%] mx-auto bg-blue-50 rounded-3xl shadow-sm p-10 md:p-16 border border-[#4CC9F0]/20 dark:border-gray-700 overflow-hidden dark:bg-gray-800"
+          className="w-full md:w-[100%] mx-auto bg-blue-50 rounded-xl shadow-sm p-10 md:p-16 border border-[#4CC9F0]/20 dark:border-gray-700 overflow-hidden dark:bg-gray-800"
         >
           <h3 className="text-3xl md:text-4xl text-[#3A0CA3] dark:text-[#4CC9F0] mb-14 text-center font-bold">
             Cronologia dezvoltării specializării/programului de Statistică în ISEP/ASE în perioada 1948-prezent
@@ -57,7 +57,7 @@ export function Istoric() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+          className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
         >
           <div className="prose prose-lg max-w-none">
             {/* Istoric Departament */}

@@ -133,7 +133,7 @@ const getInitialsColor = (initials: string) => {
 
                   <a
                     href={`mailto:${data.email}`}
-                    className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors"
+                    className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:hover:text-[#DDB8FF] transition-colors"
                   >
                     <Mail className="w-5 h-5" />
                     <span>{data.email}</span>
@@ -313,7 +313,7 @@ const getInitialsColor = (initials: string) => {
                             href={profil.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors inline-flex items-center gap-1"
+                            className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:hover:text-[#DDB8FF] transition-colors inline-flex items-center gap-1"
                           >
                             <ExternalLink className="w-3 h-3" />
                             <span>{profil.tip}</span>
@@ -386,7 +386,7 @@ const getInitialsColor = (initials: string) => {
                               href={pub.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-sm text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors inline-flex items-center gap-1"
+                              className="text-sm text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:hover:text-[#DDB8FF] transition-colors inline-flex items-center gap-1"
                             >
                               <ExternalLink className="w-3 h-3" />
                               <span>Vezi publicația</span>

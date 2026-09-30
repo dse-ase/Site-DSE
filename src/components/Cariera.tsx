@@ -81,7 +81,7 @@ export function Cariera() {
             >
               <div className="relative h-full bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-[#4361EE]/30 dark:hover:border-[#4361EE]/50">
                 {/* Decorative gradient border */}
-                <div className={`absolute inset-0 ${career.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
+                <div className={`absolute inset-0 ${career.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`}></div>
                 
                 {/* Icon */}
                 <div className={`relative inline-flex items-center justify-center w-14 h-14 rounded-xl ${career.color} mb-6 transition-transform duration-300`}>
@@ -90,7 +90,7 @@ export function Cariera() {
 
                 {/* Content */}
                 <div className="relative">
-                  <h3 className="text-xl mb-3 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
+                  <h3 className="text-xl mb-3 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
                     {career.title}
                   </h3>
                   
@@ -121,7 +121,7 @@ export function Cariera() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-sm border border-gray-100 dark:border-gray-700"
+          className="bg-white dark:bg-gray-800 rounded-xl p-12 shadow-sm border border-gray-100 dark:border-gray-700"
         >
           {/* Stagiul de Practică pentru Licență */}
           <motion.div
@@ -171,7 +171,7 @@ export function Cariera() {
                   href="https://csie.ase.ro/student-csie/practica/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors ml-1 underline"
+                  className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:hover:text-[#DDB8FF] transition-colors ml-1 underline"
                 >
                   https://csie.ase.ro/student-csie/practica/
                 </a>
@@ -234,12 +234,12 @@ export function Cariera() {
             </ul>
             <div className="bg-[#7209B7]/5 rounded-lg p-4 border-l-4 border-[#7209B7] dark:bg-[#7209B7]/20">
               <p className="text-gray-700 dark:text-gray-300">
-                👉 Pentru informații detaliate (proceduri, documente necesare, calendar, echivalare, coduri COR, firme partenere și pașii de înscriere la stagiile disponibile), accesați pagina: 
+                Pentru informații detaliate (proceduri, documente necesare, calendar, echivalare, coduri COR, firme partenere și pașii de înscriere la stagiile disponibile), accesați pagina: 
                 <a 
                   href="https://csie.ase.ro/student-csie/stagiul-de-practica-pentru-studiile-de-masterat-2/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#7209B7] dark:text-[#DDB8FF] hover:text-[#4361EE] dark:text-[#A5B8FF] dark:hover:text-[#4361EE] dark:text-[#A5B8FF] transition-colors ml-1 underline"
+                  className="text-[#7209B7] dark:text-[#DDB8FF] hover:text-[#4361EE] dark:hover:text-[#A5B8FF] transition-colors ml-1 underline"
                 >
                   https://csie.ase.ro/student-csie/stagiul-de-practica-pentru-studiile-de-masterat-2/
                 </a>

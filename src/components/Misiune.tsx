@@ -65,7 +65,7 @@ export function Misiune() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white dark:bg-gray-800 rounded-3xl p-12 mb-16 shadow-2xl border border-[#4CC9F0]/20 dark:border-gray-700"
+          className="bg-white dark:bg-gray-800 rounded-xl p-12 mb-16 shadow-sm border border-[#4CC9F0]/20 dark:border-gray-700"
         >
           <div className="max-w-4xl mx-auto">
             <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">

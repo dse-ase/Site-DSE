@@ -150,7 +150,7 @@ export function SimpleHeader() {
                   <button
                     onClick={() => setDarkMode(!darkMode)}
                     className="p-2.5 rounded-lg text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-300"
-                    aria-label="Toggle Dark Mode"
+                    aria-label={darkMode ? "Activează modul luminos" : "Activează modul întunecat"}
                   >
                     {darkMode ? (
                       <Moon className="w-7 h-7" />
@@ -168,7 +168,7 @@ export function SimpleHeader() {
                 <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] transition-all duration-200">
                   Despre noi <ChevronDown className="w-4 h-4" />
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200">
                   <a
                     href="#/istoric"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
@@ -194,7 +194,7 @@ export function SimpleHeader() {
                 <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] transition-all duration-200">
                   Programe studii <ChevronDown className="w-4 h-4" />
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200">
                   <a
                     href="#/"
                     onClick={(e) => {
@@ -238,18 +238,18 @@ export function SimpleHeader() {
                 <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] transition-all duration-200">
                   Studenți <ChevronDown className="w-4 h-4" />
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
                   <a
                     href="#/activitati-viitoare"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    🚀 Activități viitoare
+                    Activități viitoare
                   </a>
                   <a
                     href="#/evenimente-trecute"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    🕰️ Evenimente trecute
+                    Evenimente trecute
                   </a>
 
                   <div className="border-t border-gray-700 my-2"></div>
@@ -259,13 +259,13 @@ export function SimpleHeader() {
                     rel="noopener noreferrer"
                     className="block w-full text-left px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    📖 Biblioteca ASE
+                    Biblioteca ASE
                   </a>
                   <button
                     onClick={() => setIsMapOpen(true)}
                     className="w-full text-left px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    🏢 Campus ASE
+                    Campus ASE
                   </button>
                   <a
                     href="https://csie.ase.ro/wp-content/uploads/2025/10/Calendarul-Studentului-2025-2026.pdf"
@@ -273,13 +273,13 @@ export function SimpleHeader() {
                     rel="noopener noreferrer"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    📅 Calendarul Studentului
+                    Calendarul Studentului
                   </a>
                   <a
                     href="#/orar"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    📚 Orar
+                    Orar
                   </a>
                   <a
                     href="https://csie.ase.ro/"
@@ -287,45 +287,45 @@ export function SimpleHeader() {
                     rel="noopener noreferrer"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    🏛️ Site CSIE
+                    Site CSIE
                   </a>
                   <div className="border-t border-gray-700 my-2"></div>
                   <a
                     href="#/databases"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    📊 Baze de date
+                    Baze de date
                   </a>
                   <a
                     href="#/instrumente-analiza"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    💻 Instrumente de analiză
+                    Instrumente de analiză
                   </a>
                   <div className="border-t border-gray-700 my-2"></div>
                   <a
                     href="#/studenti-colaboratori"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    🎓 Studenții noștri colaboratori
+                    Studenții noștri colaboratori
                   </a>
                   <a
                     href="#/cariera"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    💼 Carieră
+                    Carieră
                   </a>
                   <a
                     href="#/profesori-coordonatori"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    👨‍🏫 Profesori coordonatori
+                    Profesori coordonatori
                   </a>
                   <a
                     href="#/testimoniale"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
                   >
-                    💬 Testimoniale
+                    Testimoniale
                   </a>
                 </div>
               </div>
@@ -362,7 +362,7 @@ export function SimpleHeader() {
               <button
                 onClick={() => setDarkMode(!darkMode)}
                 className="p-2 rounded-lg text-white hover:bg-white/10 transition-all duration-300"
-                aria-label="Toggle Dark Mode"
+                aria-label={darkMode ? "Activează modul luminos" : "Activează modul întunecat"}
               >
                 {darkMode ? (
                   <Moon className="w-6 h-6" />
@@ -372,6 +372,8 @@ export function SimpleHeader() {
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? "Închide meniul" : "Deschide meniul"}
+                aria-expanded={isMenuOpen}
                 className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
               >
                 {isMenuOpen ? (
@@ -464,14 +466,14 @@ export function SimpleHeader() {
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      🚀 Activități viitoare
+                      Activități viitoare
                     </a>
                     <a
                       href="#/evenimente-trecute"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      🕰️ Evenimente trecute
+                      Evenimente trecute
                     </a>
                     <a
                       href="https://biblioteca.ase.ro/"
@@ -479,7 +481,7 @@ export function SimpleHeader() {
                       rel="noopener noreferrer"
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center w-full"
                     >
-                      📖 Biblioteca ASE
+                      Biblioteca ASE
                     </a>
                     <button
                       onClick={() => {
@@ -488,7 +490,7 @@ export function SimpleHeader() {
                       }}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center w-full"
                     >
-                      🏢 Campus ASE
+                      Campus ASE
                     </button>
                     <a
                       href="https://csie.ase.ro/wp-content/uploads/2025/10/Calendarul-Studentului-2025-2026.pdf"
@@ -497,14 +499,14 @@ export function SimpleHeader() {
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      📅 Calendarul Studentului
+                      Calendarul Studentului
                     </a>
                     <a
                       href="#/orar"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      📚 Orar
+                      Orar
                     </a>
                     <a
                       href="https://csie.ase.ro/"
@@ -513,49 +515,49 @@ export function SimpleHeader() {
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      🏛️ Site CSIE
+                      Site CSIE
                     </a>
                     <a
                       href="#/databases"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      📊 Baze de date
+                      Baze de date
                     </a>
                     <a
                       href="#/instrumente-analiza"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      💻 Instrumente de analiză
+                      Instrumente de analiză
                     </a>
                     <a
                       href="#/studenti-colaboratori"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      🎓 Studenții noștri colaboratori
+                      Studenții noștri colaboratori
                     </a>
                     <a
                       href="#/cariera"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      💼 Carieră
+                      Carieră
                     </a>
                     <a
                       href="#/profesori-coordonatori"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      👨‍🏫 Profesori coordonatori
+                      Profesori coordonatori
                     </a>
                     <a
                       href="#/testimoniale"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-200 hover:text-[#4CC9F0] transition-colors text-center"
                     >
-                      💬 Testimoniale
+                      Testimoniale
                     </a>
                   </div>
                 </div>

@@ -34,7 +34,7 @@ export function CardsSection() {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all cursor-pointer"
+                  className="hover:text-[#7209B7] dark:hover:text-[#DDB8FF] inline-block py-1 transition-colors cursor-pointer"
                 >
                   • <span className="font-medium">Licență:</span> Statistică
                   aplicată și Data Science
@@ -43,7 +43,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/master-asds"
-                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all"
+                  className="hover:text-[#7209B7] dark:hover:text-[#DDB8FF] inline-block py-1 transition-colors"
                 >
                   • <span className="font-medium">Master:</span> Statistică
                   aplicată și Data Science
@@ -52,7 +52,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/master-ada"
-                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all"
+                  className="hover:text-[#7209B7] dark:hover:text-[#DDB8FF] inline-block py-1 transition-colors"
                 >
                   • <span className="font-medium">Master:</span> Applied data
                   analytics
@@ -61,7 +61,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cursuri-postuniversitare"
-                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all"
+                  className="hover:text-[#7209B7] dark:hover:text-[#DDB8FF] inline-block py-1 transition-colors"
                 >
                   •{" "}
                   <span className="font-medium">Cursuri postuniversitare</span>
@@ -70,7 +70,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/doctorat"
-                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all"
+                  className="hover:text-[#7209B7] dark:hover:text-[#DDB8FF] inline-block py-1 transition-colors"
                 >
                   • <span className="font-medium">Doctorat:</span> Cibernetică
                   și Statistică Economică
@@ -88,7 +88,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cariera"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Carieră</span> - Oportunități
                   și internship-uri
@@ -97,7 +97,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/orar"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Orar</span> - Programa
                   cursurilor
@@ -106,7 +106,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/databases"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Baze de date</span> - Resurse
                   pentru analiză
@@ -115,7 +115,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/instrumente-analiza"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Instrumente</span> - Software
                   pentru analiză
@@ -124,7 +124,7 @@ export function CardsSection() {
               <li>
                 <button
                   onClick={() => setIsMapOpen(true)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block text-left w-full cursor-pointer"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1 text-left w-full cursor-pointer"
                 >
                   • <span className="font-medium">Campus ASE</span> - Locații și
                   săli
@@ -144,7 +144,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Conferința ICAS</span>
                 </a>
@@ -152,7 +152,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Revista JSES</span>
                 </a>
@@ -160,7 +160,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Centrul de sondaje</span>
                 </a>
@@ -168,7 +168,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Data Science Lab</span>
                 </a>
@@ -176,7 +176,7 @@ export function CardsSection() {
                             <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:hover:text-[#DDB8FF] text-lg transition-colors block py-1"
                 >
                   • <span className="font-medium">Revista ECOCIB </span>
                 </a>

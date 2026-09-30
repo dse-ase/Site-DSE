@@ -212,7 +212,7 @@ export default function ListeProfesoriPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
           >
             <div className="flex items-center gap-3 mb-8">
               <Award className="w-8 h-8 text-[#4361EE] dark:text-[#A5B8FF]" />
@@ -249,7 +249,7 @@ export default function ListeProfesoriPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
           >
             <div className="flex items-center gap-3 mb-8">
               <TrendingUp className="w-8 h-8 text-[#4361EE] dark:text-[#A5B8FF]" />
@@ -284,7 +284,7 @@ export default function ListeProfesoriPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
           >
             <div className="flex items-center gap-3 mb-8">
               <Calendar className="w-8 h-8 text-[#4361EE] dark:text-[#A5B8FF]" />
@@ -323,7 +323,7 @@ export default function ListeProfesoriPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
           >
             <div className="flex items-center gap-3 mb-8">
               <Clock className="w-8 h-8 text-[#4361EE] dark:text-[#A5B8FF]" />

@@ -3,14 +3,12 @@ import { motion } from 'motion/react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
 import { GraduationCap, BookOpen, ExternalLink, ChevronDown, Lightbulb } from 'lucide-react';
+import { temeCoordonatori } from '../data/temeCoordonatori';
+import type { ListaTeme } from '../data/temeCoordonatori';
 
-type Coordonator = {
-  name: string;
-  slug: string;
-  /** Teme propuse explicit de profesor. Butonul „Propuneri teme” apare doar
-   *  pentru cei care au trimis o listă — lipsa lui înseamnă că nu au trimis. */
-  teme?: string[];
-};
+// Butonul „Propuneri teme” apare doar pentru profesorii care au o listă în
+// `temeCoordonatori` la nivelul respectiv — lipsa lui înseamnă că nu au trimis teme.
+type Coordonator = { name: string; slug: string };
 
 // Mapping de activități didactice pentru fiecare profesor
 const profesoriInfo: Record<string, string[]> = {
@@ -38,26 +36,11 @@ const profesoriInfo: Record<string, string[]> = {
   'gabriela-niculescu': ['Statistică teoretică și statistică economică', 'Anchete și sondaje statistice', 'Econometrie']
 };
 
-const temeIleanu = [
-  'Cuantificarea și modelarea fenomenelor demografice',
-  'Metode cantitative utilizate în analiza rezilienței economice',
-  'Modelarea econometrică a indicatorilor care caracterizează piața muncii',
-  'Calitatea ajustării și măsuri ale discrepanțelor. Dezvoltări teoretice și practice',
-  'Cuantificarea poverii bolilor',
-  'Analize de impact bugetar. Evaluări, scenarii și estimări bazate pe modele de regresie, DSA și PSA',
-  'Cuantificarea riscurilor în economie utilizând modele cu variabile discrete',
-  'Cuantificarea riscurilor în domeniul medical utilizând modele cu alegere discretă',
-  'Abordări tradiționale vs. AI în analiza fenomenelor socio-economice',
-  'Indicatori compoziți și utilizarea lor în sociologie, economie, sănătate etc.',
-  'Teme cu abordări transdisciplinare',
-  'Alte teme care conțin, printre altele, și subiectele exemplificate în lista de mai sus'
-];
-
 // Profesori coordonatori pentru Licență - sortați alfabetic
 const profesoriLicenta: Coordonator[] = [
   { name: 'Adrian COSTEA', slug: 'adrian-costea' },
   { name: 'Adrian OȚOIU', slug: 'adrian-otoiu' },
-  { name: 'Bogdan Vasile ILEANU', slug: 'bogdan-ileanu', teme: temeIleanu },
+  { name: 'Bogdan Vasile ILEANU', slug: 'bogdan-ileanu' },
   { name: 'Claudiu HERȚELIU', slug: 'claudiu-herteliu' },
   { name: 'Constanța MIHAESCU', slug: 'constanta-mihaescu' },
   { name: 'Cristina Rodica BOBOC', slug: 'cristina-boboc' },
@@ -82,7 +65,7 @@ const profesoriLicenta: Coordonator[] = [
 const profesoriMaster: Coordonator[] = [
   { name: 'Adrian COSTEA', slug: 'adrian-costea' },
   { name: 'Adrian OȚOIU', slug: 'adrian-otoiu' },
-  { name: 'Bogdan Vasile ILEANU', slug: 'bogdan-ileanu', teme: temeIleanu },
+  { name: 'Bogdan Vasile ILEANU', slug: 'bogdan-ileanu' },
   { name: 'Claudiu HERȚELIU', slug: 'claudiu-herteliu' },
   { name: 'Constanța MIHAESCU', slug: 'constanta-mihaescu' },
   { name: 'Cristina Rodica BOBOC', slug: 'cristina-boboc' },
@@ -98,15 +81,16 @@ const profesoriMaster: Coordonator[] = [
   { name: 'Tudorel ANDREI', slug: 'tudorel-andrei' }
 ];
 
-function CoordonatorCard({ profesor, index, baseDelay, panelId }: {
+function CoordonatorCard({ profesor, index, baseDelay, panelId, teme }: {
   profesor: Coordonator;
   index: number;
   baseDelay: number;
   panelId: string;
+  teme?: ListaTeme;
 }) {
   const [temeDeschise, setTemeDeschise] = useState(false);
   const activitati = profesoriInfo[profesor.slug] || [];
-  const areTeme = !!profesor.teme && profesor.teme.length > 0;
+  const areTeme = !!teme && teme.teme.length > 0;
 
   return (
     <motion.div
@@ -150,17 +134,28 @@ function CoordonatorCard({ profesor, index, baseDelay, panelId }: {
           </button>
 
           {temeDeschise && (
-            <ul
-              id={panelId}
-              className="mt-3 space-y-2 border-t border-[#4CC9F0]/30 dark:border-gray-600 pt-3"
-            >
-              {profesor.teme!.map((tema, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  <span className="text-[#7209B7] dark:text-[#DDB8FF] font-semibold flex-shrink-0 w-5 text-right">{idx + 1}.</span>
-                  <span>{tema}</span>
-                </li>
-              ))}
-            </ul>
+            <div id={panelId} className="mt-3 border-t border-[#4CC9F0]/30 dark:border-gray-600 pt-3">
+              <ol className="space-y-3">
+                {teme!.teme.map((tema, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-sm">
+                    <span className="text-[#7209B7] dark:text-[#DDB8FF] font-semibold flex-shrink-0 w-5 text-right">{idx + 1}.</span>
+                    <span>
+                      <span className="text-gray-800 dark:text-gray-200">{tema.titlu}</span>
+                      {tema.metode && (
+                        <span className="block text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                          Metode: {tema.metode}
+                        </span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              {teme!.nota && (
+                <p className="mt-3 pt-3 border-t border-[#4CC9F0]/30 dark:border-gray-600 text-xs text-gray-600 dark:text-gray-400">
+                  {teme!.nota}
+                </p>
+              )}
+            </div>
           )}
         </div>
       )}
@@ -192,7 +187,7 @@ export default function ProfesoriCoordonatoriPage() {
               Profesorii îndrumători pentru lucrări de licență și disertație
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400 max-w-3xl mx-auto px-4 mt-3">
-              Butonul „Propuneri teme” apare la profesorii care au transmis o listă explicită de teme.
+              Butonul „Propuneri teme” apare la profesorii care au transmis o listă de teme pentru anul universitar 2026–2027.
             </p>
           </motion.div>
 
@@ -221,6 +216,7 @@ export default function ProfesoriCoordonatoriPage() {
                     index={index}
                     baseDelay={0.3}
                     panelId={`teme-licenta-${profesor.slug}`}
+                    teme={temeCoordonatori[profesor.slug]?.licenta}
                   />
                 ))}
               </div>
@@ -257,6 +253,7 @@ export default function ProfesoriCoordonatoriPage() {
                     index={index}
                     baseDelay={0.5}
                     panelId={`teme-master-${profesor.slug}`}
+                    teme={temeCoordonatori[profesor.slug]?.master}
                   />
                 ))}
               </div>

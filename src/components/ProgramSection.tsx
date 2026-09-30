@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { BookOpen, Award, Briefcase, GraduationCap, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
-import EMOS from '../assets/salaEMOS.png';
+import EMOS from '../assets/salaEMOS.jpg';
 
 // Hartă campus ASE din Figma
 
@@ -157,7 +157,7 @@ export function ProgramSection() {
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Discipline principale</h4>
+                  <h4 className="text-sm uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-3">Discipline principale</h4>
                   <div className="grid grid-cols-1 gap-2">
                     {(expandedCategories[category.name] ? category.subjects : category.subjects.slice(0, 3)).map((subject, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">

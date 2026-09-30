@@ -21,7 +21,7 @@ const masterInfo = {
 
 const highlights = [
   {
-    title: "🏅 Acreditat EMOS",
+    title: "Acreditat EMOS",
     description:
       "Programul deține certificarea European Master in Official Statistics (EMOS), recunoscută la nivel european, oferind acces la stagii și rețele profesionale din statistica oficială.",
   },
@@ -325,7 +325,7 @@ export function MasterASDSDetails() {
       case "Colocviu":
         return "bg-[#4361EE] text-white";
       default:
-        return "bg-gray-400 text-white";
+        return "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300";
     }
   };
 
@@ -358,7 +358,7 @@ export function MasterASDSDetails() {
       className="inline-flex items-center gap-2 px-6 py-2 rounded-full border-2 border-[#7209B7] bg-[#7209B7] text-white transition-transform duration-200 cursor-pointer shadow-md"
     >
       <span className="text-sm font-semibold uppercase tracking-wider">
-        🏅 Certificat EMOS
+        Certificat EMOS
       </span>
       <ExternalLink className="w-3 h-3" /> {/* Opțional: am adăugat o iconiță mică de link extern */}
     </a>

@@ -172,7 +172,7 @@ export default function CursuriPostuniversitarePage() {
                   <CheckCircle2 className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF] flex-shrink-0 mt-0.5" />
                   <span>
                     {lector.slug ? (
-                      <a href={`#/profesor/${lector.slug}`} className="font-medium hover:text-[#4361EE] dark:hover:text-[#4CC9F0] hover:underline">
+                      <a href={`#/profesor/${lector.slug}`} className="inline-block py-0.5 font-medium hover:text-[#4361EE] dark:hover:text-[#4CC9F0] hover:underline">
                         {lector.name}
                       </a>
                     ) : (
@@ -289,7 +289,7 @@ export default function CursuriPostuniversitarePage() {
                 </a>
                 <a
                   href="mailto:angelica.paiu@csie.ase.ro"
-                  className="inline-flex items-center gap-2 bg-white/15 border border-white/40 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/25 transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#3A0CA3] border border-white/40 text-white px-6 py-3 rounded-full font-semibold hover:bg-[#3F37C9] transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                   angelica.paiu@csie.ase.ro

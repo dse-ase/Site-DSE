@@ -223,7 +223,7 @@ export default function DisciplinePage() {
                     onClick={() => setSelectedYear(year)}
                     className={`px-6 py-2 rounded-lg font-medium transition-all ${
                       selectedYear === year
-                        ? 'bg-[#4361EE] text-white shadow-lg'
+                        ? 'bg-[#4361EE] text-white shadow-sm'
                         : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                     }`}
                   >
@@ -238,7 +238,7 @@ export default function DisciplinePage() {
                   onClick={() => setSelectedSemester(1)}
                   className={`px-6 py-2 rounded-lg font-medium transition-all ${
                     selectedSemester === 1
-                      ? 'bg-[#4361EE] text-white shadow-lg'
+                      ? 'bg-[#4361EE] text-white shadow-sm'
                       : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                   }`}
                 >
@@ -248,7 +248,7 @@ export default function DisciplinePage() {
                   onClick={() => setSelectedSemester(2)}
                   className={`px-6 py-2 rounded-lg font-medium transition-all ${
                     selectedSemester === 2
-                      ? 'bg-[#4361EE] text-white shadow-lg'
+                      ? 'bg-[#4361EE] text-white shadow-sm'
                       : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                   }`}
                 >

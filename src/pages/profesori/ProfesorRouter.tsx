@@ -58,7 +58,7 @@ function ProfesorComingSoon({ name, email }: { name: string; email: string }) {
           
           <div className="bg-[#4CC9F0]/10 rounded-xl p-8 mb-6 dark:bg-[#4CC9F0]/5">
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              📄 Pagina profesorului este în curs de completare
+              Pagina profesorului este în curs de completare
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400">
               Informațiile detaliate vor fi disponibile în curând
