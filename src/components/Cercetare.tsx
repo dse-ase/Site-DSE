@@ -296,7 +296,7 @@ export function Cercetare() {
                     </h3>
                   </div>
                   <p className="text-white/85">
-                    A XVIII-a ediție · organizată anual de Departamentul de
+                    A XIX-a ediție · organizată anual de Departamentul de
                     Statistică și Econometrie
                   </p>
                 </div>

@@ -67,6 +67,37 @@ const evenimente: Eveniment[] = [
     imagineAlt: `${dataSprint.titlu}: 3 zile, o provocare reală de business, date reale. ${dataSprint.dataText}, ${dataSprint.loc}. Organizat de ${dataSprint.organizatori}.`,
   },
   {
+    id: 12,
+    titlu: "Stagii în statistica oficială europeană, cu finanțare – EMOS Mobility Programme",
+    descriere:
+      "Stagii finanțate de Eurostat la institute de statistică din Lituania și Franța, pentru masteranzi ASDS și absolvenți recenți.",
+    data: "Stagii octombrie 2026 – aprilie 2027",
+    dataStart: "2026-10-05",
+    // ultimul stagiu anunțat (INSEE) începe pe 1 februarie 2027
+    dataEnd: "2027-01-31",
+    link: "https://asds-csie.ase.ro/stagii-in-statistica-oficiala-europeana-cu-finantare-emos-mobility-programme/",
+    linkEticheta: "Citește anunțul",
+    contact: "miruna.mazurencu@ase.ro",
+    categorie: "EMOS",
+    icon: Globe,
+  },
+  {
+    id: 13,
+    titlu: "EMOS Master's Thesis Competition 2027 – apel pentru lucrări de disertație",
+    descriere:
+      "Disertații nominalizate de coordonatori; câștigătorii prezintă la NTTS Bruxelles (martie 2027), cu costuri acoperite.",
+    data: "Publicat pe 7 octombrie 2026",
+    dataStart: "2026-10-07",
+    dataEnd: "2026-10-12",
+    ...(aTrecutZiua("2026-10-12")
+      ? {}
+      : { termenLimita: "Trimitere până luni, 12 octombrie 2026" }),
+    link: "https://asds-csie.ase.ro/emos-masters-thesis-competition-2027-call-for-submissions/",
+    linkEticheta: "Citește anunțul",
+    categorie: "EMOS",
+    icon: Award,
+  },
+  {
     id: 1,
     titlu: "Oportunitate pentru studenții ASDS – Programul EMOS",
     descriere:
